@@ -1,0 +1,13 @@
+name: TestProject
+version: 0.1.0
+
+authors:
+  - zrma <bulbitain@gmail.com>
+
+targets:
+  TestProject:
+    main: src/TestProject.cr
+
+crystal: 0.21.0
+
+license: MIT
