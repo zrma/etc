@@ -312,6 +312,7 @@
 				0B95B4B21DF8570B00A280DD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

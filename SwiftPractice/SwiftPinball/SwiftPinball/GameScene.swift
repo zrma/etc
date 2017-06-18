@@ -175,7 +175,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         monster3.position = CGPoint(x: 150, y: 200)
         self.addChild(monster3)
         
-        let rotateAction = SKAction.rotate(byAngle: CGFloat(360 * M_PI / 180), duration: 3)
+        let rotateAction = SKAction.rotate(byAngle: CGFloat(360 * Double.pi / 180), duration: 3)
         let rotateRepeatAction = SKAction.repeatForever(rotateAction)
         SKAction.repeat(rotateRepeatAction, count: 1000)
         monster3.run(rotateRepeatAction)
@@ -212,8 +212,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for touch in touches {
             _ = touch.location(in: self)
             
-            let swingAction1 = SKAction.rotate(byAngle: CGFloat(-M_PI * 0.25), duration: 0.05)
-            let swingAction2 = SKAction.rotate(byAngle: CGFloat(M_PI * 0.25), duration: 0.05)
+            let swingAction1 = SKAction.rotate(byAngle: CGFloat(-Double.pi * 0.25), duration: 0.05)
+            let swingAction2 = SKAction.rotate(byAngle: CGFloat(Double.pi * 0.25), duration: 0.05)
             armRight.run(swingAction1)
             armLeft.run(swingAction2)
         }
@@ -227,8 +227,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         for touch in touches {
             _ = touch.location(in: self)
             
-            let swingAction1 = SKAction.rotate(byAngle: CGFloat(-M_PI * 0.25), duration: 0.05)
-            let swingAction2 = SKAction.rotate(byAngle: CGFloat(M_PI * 0.25), duration: 0.05)
+            let swingAction1 = SKAction.rotate(byAngle: CGFloat(-Double.pi * 0.25), duration: 0.05)
+            let swingAction2 = SKAction.rotate(byAngle: CGFloat(Double.pi * 0.25), duration: 0.05)
             armRight.run(swingAction2)
             armLeft.run(swingAction1)
         }

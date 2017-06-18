@@ -1,16 +1,10 @@
-using Match
+total = 0
 
-function qsort( list::Array{Int64,1} )
-  @match list begin
-    [] => []
-    [ pivot, tails... ] => vcat(
-      qsort( [ x for x in tails if x < pivot ] ),
-      pivot,
-      qsort( [ x for x in tails if x > pivot ] ) )
-  end
+for i in 1:10000000
+    if i % 2 == 0
+        total += 1
+    end
 end
 
-datas = [3, 2, 9, 1, 5, 4]
-println( datas )
-@time result = qsort( datas )
-println( result )
+println( "total : ", total )
+
