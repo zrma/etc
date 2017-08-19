@@ -8,11 +8,11 @@ import (
 type Product struct {
 	gorm.Model
 	Code  string
-	Price unit
+	Price uint
 }
 
 func main() {
-	db, err := gorm.Open("sqlite3", "test.db")
+	db, err := gorm.Open("sqlite3", "./db/test.db")
 	if err != nil {
 		panic("failed to connect database")
 	}
