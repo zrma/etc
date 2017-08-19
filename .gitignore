@@ -799,3 +799,5 @@ hs_err_pid*
 
 glide.lock
 vendor/
+
+db/
