@@ -794,10 +794,7 @@ hs_err_pid*
 # Output of the go coverage tool, specifically when used with LiteIDE
 *.out
 
-# Project-local glide cache, RE: https://github.com/Masterminds/glide/issues/736
-.glide/
-
-glide.lock
-vendor/
+github.com/
+vendor/*/
 
 db/
