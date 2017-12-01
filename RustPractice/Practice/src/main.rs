@@ -1,14 +1,14 @@
+fn test(x: &i32, y: i32) {
+    *x = y;
+}
+
+
 fn main() {
-    let mut vec = Vec::new();
-    &vec.push(1);
-    &vec.push(2);
+    let mut a = Box::new(20);
 
-    assert_eq!(vec.len(), 2);
-    assert_eq!(vec[0], 1);
+    println!("{}", a);
 
-    println!("Hello, world!");
+    test(&a, 30);
 
-    for x in &vec {
-        println!("{}", x);
-    }
+    println!("{}", a);
 }
