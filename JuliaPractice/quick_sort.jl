@@ -10,8 +10,8 @@ function quick_sort( list::Array{Int64,1} )
   end
 end
 
-datas = [3, 2, 9, 1, 5, 4, 7]
+datas = [3, 2, 1]
+@time result = quick_sort( datas )
 println( datas )
+datas = unique([rand(1:1000) for r in 1:1000])
 @time result = quick_sort( datas )
-@time result = quick_sort( datas )
-println( result )
