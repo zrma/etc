@@ -1,14 +1,14 @@
-fn test(x: &i32, y: i32) {
+fn test(x: &mut i32, y: i32) {
     *x = y;
 }
 
 
 fn main() {
-    let mut a = Box::new(20);
+    let mut a : i32 = 20;
 
     println!("{}", a);
 
-    test(&a, 30);
+    test(&mut a, 30);
 
     println!("{}", a);
 }
