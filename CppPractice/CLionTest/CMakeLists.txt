@@ -34,7 +34,9 @@ include(${CPM_DIR}/CPM.cmake)
 # TODO: Include any modules here...
 
 CPM_AddModule("boost"
-        GIT_REPOSITORY "https://github.com/cogumbreiro/cpm-boost"
-        GIT_TAG "1.59.0")
+        GIT_REPOSITORY "https://github.com/toeb/cpm-boost")
+
+CPM_AddModule("json"
+        GIT_REPOSITORY "https://github.com/nlohmann/json")
 
 CPM_Finish()
