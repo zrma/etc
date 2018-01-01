@@ -1,7 +1,8 @@
 #include <list>
 #include <iostream>
 
-#include <boost/asio.hpp>
+#include <boost/asio.hpp
+>
 
 int main()
 {
@@ -12,7 +13,4 @@ int main()
 	{
 		std::cout << i << std::endl;
 	}
-
-	boost::asio::io_service service;
-	service.run_one();
 }
