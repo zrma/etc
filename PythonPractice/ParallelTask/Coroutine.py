@@ -35,7 +35,7 @@ async def HandleClient(reader, writer):
     #
     writer.write("Hello\n".encode())
 
-    data = await asyncio.wait_for(reader.readline(), timeout = 10.0)
+    data = await asyncio.wait_for(reader.readline(), timeout = 600.0)
     if data is None:
         log.warning("Expected World, received None")
         return
@@ -54,20 +54,23 @@ async def HandleClient(reader, writer):
 
     # 간단한 에코백 루프
     while True:
-        i = i + 1
+        try:
+            i = i + 1
 
-        data = await asyncio.wait_for(reader.readline(), timeout = 10.0)
-        if data is None:
-            log.warning("Received no data")
-            return
+            data = await asyncio.wait_for(reader.readline(), timeout = 600.0)
+            if data is None:
+                log.warning("Received no data")
+                return
 
-        sdata = data.decode().rstrip()
-        if sdata == 'Quit':
-            writer.write("Quit\n".encode())
-            break
+            sdata = data.decode().rstrip()
+            if sdata == 'Quit':
+                writer.write("Quit\n".encode())
+                break
 
-        response = ("Echo %d: %s\n" % (i, sdata))
-        writer.write(response.encode())
+            response = ("Echo %d: %s\n" % (i, sdata))
+            writer.write(response.encode())
+        except e:
+            pass
 
 
 def main():
