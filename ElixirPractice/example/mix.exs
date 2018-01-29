@@ -17,7 +17,8 @@ defmodule Example.Mixfile do
     # Specify extra applications you'll use from Erlang/Elixir
     [
         extra_applications: [:logger, :plug, :poison],
-        mod: {Example, []}
+        mod: {Example, []},
+        env: [cowboy_port: 8080]
     ]
   end
 
