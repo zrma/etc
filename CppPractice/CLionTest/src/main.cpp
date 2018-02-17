@@ -1,16 +1,20 @@
-#include <list>
-#include <iostream>
+#include "stdafx.h"
 
-#include <boost/asio.hpp
->
+#include "TypeTraits.h"
+
+class Test
+{
+};
 
 int main()
 {
-	std::list<int> l;
-	l.assign( 10, 0 );
+	auto a = 0;
+	auto b = "test";
+	auto c = new Test();
+	auto d = std::make_shared<Test>();
 
-	for ( const auto &i : l )
-	{
-		std::cout << i << std::endl;
-	}
+	std::cout << is_shared_ptr_t( a ) << std::endl;
+	std::cout << is_shared_ptr_t( b ) << std::endl;
+	std::cout << is_shared_ptr_t( c ) << std::endl;
+	std::cout << is_shared_ptr_t( d ) << std::endl;
 }
