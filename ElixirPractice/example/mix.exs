@@ -16,7 +16,7 @@ defmodule Example.Mixfile do
   def application do
     # Specify extra applications you'll use from Erlang/Elixir
     [
-        extra_applications: [:logger, :plug, :poison, :runtime_tools],
+        extra_applications: [:logger, :plug, :poison, :observer_cli],
         mod: {Example, []},
         env: [cowboy_port: 8080]
     ]
@@ -36,7 +36,7 @@ defmodule Example.Mixfile do
         {:cowboy, "~> 1.0.0"},
         {:plug, "~> 1.3"},
         {:poison, "~> 3.1"},
-        {:sshex, "2.1.0", only: :dev}
+        {:observer_cli, "~> 1.2"}
     ]
   end
 end
