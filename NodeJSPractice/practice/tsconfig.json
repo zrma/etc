@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2016",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "inlineSources": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": true,
+        "isolatedModules": true,
+        "strict": true,
+        "typeRoots": [
+            "./typings"
+        ]
+    },
+    "include": [
+        "src"
+    ],
+    "exclude": [
+        "typings",
+        "node_modules"
+    ],
+    "files": [
+        "./typings/sleep-promise.d.ts",
+        "./typings/async-child-process.d.ts",
+        "./typings/es6-promise-pool.d.ts"
+    ]
+}
