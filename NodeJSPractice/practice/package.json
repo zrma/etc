@@ -3,6 +3,23 @@
     "version": "1.0.0",
     "private": true,
     "dependencies": {
-        "underscore": "^1.8.3"
+        "async-child-process": "^1.1.1",
+        "csvtojson": "^1.1.9",
+        "es6-promise-pool": "^2.5.0",
+        "fs-extra": "^5.0.0",
+        "lodash": "^4.17.5",
+        "raven": "^2.4.2",
+        "sleep-promise": "^2.0.0"
+    },
+    "devDependencies": {
+        "@types/csvtojson": "^1.1.5",
+        "@types/fs-extra": "^5.0.1",
+        "@types/lodash": "^4.14.104",
+        "@types/node": "^9.4.7",
+        "@types/raven": "^2.1.6",
+        "should": "^7.1.1",
+        "supertest": "^3.0.0",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.2"
     }
 }
