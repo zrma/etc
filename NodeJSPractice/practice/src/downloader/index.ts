@@ -48,19 +48,18 @@ const loadMovies = async () => {
     console.log('유효성 체크 실패, 무시 목록');
     console.log('----------------------------------------');
 
-    _.each(invalidMovies, (movie: Movie) => {
+    _.each(invalidMovies, (movie) => {
         const msg = `${movie.year}년 ${movie.term}학기 - ${movie.title}_${movie.name} [${movie.lecture}]`;
         console.log(msg);
     });
     console.log('----------------------------------------');
 
-    const validMovies = _.filter(movies, (movie: Movie) => {
+    const validMovies = _.filter(movies, (movie) => {
         return !invalidFilter(movie);
     });
 
     const commands: string[] = [];
-    for (let idx in validMovies) {
-        const movie = movies[idx];
+    _.each(validMovies, async (movie) => {
         const currentPath = path.join(outputRoot, `${movie.year}/${movie.term}`,
             `${movie.title}_${movie.name}`, `${movie.lecture}`);
         await fs.ensureDir(currentPath);
@@ -78,7 +77,6 @@ ${movie.lecture}
 ----------------------------------------
 파일 목록 
 `;
-
         const readmePath = path.join(currentPath, `readme.md`);
         if (await fs.pathExists(readmePath)) {
             await fs.remove(readmePath);
@@ -105,7 +103,7 @@ ${movie.lecture}
                 commands.push(cmd);
             });
         }
-    }
+    });
 
     const task = async (cmd: string) => {
         console.log(cmd);
