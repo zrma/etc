@@ -1,0 +1,9 @@
+{"compile":[
+["/Users/zrma/Documents/Code/PolyGlot/NimPractice/test/nimcache/test.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.18.0_1/nim/lib -o /Users/zrma/Documents/Code/PolyGlot/NimPractice/test/nimcache/test.o /Users/zrma/Documents/Code/PolyGlot/NimPractice/test/nimcache/test.c"]
+],
+"link":[
+"/Users/zrma/Documents/Code/PolyGlot/NimPractice/test/nimcache/test.o",
+"/Users/zrma/Documents/Code/PolyGlot/NimPractice/test/nimcache/stdlib_system.o"
+],
+"linkcmd": "clang   -o /Users/zrma/Documents/Code/PolyGlot/NimPractice/test/test  /Users/zrma/Documents/Code/PolyGlot/NimPractice/test/nimcache/test.o /Users/zrma/Documents/Code/PolyGlot/NimPractice/test/nimcache/stdlib_system.o    -ldl"
+}

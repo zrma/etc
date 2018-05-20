@@ -1,16 +1,18 @@
 (ns csp.core)
 
-(defn foo
-	"I don't do a whole lot."
-	[x]
-	(println x "Hello, World!"))
+(use '[clojure.string :only (join split)])
 
-(defn gugu
+(defn func
+	"This is comment."
+	[x]
+	(println "Hello," (join "" [g])))
+
+(defn multiple
 	[]
 	(doall
 		(for [x (range 2 10) y (range 1 10)]
 			(println (format "%d x %d = %d" x y (* x y))))))
 
 
-(foo "Tester")
-(gugu)
+(func "World")
+;; (multiple)

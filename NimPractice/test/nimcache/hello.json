@@ -1,0 +1,9 @@
+{"compile":[
+]
+],
+"link":[
+"/Users/zrma/Documents/Code/PolyGlot/NimPractice/test/nimcache/hello.o",
+"/Users/zrma/Documents/Code/PolyGlot/NimPractice/test/nimcache/stdlib_system.o"
+],
+"linkcmd": "clang   -o /Users/zrma/Documents/Code/PolyGlot/NimPractice/test/hello  /Users/zrma/Documents/Code/PolyGlot/NimPractice/test/nimcache/hello.o /Users/zrma/Documents/Code/PolyGlot/NimPractice/test/nimcache/stdlib_system.o    -ldl"
+}
