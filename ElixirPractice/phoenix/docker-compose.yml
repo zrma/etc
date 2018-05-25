@@ -1,0 +1,22 @@
+web:
+  build: .
+  ports:
+    - "4000:4000"
+  command: mix phoenix.server
+  environment:
+    - MIX_ENV=dev
+    - PORT=4000
+  volumes:
+    - ./app:/app
+  links:
+    - db
+
+db:
+  image: mariadb
+  restart: always
+  environment:
+    - MYSQL_ROOT_PASSWORD=mysql
+    - MYSQL_USER=mysql
+    - MYSQL_PASSWORD=mysql
+  ports:
+    - 3306:3306
