@@ -1,14 +1,14 @@
-fn test(x: &mut i32, y: i32) {
-    *x = y;
-}
+#[macro_use]
+extern crate const_cstr;
+extern crate dlopen;
 
+use dlopen::symbor::Library;
 
 fn main() {
-    let mut a : i32 = 20;
+    let lib = Library::open("./libembed.dylib").expect("Failed to load library");
 
-    println!("{}", a);
+    let func = unsafe { lib.symbol_cstr::<fn()>(const_cstr!("process").as_cstr()) }.unwrap();
 
-    test(&mut a, 30);
-
-    println!("{}", a);
+    func();
+    println!("done!");
 }

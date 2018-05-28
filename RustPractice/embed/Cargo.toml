@@ -1,8 +1,10 @@
 [package]
-name = "practice"
+name = "embed"
 version = "0.1.0"
 authors = ["zrma <bulbitain@gmail.com>"]
 
 [dependencies]
-dlopen = "0.1.0"
-const-cstr = "0.3.0"
+
+[lib]
+name = "embed"
+crate-type = ["dylib"]
