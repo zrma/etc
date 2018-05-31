@@ -7,7 +7,7 @@ use dlopen::symbor::Library;
 #[cfg(target_os = "windows")]
 const FILE_NAME: &str= "./embed.dll";
 
-#[cfg(target_os = "ubuntu")]
+#[cfg(target_os = "linux")]
 const FILE_NAME : &str= "./libembed.so";
 
 #[cfg(target_os = "macos")]
