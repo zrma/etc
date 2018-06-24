@@ -1,0 +1,5 @@
+[deps]
+DBI = "f6f8745a-7764-11e8-0700-3d392a0c0e2b"
+Flax = "233c6376-7765-11e8-05bc-83242ce90276"
+MySQL = "39abe10b-433b-5dbd-92d4-e302a9df00cd"
+SearchLight = "340e8cb6-72eb-11e8-37ce-c97ebeb32050"
