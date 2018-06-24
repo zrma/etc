@@ -1,5 +1,5 @@
 {"compile":[
-["<home>/Documents/Code/PolyGlot/NimPractice/test/nimcache/test.c", "clang -c  -w  -I/usr/local/Cellar/nim/0.18.0_1/nim/lib -o <home>/Documents/Code/PolyGlot/NimPractice/test/nimcache/test.o <home>/Documents/Code/PolyGlot/NimPractice/test/nimcache/test.c"]
+]
 ],
 "link":[
 "<home>/Documents/Code/PolyGlot/NimPractice/test/nimcache/test.o",
