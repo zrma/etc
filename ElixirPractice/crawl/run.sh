@@ -1,1 +1,1 @@
-docker run -it --rm -v ${pwd}:/app elixir bash
+docker run -it --rm -v $PWD:/app elixir bash
