@@ -1,1 +1,1 @@
-docker run -it --rm -v <home>/Documents/Code/PolyGlot/ElixirPractice/crawl:/app elixir bash
+docker run -it --rm -v ${pwd}:/app elixir bash
