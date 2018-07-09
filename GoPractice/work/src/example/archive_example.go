@@ -20,14 +20,14 @@ func archive() {
 	}{
 		{"readme.txt", "This archive contains some text files."},
 		{"gopher.txt", "Gopher name:\nGeorge\nGeoffrey\nGonzo"},
-		{"todo.txt", "Get animal handling license."},
+		{"note.txt", "Get animal handling license."},
 	}
 
 	for _, file := range files {
 		header := &tar.Header{
 			Name: file.Name,
 			Mode: 0600,
-			Uid:  len(file.Body),
+			Size: int64(len(file.Body)),
 		}
 
 		if err := tarWriter.WriteHeader(header); err != nil {
@@ -59,7 +59,7 @@ func archive() {
 			log.Fatal(err)
 		}
 
-		fmt.Printf("Contents of %s : \n", header.Name)
+		fmt.Printf("Contents of %s :\n", header.Name)
 		if _, err := io.Copy(os.Stdout, tarReader); err != nil {
 			raven.CaptureError(err, nil)
 			log.Fatal(err)
