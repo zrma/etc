@@ -14,6 +14,6 @@ func main() {
 	defer raven.Close()
 
 	raven.CapturePanicAndWait(func() {
-		archive()
+		tarPhase()
 	}, nil)
 }

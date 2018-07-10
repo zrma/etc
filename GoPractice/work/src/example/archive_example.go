@@ -2,26 +2,33 @@ package main
 
 import (
 	"archive/tar"
+	"archive/zip"
 	"bytes"
 	"fmt"
 	"io"
-	"log"
 	"os"
 
-	"github.com/getsentry/raven-go"
+	"example/util"
+
 )
 
-func archive() {
-	var buf bytes.Buffer
-	tarWriter := tar.NewWriter(&buf)
+type file struct {
+	Name, Body string
+}
 
-	var files = []struct {
-		Name, Body string
-	}{
-		{"readme.txt", "This archive contains some text files."},
+func buildSampleFiles() []file {
+	return []file{
+		{"readme.txt", "This tarPhase contains some text files."},
 		{"gopher.txt", "Gopher name:\nGeorge\nGeoffrey\nGonzo"},
 		{"note.txt", "Get animal handling license."},
 	}
+}
+
+func archiveTar() *bytes.Buffer {
+	var buf bytes.Buffer
+	tarWriter := tar.NewWriter(&buf)
+
+	files := buildSampleFiles()
 
 	for _, file := range files {
 		header := &tar.Header{
@@ -30,41 +37,58 @@ func archive() {
 			Size: int64(len(file.Body)),
 		}
 
-		if err := tarWriter.WriteHeader(header); err != nil {
-			raven.CaptureError(err, nil)
-			log.Fatal(err)
-		}
-
-		if _, err := tarWriter.Write([]byte(file.Body)); err != nil {
-			raven.CaptureErrorAndWait(err, nil)
-			raven.CaptureError(err, nil)
-			log.Fatal(err)
-		}
+		util.CheckError(tarWriter.WriteHeader(header))
+		util.CheckError(tarWriter.Write([]byte(file.Body)))
 	}
 
-	if err := tarWriter.Close(); err != nil {
-		raven.CaptureError(err, nil)
-		log.Fatal(err)
-	}
+	util.CheckError(tarWriter.Close())
 
-	tarReader := tar.NewReader(&buf)
+	return &buf
+}
+
+func unarchiveTar(buf *bytes.Buffer) {
+	tarReader := tar.NewReader(buf)
 	for {
 		header, err := tarReader.Next()
 		if err == io.EOF {
 			break
 		}
-
-		if err != nil {
-			raven.CaptureError(err, nil)
-			log.Fatal(err)
-		}
+		util.CheckError(err)
 
 		fmt.Printf("Contents of %s :\n", header.Name)
-		if _, err := io.Copy(os.Stdout, tarReader); err != nil {
-			raven.CaptureError(err, nil)
-			log.Fatal(err)
-		}
+
+		util.CheckError(io.Copy(os.Stdout, tarReader))
 
 		fmt.Println()
 	}
+}
+
+func tarPhase() {
+	tarFile := archiveTar()
+	unarchiveTar(tarFile)
+}
+
+func archiveZip() *bytes.Buffer {
+	buf := new(bytes.Buffer)
+	zipWriter := zip.NewWriter(buf)
+
+	files := buildSampleFiles()
+
+	for _, file := range files {
+		zipFile, err := zipWriter.Create(file.Name)
+		util.CheckError(err)
+
+		util.CheckError(zipFile.Write([]byte(file.Body)))
+	}
+
+	util.CheckError(zipWriter.Close())
+	return buf
+}
+
+func unarchiveZip() {
+
+}
+
+func zipPhase() {
+
 }
