@@ -1,10 +1,10 @@
 package main
 
-func ExampleArchive() {
-	archive()
+func ExampleTar() {
+	tarPhase()
 	// Output:
 	// Contents of readme.txt :
-	// This archive contains some text files.
+	// This tarPhase contains some text files.
 	// Contents of gopher.txt :
 	// Gopher name:
 	// George
