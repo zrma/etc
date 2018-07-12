@@ -1,7 +1,7 @@
 package util
 
 import (
-	"log"
+	"fmt"
 
 	"github.com/getsentry/raven-go"
 )
@@ -9,11 +9,11 @@ import (
 func CheckError(args ...interface{}) {
 	raven.CapturePanicAndWait(func() {
 		argsLen := len(args)
-		lastToken := args[argsLen]
+		lastToken := args[argsLen-1]
 		if lastToken != nil {
 			err := lastToken.(error)
 			raven.CaptureError(err, nil)
-			log.Fatal(err)
+			fmt.Print(err)
 		}
 	}, nil)
 }
