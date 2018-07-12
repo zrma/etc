@@ -1,15 +1,15 @@
-package main
+package archive
 
 import (
 	"archive/tar"
 	"archive/zip"
+	"bufio"
 	"bytes"
 	"fmt"
 	"io"
 	"os"
 
 	"example/util"
-
 )
 
 type file struct {
@@ -18,7 +18,7 @@ type file struct {
 
 func buildSampleFiles() []file {
 	return []file{
-		{"readme.txt", "This tarPhase contains some text files."},
+		{"readme.txt", "This phase contains some text files."},
 		{"gopher.txt", "Gopher name:\nGeorge\nGeoffrey\nGonzo"},
 		{"note.txt", "Get animal handling license."},
 	}
@@ -63,9 +63,9 @@ func unarchiveTar(buf *bytes.Buffer) {
 	}
 }
 
-func tarPhase() {
-	tarFile := archiveTar()
-	unarchiveTar(tarFile)
+func TarPhase() {
+	buffer := archiveTar()
+	unarchiveTar(buffer)
 }
 
 func archiveZip() *bytes.Buffer {
@@ -85,10 +85,45 @@ func archiveZip() *bytes.Buffer {
 	return buf
 }
 
-func unarchiveZip() {
+func unarchiveZip(fileName string) {
+	reader, err := zip.OpenReader(fileName)
+	util.CheckError(err)
+	defer reader.Close()
 
+	for _, file := range reader.File {
+		fmt.Printf("Contents of %s :\n", file.Name)
+
+		rc, err := file.Open()
+		util.CheckError(err)
+
+		_, err = io.CopyN(os.Stdout, rc, 68)
+		util.CheckError(err)
+
+		rc.Close()
+		fmt.Println()
+	}
 }
 
-func zipPhase() {
+func ZipPhase() {
+	fileName := "/tmp/test.zip"
 
+	buffer := archiveZip()
+	writeFile(buffer, fileName)
+	unarchiveZip(fileName)
+	removeFile(fileName)
+}
+
+func writeFile(buf *bytes.Buffer, fileName string) {
+	file, err := os.Create(fileName)
+	util.CheckError(err)
+	defer file.Close()
+
+	writer := bufio.NewWriter(file)
+	writer.Write(buf.Bytes())
+
+	writer.Flush()
+}
+
+func removeFile(fileName string) {
+	util.CheckError(os.Remove(fileName))
 }
