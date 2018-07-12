@@ -1,11 +1,9 @@
 package main
 
 import (
+	"log"
 
-"log"
-
-"github.com/getsentry/raven-go"
-
+	"github.com/getsentry/raven-go"
 )
 
 func main() {
@@ -14,7 +12,4 @@ func main() {
 		log.Panic(err)
 	}
 	defer raven.Close()
-
-	raven.CapturePanicAndWait(func() {
-	}, nil)
 }
