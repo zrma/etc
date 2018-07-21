@@ -5,8 +5,10 @@ import (
 	"archive/zip"
 	"bufio"
 	"bytes"
+	"compress/flate"
 	"fmt"
 	"io"
+	"io/ioutil"
 	"os"
 
 	"example/util"
@@ -24,7 +26,7 @@ func buildSampleFiles() []file {
 	}
 }
 
-func archiveTar() *bytes.Buffer {
+func Tar() *bytes.Buffer {
 	var buf bytes.Buffer
 	tarWriter := tar.NewWriter(&buf)
 
@@ -46,7 +48,7 @@ func archiveTar() *bytes.Buffer {
 	return &buf
 }
 
-func unarchiveTar(buf *bytes.Buffer) {
+func UnTar(buf *bytes.Buffer) {
 	tarReader := tar.NewReader(buf)
 	for {
 		header, err := tarReader.Next()
@@ -63,14 +65,13 @@ func unarchiveTar(buf *bytes.Buffer) {
 	}
 }
 
-func TarPhase() {
-	buffer := archiveTar()
-	unarchiveTar(buffer)
-}
-
-func archiveZip() *bytes.Buffer {
+func Zip() *bytes.Buffer {
 	buf := new(bytes.Buffer)
 	zipWriter := zip.NewWriter(buf)
+
+	zipWriter.RegisterCompressor(zip.Deflate, func(out io.Writer) (io.WriteCloser, error) {
+		return flate.NewWriter(out, flate.BestCompression)
+	})
 
 	files := buildSampleFiles()
 
@@ -85,45 +86,24 @@ func archiveZip() *bytes.Buffer {
 	return buf
 }
 
-func unarchiveZip(fileName string) {
-	reader, err := zip.OpenReader(fileName)
+func UnZip(fileName string) {
+	zipReader, err := zip.OpenReader(fileName)
 	util.CheckError(err)
-	defer reader.Close()
+	defer zipReader.Close()
 
-	for _, file := range reader.File {
-		fmt.Printf("Contents of %s :\n", file.Name)
+	for _, zipFile := range zipReader.File {
+		fmt.Printf("Contents of %s :\n", zipFile.Name)
 
-		rc, err := file.Open()
+		readFile, err := zipFile.Open()
 		util.CheckError(err)
 
-		_, err = io.CopyN(os.Stdout, rc, 68)
+		buf := bufio.NewReader(readFile)
+		content, err := ioutil.ReadAll(buf)
 		util.CheckError(err)
 
-		rc.Close()
+		fmt.Printf("%s", content)
+
+		readFile.Close()
 		fmt.Println()
 	}
-}
-
-func ZipPhase() {
-	fileName := "/tmp/test.zip"
-
-	buffer := archiveZip()
-	writeFile(buffer, fileName)
-	unarchiveZip(fileName)
-	removeFile(fileName)
-}
-
-func writeFile(buf *bytes.Buffer, fileName string) {
-	file, err := os.Create(fileName)
-	util.CheckError(err)
-	defer file.Close()
-
-	writer := bufio.NewWriter(file)
-	writer.Write(buf.Bytes())
-
-	writer.Flush()
-}
-
-func removeFile(fileName string) {
-	util.CheckError(os.Remove(fileName))
 }
