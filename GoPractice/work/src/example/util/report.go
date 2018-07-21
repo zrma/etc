@@ -13,7 +13,7 @@ func CheckError(args ...interface{}) {
 		if lastToken != nil {
 			err := lastToken.(error)
 			raven.CaptureError(err, nil)
-			fmt.Print(err)
+			fmt.Println(err)
 		}
 	}, nil)
 }
