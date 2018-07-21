@@ -22,4 +22,4 @@ bin/
 *golang.org/
 *gopkg.in/
 
-report.json
+reports/
