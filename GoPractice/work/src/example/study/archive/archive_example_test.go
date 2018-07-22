@@ -2,7 +2,7 @@ package archive
 
 import "example/util"
 
-func ExampleTarPhase() {
+func ExampleTar() {
 	buffer := Tar()
 	UnTar(buffer)
 	// Output:
@@ -18,7 +18,7 @@ func ExampleTarPhase() {
 
 }
 
-func ExampleZipPhase() {
+func ExampleZip() {
 	fileName := "/tmp/test.zip"
 
 	buffer := Zip()
