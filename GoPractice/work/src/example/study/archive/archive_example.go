@@ -26,6 +26,7 @@ func buildSampleFiles() []file {
 	}
 }
 
+// Tar 압축 연습
 func Tar() *bytes.Buffer {
 	var buf bytes.Buffer
 	tarWriter := tar.NewWriter(&buf)
@@ -48,7 +49,8 @@ func Tar() *bytes.Buffer {
 	return &buf
 }
 
-func UnTar(buf *bytes.Buffer) {
+// UnTar 압축해제 연습
+func UnTar(buf io.Reader) {
 	tarReader := tar.NewReader(buf)
 	for {
 		header, err := tarReader.Next()
@@ -65,6 +67,7 @@ func UnTar(buf *bytes.Buffer) {
 	}
 }
 
+// Zip 압축 연습
 func Zip() *bytes.Buffer {
 	buf := new(bytes.Buffer)
 	zipWriter := zip.NewWriter(buf)
@@ -86,10 +89,13 @@ func Zip() *bytes.Buffer {
 	return buf
 }
 
+// UnZip 압축해제 연습
 func UnZip(fileName string) {
 	zipReader, err := zip.OpenReader(fileName)
 	util.CheckError(err)
-	defer zipReader.Close()
+	defer func() {
+		util.CheckError(zipReader.Close())
+	}()
 
 	for _, zipFile := range zipReader.File {
 		fmt.Printf("Contents of %s :\n", zipFile.Name)
@@ -103,7 +109,7 @@ func UnZip(fileName string) {
 
 		fmt.Printf("%s", content)
 
-		readFile.Close()
+		util.CheckError(readFile.Close())
 		fmt.Println()
 	}
 }
