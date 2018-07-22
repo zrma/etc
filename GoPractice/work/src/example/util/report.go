@@ -6,6 +6,7 @@ import (
 	"github.com/getsentry/raven-go"
 )
 
+// CheckError 센트리 오류 보고
 func CheckError(args ...interface{}) {
 	raven.CapturePanicAndWait(func() {
 		argsLen := len(args)
