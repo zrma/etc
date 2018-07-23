@@ -1,3 +1,4 @@
+#!/bin/sh
 mkdir ./reports
 go-acc -o ./reports/coverage.out ./...
 go test ./... -json > ./reports/report.json
