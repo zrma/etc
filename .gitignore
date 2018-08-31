@@ -804,6 +804,7 @@ vendor/*/
 
 db/
 
+.vscode/
 
 # Julia Playground
 .playground/
