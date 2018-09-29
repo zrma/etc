@@ -1,0 +1,11 @@
+cat
+dog
+.org
+cat
+cat
+&&
+tiger
+dog
+100
+tiger
+cat
