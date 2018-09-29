@@ -1,0 +1,4 @@
+.idea/*
+metastore_db/
+output/
+spark-warehouse/
