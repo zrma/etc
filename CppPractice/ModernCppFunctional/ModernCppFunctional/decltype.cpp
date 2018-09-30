@@ -38,6 +38,5 @@ const int Func1()
 
 const int & Func2()
 {
-	// TODO: 여기에 반환 구문을 삽입합니다.
 	return std::forward<int&&>(0);
 }
