@@ -10,5 +10,6 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion,
   "org.apache.spark" %% "spark-sql" % sparkVersion,
   "org.apache.spark" %% "spark-hive" % sparkVersion,
+  "org.apache.spark" %% "spark-streaming" % sparkVersion,
   "joda-time" % "joda-time" % "2.9.9"
 )
