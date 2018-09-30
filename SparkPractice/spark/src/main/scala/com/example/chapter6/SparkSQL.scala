@@ -50,7 +50,8 @@ case class DecimalTypeContainer(data: BigDecimal)
 object SparkSQL {
   def main(args: Array[String]): Unit = {
     import org.apache.spark.sql.Encoders
-    val warehouseLocation = "/Users/zrma/Documents/Code/PolyGlot/SparkPractice/spark/spark-warehouse"
+    val warehouseLocation =
+      "/Users/zrma/Documents/Code/PolyGlot/SparkPractice/spark/spark-warehouse"
     val ss = SparkSession
       .builder()
       .master("local[*]")
