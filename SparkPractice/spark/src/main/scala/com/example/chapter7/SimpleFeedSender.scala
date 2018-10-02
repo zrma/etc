@@ -54,7 +54,7 @@ object SimpleFeedSender {
                   return
                 }
 
-                out.print(line)
+                out.println(line)
                 out.flush()
               }
             } finally {
@@ -72,5 +72,4 @@ object SimpleFeedSender {
       true
     }
   }
-
 }
