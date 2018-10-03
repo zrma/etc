@@ -5,16 +5,16 @@ import java.net.ServerSocket
 
 import scala.io.Source
 
-case class SimpleFeedActorConfig(hostname: String = "localhost",
-                                 port: Int = 12345,
-                                 interval: Int = 500,
-                                 inputFile: String = "input")
+case class SimpleFeedSenderConfig(hostname: String = "localhost",
+                                  port: Int = 12345,
+                                  interval: Int = 500,
+                                  inputFile: String = "input")
 
 object SimpleFeedSender {
 
   def main(args: Array[String]) {
     val parser =
-      new scopt.OptionParser[SimpleFeedActorConfig]("SimpleFeedActor") {
+      new scopt.OptionParser[SimpleFeedSenderConfig]("SimpleFeedActor") {
         arg[String]("hostname") required () action { (x, c) =>
           c.copy(hostname = x)
         } text "The hostname to accept connections from remote hosts"
@@ -31,7 +31,7 @@ object SimpleFeedSender {
 
       }
 
-    parser.parse(args, SimpleFeedActorConfig()) exists { config =>
+    parser.parse(args, SimpleFeedSenderConfig()) exists { config =>
       println("Start server")
 
       val server = new ServerSocket(config.port)
