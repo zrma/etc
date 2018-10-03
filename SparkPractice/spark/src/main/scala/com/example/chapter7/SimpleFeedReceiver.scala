@@ -6,14 +6,14 @@ import org.apache.spark.sql.SparkSession
 import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
-case class SimplePrinterConfig(hostname: String = "localhost",
-                               port: Int = 12345,
-                               interval: Int = 1000)
+case class SimpleReceiverConfig(hostname: String = "localhost",
+                                port: Int = 12345,
+                                interval: Int = 1000)
 
 object SimpleFeedReceiver extends Logging {
   def main(args: Array[String]) {
 
-    val parser = new scopt.OptionParser[SimplePrinterConfig]("SimplePrinter") {
+    val parser = new scopt.OptionParser[SimpleReceiverConfig]("SimplePrinter") {
       arg[String]("hostname") required () action { (x, c) =>
         c.copy(hostname = x)
       } text "The hostname to accept connections from remote hosts"
@@ -25,7 +25,7 @@ object SimpleFeedReceiver extends Logging {
       } text "The interval to process data [msec]"
     }
 
-    parser.parse(args, SimplePrinterConfig()) exists { config =>
+    parser.parse(args, SimpleReceiverConfig()) exists { config =>
       Logger.getRootLogger.setLevel(Level.WARN)
 
       val ss = SparkSession
