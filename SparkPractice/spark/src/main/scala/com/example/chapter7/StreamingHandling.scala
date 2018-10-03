@@ -76,7 +76,7 @@ object StreamingHandling {
 
   def main(args: Array[String]): Unit = {
 
-    val parser = new scopt.OptionParser[SimplePrinterConfig]("SimplePrinter") {
+    val parser = new scopt.OptionParser[SimpleReceiverConfig]("SimplePrinter") {
       arg[String]("hostname") required () action { (x, c) =>
         c.copy(hostname = x)
       } text "The hostname to accept connections from remote hosts"
@@ -88,7 +88,7 @@ object StreamingHandling {
       } text "The interval to process data [msec]"
     }
 
-    parser.parse(args, SimplePrinterConfig()) exists { config =>
+    parser.parse(args, SimpleReceiverConfig()) exists { config =>
       Logger.getRootLogger.setLevel(Level.WARN)
 
       val ss = SparkSession
