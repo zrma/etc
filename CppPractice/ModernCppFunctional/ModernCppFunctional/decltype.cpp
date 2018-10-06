@@ -2,10 +2,10 @@
 
 #include "decltype.h"
 
-const int Func1();
+int Func1();
 const int& Func2();
 
-struct X { double d;  };
+struct X { double D;  };
 
 void DeclTypePractice()
 {
@@ -19,7 +19,7 @@ void DeclTypePractice()
 	// decl type(i) i1 = i;
 	const auto i1 = i;
 	
-	const decltype(x->d) d1 = 0;
+	const decltype(x->D) d1 = 0;
 	// decl type((x->d)) d2 = d1;
 	const auto& d2 = d1;
 
@@ -31,7 +31,7 @@ void DeclTypePractice()
 	delete x;
 }
 
-const int Func1()
+int Func1()
 {
 	return 0;
 }
