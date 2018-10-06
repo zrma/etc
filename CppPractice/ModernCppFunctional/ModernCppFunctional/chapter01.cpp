@@ -6,6 +6,8 @@
 #include "chapter01.h"
 #include "begin_end.h"
 #include "vector.h"
+#include "sort.h"
+#include "Vehicle.h"
 
 void Chapter01()
 {
@@ -13,4 +15,6 @@ void Chapter01()
 	DeclTypePractice();
 	BeginEndPractice();
 	VectorPractice();
+	SortPractice();
+	FindPractice();
 }

@@ -33,8 +33,17 @@
     <ClInclude Include="begin_end.h">
       <Filter>Chapter01</Filter>
     </ClInclude>
+    <ClInclude Include="sort.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
     <ClInclude Include="vector.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="util.h">
+      <Filter>소스 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Vehicle.h">
+      <Filter>Chapter01</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -53,8 +62,17 @@
     <ClCompile Include="begin_end.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
+    <ClCompile Include="sort.cpp">
+      <Filter>Chapter01</Filter>
+    </ClCompile>
     <ClCompile Include="vector.cpp">
+      <Filter>Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="util.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Vehicle.cpp">
+      <Filter>Chapter01</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
