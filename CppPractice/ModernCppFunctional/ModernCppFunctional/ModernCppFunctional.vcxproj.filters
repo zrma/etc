@@ -45,6 +45,9 @@
     <ClInclude Include="Vehicle.h">
       <Filter>Chapter01</Filter>
     </ClInclude>
+    <ClInclude Include="lambda.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -72,6 +75,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Vehicle.cpp">
+      <Filter>Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="lambda.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
   </ItemGroup>
