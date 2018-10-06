@@ -1,9 +1,10 @@
 #include "pch.h"
 #include "vector.h"
+#include "util.h"
 
 void VectorPractice()
 {
-	std::cout << "[vector]" << std::endl;
+	PrintTitle("vector");
 
 	std::vector<int> vec = { 0, 1, 2 };
 

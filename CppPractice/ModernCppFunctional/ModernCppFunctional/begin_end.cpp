@@ -1,10 +1,11 @@
 ﻿#include "pch.h"
 
 #include "begin_end.h"
+#include "util.h"
 
 void BeginEndPractice()
 {
-	std::cout << "[begin_end]" << std::endl;
+	PrintTitle("[begin_end]");
 
 	// 배열 선언
 	std::array<int, 10> arr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };

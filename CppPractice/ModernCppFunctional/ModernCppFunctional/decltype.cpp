@@ -1,6 +1,7 @@
 ﻿#include "pch.h"
 
 #include "decltype.h"
+#include "util.h"
 
 int Func1();
 const int& Func2();
@@ -9,6 +10,8 @@ struct X { double D;  };
 
 void DeclTypePractice()
 {
+	PrintTitle("DeclType");
+
 	std::cout << "result of add : " << Add<int, int>(3, 5) << std::endl;
 
 	const auto i = 0;
