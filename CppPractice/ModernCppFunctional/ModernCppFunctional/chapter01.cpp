@@ -8,6 +8,7 @@
 #include "vector.h"
 #include "sort.h"
 #include "Vehicle.h"
+#include "lambda.h"
 
 void Chapter01()
 {
@@ -17,4 +18,5 @@ void Chapter01()
 	VectorPractice();
 	SortPractice();
 	FindPractice();
+	LambdaPractice();
 }

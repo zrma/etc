@@ -152,6 +152,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="lambda.cpp" />
     <ClCompile Include="sort.cpp" />
     <ClCompile Include="util.cpp" />
     <ClCompile Include="vector.cpp" />
@@ -164,6 +165,7 @@
     <ClInclude Include="begin_end.h" />
     <ClInclude Include="chapter01.h" />
     <ClInclude Include="decltype.h" />
+    <ClInclude Include="lambda.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="sort.h" />
     <ClInclude Include="util.h" />
