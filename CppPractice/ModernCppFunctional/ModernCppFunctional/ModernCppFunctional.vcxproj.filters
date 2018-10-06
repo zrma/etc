@@ -30,6 +30,12 @@
     <ClInclude Include="chapter01.h">
       <Filter>Chapter01</Filter>
     </ClInclude>
+    <ClInclude Include="begin_end.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="vector.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -43,6 +49,12 @@
     </ClCompile>
     <ClCompile Include="decltype.cpp">
       <Filter>Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="begin_end.cpp">
+      <Filter>Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="vector.cpp">
+      <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
