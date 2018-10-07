@@ -9,6 +9,7 @@
 #include "sort.h"
 #include "find.h"
 #include "lambda.h"
+#include "smart_pointer.h"
 
 void Chapter01()
 {
@@ -19,4 +20,5 @@ void Chapter01()
 	SortPractice();
 	FindPractice();
 	LambdaPractice();
+	SmartPointerPractice();
 }
