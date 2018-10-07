@@ -47,6 +47,9 @@
     <ClInclude Include="smart_pointer.h">
       <Filter>Chapter01</Filter>
     </ClInclude>
+    <ClInclude Include="tuple.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -80,6 +83,9 @@
       <Filter>Chapter01</Filter>
     </ClCompile>
     <ClCompile Include="smart_pointer.cpp">
+      <Filter>Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="tuple.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
   </ItemGroup>
