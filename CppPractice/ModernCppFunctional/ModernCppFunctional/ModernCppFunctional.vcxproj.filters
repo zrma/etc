@@ -44,6 +44,9 @@
     <ClInclude Include="find.h">
       <Filter>Chapter01</Filter>
     </ClInclude>
+    <ClInclude Include="smart_pointer.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -74,6 +77,9 @@
       <Filter>Chapter01</Filter>
     </ClCompile>
     <ClCompile Include="find.cpp">
+      <Filter>Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="smart_pointer.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
   </ItemGroup>
