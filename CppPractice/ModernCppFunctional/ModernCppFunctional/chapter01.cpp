@@ -10,6 +10,7 @@
 #include "find.h"
 #include "lambda.h"
 #include "smart_pointer.h"
+#include "tuple.h"
 
 void Chapter01()
 {
@@ -21,4 +22,5 @@ void Chapter01()
 	FindPractice();
 	LambdaPractice();
 	SmartPointerPractice();
+	TuplePractice();
 }

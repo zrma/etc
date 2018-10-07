@@ -155,6 +155,7 @@
     <ClCompile Include="lambda.cpp" />
     <ClCompile Include="smart_pointer.cpp" />
     <ClCompile Include="sort.cpp" />
+    <ClCompile Include="tuple.cpp" />
     <ClCompile Include="util.cpp" />
     <ClCompile Include="vector.cpp" />
     <ClCompile Include="find.cpp" />
@@ -170,6 +171,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="smart_pointer.h" />
     <ClInclude Include="sort.h" />
+    <ClInclude Include="tuple.h" />
     <ClInclude Include="util.h" />
     <ClInclude Include="vector.h" />
     <ClInclude Include="find.h" />
