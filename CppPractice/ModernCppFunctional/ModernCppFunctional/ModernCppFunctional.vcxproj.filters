@@ -12,6 +12,9 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Chapter02">
+      <UniqueIdentifier>{51bffccd-eba0-4911-8f1e-befe160f51f1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="auto.h">
@@ -50,6 +53,15 @@
     <ClInclude Include="tuple.h">
       <Filter>Chapter01</Filter>
     </ClInclude>
+    <ClInclude Include="chapter02.h">
+      <Filter>Chapter02</Filter>
+    </ClInclude>
+    <ClInclude Include="first_class.h">
+      <Filter>Chapter02</Filter>
+    </ClInclude>
+    <ClInclude Include="dynamic_function.h">
+      <Filter>Chapter02</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -87,6 +99,15 @@
     </ClCompile>
     <ClCompile Include="tuple.cpp">
       <Filter>Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="chapter02.cpp">
+      <Filter>Chapter02</Filter>
+    </ClCompile>
+    <ClCompile Include="first_class.cpp">
+      <Filter>Chapter02</Filter>
+    </ClCompile>
+    <ClCompile Include="dynamic_function.cpp">
+      <Filter>Chapter02</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
