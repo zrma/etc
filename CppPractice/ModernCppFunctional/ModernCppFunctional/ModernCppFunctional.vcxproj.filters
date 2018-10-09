@@ -59,7 +59,7 @@
     <ClInclude Include="first_class.h">
       <Filter>Chapter02</Filter>
     </ClInclude>
-    <ClInclude Include="dynamic_function.h">
+    <ClInclude Include="high_order_function.h">
       <Filter>Chapter02</Filter>
     </ClInclude>
   </ItemGroup>
@@ -106,7 +106,7 @@
     <ClCompile Include="first_class.cpp">
       <Filter>Chapter02</Filter>
     </ClCompile>
-    <ClCompile Include="dynamic_function.cpp">
+    <ClCompile Include="high_order_function.cpp">
       <Filter>Chapter02</Filter>
     </ClCompile>
   </ItemGroup>
