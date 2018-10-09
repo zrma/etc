@@ -1,3 +1,7 @@
 [submodule "GoPractice/work/src/git.team504.co.kr"]
   path = GoPractice/work/src/git.team504.co.kr/team504/SSSS
   url = https://git.team504.co.kr/team504/SSSS/
+
+[submodule "GoPractice/work/src/honnef.co/go/tools"]
+  path = GoPractice/work/src/honnef.co/go/tools
+  url = https://honnef.co/go/tools/
