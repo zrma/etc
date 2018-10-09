@@ -69,23 +69,19 @@ void ReturnValueLambda()
 
 	std::array<int, 10> arr;
 	std::iota(arr.begin(), arr.end(), 0);
-	std::for_each(arr.begin(), arr.end(), [](auto n) { std::cout << n << " "; });
-	std::cout << std::endl;
-
+	PrintContainer(arr);
+	
 	std::vector<int> vec;
 	vec.reserve(arr.size());
 	std::transform(arr.begin(), arr.end(), std::back_inserter(vec), [](auto n) { return static_cast<int>(std::pow(n, 2)); });
-	std::for_each(vec.begin(), vec.end(), [](auto n) { std::cout << n << " "; });
-	std::cout << std::endl;
+	PrintContainer(vec);
 
 	std::list<double> list;
 	list.assign(arr.begin(), arr.end());
-	std::for_each(list.begin(), list.end(), [](auto n) { std::cout << n << " "; });
-	std::cout << std::endl;
+	PrintContainer(list);
 	
 	std::transform(vec.begin(), vec.end(), list.begin(), [](auto n) -> double { return n / 2.0; });
-	std::for_each(list.begin(), list.end(), [](auto n) { std::cout << n << " "; });
-	std::cout << std::endl;
+	PrintContainer(list);
 }
 
 void LambdaCaptureByValue()
@@ -120,8 +116,7 @@ void LambdaCaptureByValue()
 		a = b;
 		b = old;
 	});
-	std::for_each(arr.begin(), arr.end(), [](auto n) { std::cout << n << " "; });
-	std::cout << std::endl;
+	PrintContainer(arr);
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
 }
@@ -142,8 +137,7 @@ void LambdaCaptureByReference()
 		a = b;
 		b = old;
 	});
-	std::for_each(arr.begin(), arr.end(), [](auto n) { std::cout << n << " "; });
-	std::cout << std::endl;
+	PrintContainer(arr);
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
 }
