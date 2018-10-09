@@ -155,7 +155,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="chapter02.cpp" />
-    <ClCompile Include="dynamic_function.cpp" />
+    <ClCompile Include="high_order_function.cpp" />
     <ClCompile Include="first_class.cpp" />
     <ClCompile Include="lambda.cpp" />
     <ClCompile Include="smart_pointer.cpp" />
@@ -173,7 +173,7 @@
     <ClInclude Include="chapter01.h" />
     <ClInclude Include="chapter02.h" />
     <ClInclude Include="decltype.h" />
-    <ClInclude Include="dynamic_function.h" />
+    <ClInclude Include="high_order_function.h" />
     <ClInclude Include="first_class.h" />
     <ClInclude Include="lambda.h" />
     <ClInclude Include="pch.h" />
