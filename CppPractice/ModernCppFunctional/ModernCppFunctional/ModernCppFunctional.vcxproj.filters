@@ -62,6 +62,9 @@
     <ClInclude Include="high_order_function.h">
       <Filter>Chapter02</Filter>
     </ClInclude>
+    <ClInclude Include="CurryPractice.h">
+      <Filter>Chapter02</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -107,6 +110,9 @@
       <Filter>Chapter02</Filter>
     </ClCompile>
     <ClCompile Include="high_order_function.cpp">
+      <Filter>Chapter02</Filter>
+    </ClCompile>
+    <ClCompile Include="CurryPractice.cpp">
       <Filter>Chapter02</Filter>
     </ClCompile>
   </ItemGroup>
