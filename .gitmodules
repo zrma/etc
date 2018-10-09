@@ -5,3 +5,7 @@
 [submodule "GoPractice/work/src/honnef.co/go/tools"]
   path = GoPractice/work/src/honnef.co/go/tools
   url = https://honnef.co/go/tools/
+
+[submodule "GoPractice/work/src/mvdan.cc/interfacer"]
+  path = GoPractice/work/src/mvdan.cc/interfacer
+  url = https://mvdan.cc/interfacer
