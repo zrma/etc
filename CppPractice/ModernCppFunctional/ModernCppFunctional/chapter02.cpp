@@ -3,7 +3,7 @@
 #include "chapter02.h"
 #include "first_class.h"
 #include "high_order_function.h"
-#include "CurryPractice.h"
+#include "curry.h"
 
 void Chapter02()
 {
