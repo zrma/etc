@@ -155,7 +155,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="chapter02.cpp" />
-    <ClCompile Include="CurryPractice.cpp" />
+    <ClCompile Include="chapter03.cpp" />
+    <ClCompile Include="immutable.cpp" />
+    <ClCompile Include="curry.cpp" />
     <ClCompile Include="high_order_function.cpp" />
     <ClCompile Include="first_class.cpp" />
     <ClCompile Include="lambda.cpp" />
@@ -173,7 +175,9 @@
     <ClInclude Include="begin_end.h" />
     <ClInclude Include="chapter01.h" />
     <ClInclude Include="chapter02.h" />
-    <ClInclude Include="CurryPractice.h" />
+    <ClInclude Include="chapter03.h" />
+    <ClInclude Include="immutable.h" />
+    <ClInclude Include="curry.h" />
     <ClInclude Include="decltype.h" />
     <ClInclude Include="high_order_function.h" />
     <ClInclude Include="first_class.h" />

@@ -15,6 +15,9 @@
     <Filter Include="Chapter02">
       <UniqueIdentifier>{51bffccd-eba0-4911-8f1e-befe160f51f1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Chapter03">
+      <UniqueIdentifier>{3b23f2a3-45db-441e-ab8d-3464f1aae6d5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="auto.h">
@@ -62,7 +65,13 @@
     <ClInclude Include="high_order_function.h">
       <Filter>Chapter02</Filter>
     </ClInclude>
-    <ClInclude Include="CurryPractice.h">
+    <ClInclude Include="chapter03.h">
+      <Filter>Chapter03</Filter>
+    </ClInclude>
+    <ClInclude Include="immutable.h">
+      <Filter>Chapter03</Filter>
+    </ClInclude>
+    <ClInclude Include="curry.h">
       <Filter>Chapter02</Filter>
     </ClInclude>
   </ItemGroup>
@@ -112,7 +121,13 @@
     <ClCompile Include="high_order_function.cpp">
       <Filter>Chapter02</Filter>
     </ClCompile>
-    <ClCompile Include="CurryPractice.cpp">
+    <ClCompile Include="chapter03.cpp">
+      <Filter>Chapter03</Filter>
+    </ClCompile>
+    <ClCompile Include="immutable.cpp">
+      <Filter>Chapter03</Filter>
+    </ClCompile>
+    <ClCompile Include="curry.cpp">
       <Filter>Chapter02</Filter>
     </ClCompile>
   </ItemGroup>
