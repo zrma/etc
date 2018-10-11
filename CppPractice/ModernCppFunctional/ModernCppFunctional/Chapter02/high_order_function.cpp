@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 
 #include "high_order_function.h"
-#include "util.h"
+#include "../Common/util.h"
 #include <boost/range/irange.hpp>
 
 using HyperbolicFunc = std::function<double(double)>;

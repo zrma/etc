@@ -18,61 +18,76 @@
     <Filter Include="Chapter03">
       <UniqueIdentifier>{3b23f2a3-45db-441e-ab8d-3464f1aae6d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Common">
+      <UniqueIdentifier>{ed7fb092-e0d1-4212-8919-d58cba26fd35}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="auto.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="decltype.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="chapter01.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="begin_end.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="sort.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="vector.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="util.h">
-      <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="lambda.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="find.h">
+    <ClInclude Include="Chapter01\auto.h">
       <Filter>Chapter01</Filter>
     </ClInclude>
-    <ClInclude Include="smart_pointer.h">
+    <ClInclude Include="Chapter01\begin_end.h">
       <Filter>Chapter01</Filter>
     </ClInclude>
-    <ClInclude Include="tuple.h">
+    <ClInclude Include="Chapter01\chapter01.h">
       <Filter>Chapter01</Filter>
     </ClInclude>
-    <ClInclude Include="chapter02.h">
+    <ClInclude Include="Chapter01\decltype.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter01\find.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter01\lambda.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter01\smart_pointer.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter01\sort.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter01\tuple.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter01\vector.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter01\pch.h">
+      <Filter>Chapter01</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter02\chapter02.h">
       <Filter>Chapter02</Filter>
     </ClInclude>
-    <ClInclude Include="first_class.h">
+    <ClInclude Include="Chapter02\curry.h">
       <Filter>Chapter02</Filter>
     </ClInclude>
-    <ClInclude Include="high_order_function.h">
+    <ClInclude Include="Chapter02\first_class.h">
       <Filter>Chapter02</Filter>
     </ClInclude>
-    <ClInclude Include="chapter03.h">
+    <ClInclude Include="Chapter02\high_order_function.h">
+      <Filter>Chapter02</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter02\pch.h">
+      <Filter>Chapter02</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter03\chapter03.h">
       <Filter>Chapter03</Filter>
     </ClInclude>
-    <ClInclude Include="immutable.h">
+    <ClInclude Include="Chapter03\immutable.h">
       <Filter>Chapter03</Filter>
     </ClInclude>
-    <ClInclude Include="curry.h">
-      <Filter>Chapter02</Filter>
+    <ClInclude Include="Chapter03\pch.h">
+      <Filter>Chapter03</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\util.h">
+      <Filter>Common</Filter>
+    </ClInclude>
+    <ClInclude Include="Common\pch.h">
+      <Filter>Common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -82,53 +97,53 @@
     <ClCompile Include="ModernCppFunctional.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="chapter01.cpp">
+    <ClCompile Include="Chapter01\begin_end.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
-    <ClCompile Include="decltype.cpp">
+    <ClCompile Include="Chapter01\chapter01.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
-    <ClCompile Include="begin_end.cpp">
+    <ClCompile Include="Chapter01\decltype.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
-    <ClCompile Include="sort.cpp">
+    <ClCompile Include="Chapter01\find.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
-    <ClCompile Include="vector.cpp">
+    <ClCompile Include="Chapter01\lambda.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
-    <ClCompile Include="util.cpp">
-      <Filter>Main</Filter>
-    </ClCompile>
-    <ClCompile Include="lambda.cpp">
+    <ClCompile Include="Chapter01\smart_pointer.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
-    <ClCompile Include="find.cpp">
+    <ClCompile Include="Chapter01\sort.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
-    <ClCompile Include="smart_pointer.cpp">
+    <ClCompile Include="Chapter01\tuple.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
-    <ClCompile Include="tuple.cpp">
+    <ClCompile Include="Chapter01\vector.cpp">
       <Filter>Chapter01</Filter>
     </ClCompile>
-    <ClCompile Include="chapter02.cpp">
+    <ClCompile Include="Chapter02\chapter02.cpp">
       <Filter>Chapter02</Filter>
     </ClCompile>
-    <ClCompile Include="first_class.cpp">
+    <ClCompile Include="Chapter02\curry.cpp">
       <Filter>Chapter02</Filter>
     </ClCompile>
-    <ClCompile Include="high_order_function.cpp">
+    <ClCompile Include="Chapter02\first_class.cpp">
       <Filter>Chapter02</Filter>
     </ClCompile>
-    <ClCompile Include="chapter03.cpp">
+    <ClCompile Include="Chapter02\high_order_function.cpp">
+      <Filter>Chapter02</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter03\chapter03.cpp">
       <Filter>Chapter03</Filter>
     </ClCompile>
-    <ClCompile Include="immutable.cpp">
+    <ClCompile Include="Chapter03\immutable.cpp">
       <Filter>Chapter03</Filter>
     </ClCompile>
-    <ClCompile Include="curry.cpp">
-      <Filter>Chapter02</Filter>
+    <ClCompile Include="Common\util.cpp">
+      <Filter>Common</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
