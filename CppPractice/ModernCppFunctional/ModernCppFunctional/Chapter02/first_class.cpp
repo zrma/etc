@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 
 #include "first_class.h"
-#include "util.h"
+#include "../Common/util.h"
 
 using FuncType = std::function<int(int, int)>;
 
