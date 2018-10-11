@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 
-#include "CurryPractice.h"
-#include "util.h"
+#include "curry.h"
+#include "../Common/util.h"
 #include <boost/range/irange.hpp>
 
 
