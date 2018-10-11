@@ -154,44 +154,46 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="chapter02.cpp" />
-    <ClCompile Include="chapter03.cpp" />
-    <ClCompile Include="immutable.cpp" />
-    <ClCompile Include="curry.cpp" />
-    <ClCompile Include="high_order_function.cpp" />
-    <ClCompile Include="first_class.cpp" />
-    <ClCompile Include="lambda.cpp" />
-    <ClCompile Include="smart_pointer.cpp" />
-    <ClCompile Include="sort.cpp" />
-    <ClCompile Include="tuple.cpp" />
-    <ClCompile Include="util.cpp" />
-    <ClCompile Include="vector.cpp" />
-    <ClCompile Include="find.cpp" />
-    <ClInclude Include="auto.h" />
-    <ClCompile Include="begin_end.cpp" />
-    <ClCompile Include="chapter01.cpp">
-      <FileType>CppHeader</FileType>
-    </ClCompile>
-    <ClInclude Include="begin_end.h" />
-    <ClInclude Include="chapter01.h" />
-    <ClInclude Include="chapter02.h" />
-    <ClInclude Include="chapter03.h" />
-    <ClInclude Include="immutable.h" />
-    <ClInclude Include="curry.h" />
-    <ClInclude Include="decltype.h" />
-    <ClInclude Include="high_order_function.h" />
-    <ClInclude Include="first_class.h" />
-    <ClInclude Include="lambda.h" />
+    <ClCompile Include="Chapter01\begin_end.cpp" />
+    <ClCompile Include="Chapter01\chapter01.cpp" />
+    <ClCompile Include="Chapter01\decltype.cpp" />
+    <ClCompile Include="Chapter01\find.cpp" />
+    <ClCompile Include="Chapter01\lambda.cpp" />
+    <ClCompile Include="Chapter01\smart_pointer.cpp" />
+    <ClCompile Include="Chapter01\sort.cpp" />
+    <ClCompile Include="Chapter01\tuple.cpp" />
+    <ClCompile Include="Chapter01\vector.cpp" />
+    <ClCompile Include="Chapter02\chapter02.cpp" />
+    <ClCompile Include="Chapter02\curry.cpp" />
+    <ClCompile Include="Chapter02\first_class.cpp" />
+    <ClCompile Include="Chapter02\high_order_function.cpp" />
+    <ClCompile Include="Chapter03\chapter03.cpp" />
+    <ClCompile Include="Chapter03\immutable.cpp" />
+    <ClInclude Include="Chapter01\auto.h" />
+    <ClInclude Include="Chapter01\begin_end.h" />
+    <ClInclude Include="Chapter01\chapter01.h" />
+    <ClInclude Include="Chapter01\decltype.h" />
+    <ClInclude Include="Chapter01\find.h" />
+    <ClInclude Include="Chapter01\lambda.h" />
+    <ClInclude Include="Chapter01\pch.h" />
+    <ClInclude Include="Chapter01\smart_pointer.h" />
+    <ClInclude Include="Chapter01\sort.h" />
+    <ClInclude Include="Chapter01\tuple.h" />
+    <ClInclude Include="Chapter01\vector.h" />
+    <ClInclude Include="Chapter02\chapter02.h" />
+    <ClInclude Include="Chapter02\curry.h" />
+    <ClInclude Include="Chapter02\first_class.h" />
+    <ClInclude Include="Chapter02\high_order_function.h" />
+    <ClInclude Include="Chapter02\pch.h" />
+    <ClInclude Include="Chapter03\chapter03.h" />
+    <ClInclude Include="Chapter03\immutable.h" />
+    <ClInclude Include="Chapter03\pch.h" />
+    <ClInclude Include="Common\pch.h" />
+    <ClInclude Include="Common\util.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="smart_pointer.h" />
-    <ClInclude Include="sort.h" />
-    <ClInclude Include="tuple.h" />
-    <ClInclude Include="util.h" />
-    <ClInclude Include="vector.h" />
-    <ClInclude Include="find.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="decltype.cpp" />
+    <ClCompile Include="Common\util.cpp" />
     <ClCompile Include="ModernCppFunctional.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
