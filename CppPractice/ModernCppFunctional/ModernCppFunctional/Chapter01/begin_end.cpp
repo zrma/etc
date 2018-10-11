@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 
 #include "begin_end.h"
-#include "util.h"
+#include "../Common/util.h"
 
 void BeginEndPractice()
 {
