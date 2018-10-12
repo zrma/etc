@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 
 #include "tuple.h"
-#include "util.h"
+#include "../Common/util.h"
 
 void Tuples()
 {
