@@ -2,6 +2,7 @@
 
 #include "immutable.h"
 #include "../Common/util.h"
+#include "mutable.h"
 
 template<typename T, typename U>
 class IToString
@@ -107,4 +108,5 @@ void ImmutablePractice()
 {
 	ConstPractice();
 	FirstClassPureImmutablePractice();
+	MutablePractice();
 }
