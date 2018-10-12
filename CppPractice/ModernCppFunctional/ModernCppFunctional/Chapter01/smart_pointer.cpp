@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 
 #include "smart_pointer.h"
-#include "util.h"
+#include "../Common/util.h"
 
 struct BodyMass
 {
