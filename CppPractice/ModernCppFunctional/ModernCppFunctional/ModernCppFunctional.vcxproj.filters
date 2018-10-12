@@ -89,6 +89,9 @@
     <ClInclude Include="Common\pch.h">
       <Filter>Common</Filter>
     </ClInclude>
+    <ClInclude Include="Chapter03\mutable.h">
+      <Filter>Chapter03</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -144,6 +147,9 @@
     </ClCompile>
     <ClCompile Include="Common\util.cpp">
       <Filter>Common</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter03\mutable.cpp">
+      <Filter>Chapter03</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

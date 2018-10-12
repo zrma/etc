@@ -1,6 +1,6 @@
 #include "pch.h"
 #include "vector.h"
-#include "util.h"
+#include "../Common/util.h"
 
 void VectorPractice()
 {
