@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 
 #include "sort.h"
-#include "util.h"
+#include "../Common/util.h"
 
 auto Comparer(int a, int b)
 {
