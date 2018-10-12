@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
 
 #include "decltype.h"
-#include "util.h"
+#include "../Common/util.h"
 
 int Func1();
 const int& Func2();
