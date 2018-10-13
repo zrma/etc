@@ -1,9 +1,5 @@
-//
-// Created by zrma on 2018. 2. 16..
-//
-
-#ifndef CLIONTEST_STDAFX_H
-#define CLIONTEST_STDAFX_H
+#ifndef CLION_PRACTICE_CPH_H
+#define CLION_PRACTICE_CPH_H
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -17,4 +13,4 @@
 #include <vector>
 #include <unordered_set>
 
-#endif //CLIONTEST_STDAFX_H
+#endif //CLION_PRACTICE_CPH_H
