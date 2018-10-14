@@ -168,6 +168,7 @@
     <ClCompile Include="Chapter02\first_class.cpp" />
     <ClCompile Include="Chapter02\high_order_function.cpp" />
     <ClCompile Include="Chapter03\chapter03.cpp" />
+    <ClCompile Include="Chapter03\convert_to_immutable.cpp" />
     <ClCompile Include="Chapter03\immutable.cpp" />
     <ClInclude Include="Chapter01\auto.h" />
     <ClInclude Include="Chapter01\begin_end.h" />
@@ -186,6 +187,7 @@
     <ClInclude Include="Chapter02\high_order_function.h" />
     <ClInclude Include="Chapter02\pch.h" />
     <ClInclude Include="Chapter03\chapter03.h" />
+    <ClInclude Include="Chapter03\convert_to_immutable.h" />
     <ClInclude Include="Chapter03\immutable.h" />
     <ClInclude Include="Chapter03\mutable.h" />
     <ClInclude Include="Chapter03\pch.h" />
