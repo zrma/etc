@@ -1,9 +1,5 @@
-//
-// Created by zrma on 2018. 2. 16..
-//
-
-#ifndef CLIONTEST_TYPETRAITS_H
-#define CLIONTEST_TYPETRAITS_H
+#ifndef CLION_PRACTICE_TYPE_TRAIT_H
+#define CLION_PRACTICE_TYPE_TRAIT_H
 
 #include <type_traits>
 #include <memory>
@@ -21,9 +17,9 @@ struct is_shared_ptr<std::shared_ptr<T> > : boost::mpl::true_
 };
 
 template<typename T>
-constexpr bool is_shared_ptr_t(T)
+constexpr auto is_shared_ptr_t(T)
 {
 	return is_shared_ptr<T>::value;
 }
 
-#endif //CLIONTEST_TYPETRAITS_H
+#endif //CLION_PRACTICE_TYPE_TRAIT_H
