@@ -8,10 +8,10 @@ class Test
 
 int main()
 {
-	auto a = 0;
-	auto b = "test";
-	auto c = new Test();
-	auto d = std::make_shared<Test>();
+	const auto a = 0;
+	const auto b = "test";
+	const auto c = new Test();
+	const auto d = std::make_shared<Test>();
 
 	std::cout << is_shared_ptr_t( a ) << std::endl;
 	std::cout << is_shared_ptr_t( b ) << std::endl;
