@@ -8,7 +8,7 @@ import falcon
 # other things) that you think in terms of resources and state
 # transitions, which map to HTTP verbs.
 class ThingsResource:
-    def on_get( self, _, res ):
+    def on_get(self, _, res):
         """Handles GET requests"""
         res.status = falcon.HTTP_200  # This is the default status
         res.body = ('\nTwo things awe me most, the starry sky '
@@ -24,4 +24,4 @@ app = falcon.API()
 things = ThingsResource()
 
 # things will handle all requests to the '/things' URL path
-app.add_route( '/things', things )
+app.add_route('/things', things)
