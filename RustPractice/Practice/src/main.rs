@@ -2,16 +2,19 @@
 extern crate const_cstr;
 extern crate dlopen;
 
+
 use dlopen::symbor::Library;
 
+
 #[cfg(target_os = "windows")]
-const FILE_NAME: &str= "./embed.dll";
+const FILE_NAME: &str = "./embed.dll";
 
 #[cfg(target_os = "linux")]
-const FILE_NAME : &str= "./libembed.so";
+const FILE_NAME: &str = "./libembed.so";
 
 #[cfg(target_os = "macos")]
-const FILE_NAME : &str= "./libembed.dylib";
+const FILE_NAME: &str = "./libembed.dylib";
+
 
 fn main() {
     let lib = Library::open(FILE_NAME).expect("Failed to load library");
