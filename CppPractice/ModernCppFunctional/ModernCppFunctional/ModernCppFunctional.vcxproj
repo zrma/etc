@@ -154,6 +154,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Chapter01\auto.cpp" />
     <ClCompile Include="Chapter01\begin_end.cpp" />
     <ClCompile Include="Chapter01\chapter01.cpp" />
     <ClCompile Include="Chapter01\decltype.cpp" />
