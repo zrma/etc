@@ -157,6 +157,9 @@
     <ClCompile Include="Chapter03\convert_to_immutable.cpp">
       <Filter>Chapter03</Filter>
     </ClCompile>
+    <ClCompile Include="Chapter01\auto.cpp">
+      <Filter>Chapter01</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

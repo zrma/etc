@@ -49,6 +49,18 @@ void Tie()
 	std::cout << std::endl;
 }
 
+void AutoUnpack()
+{
+	PrintTitle("auto_unpack");
+
+	auto[i, s, b] = std::tuple(1, "Robert", true);
+	std::cout << "auto [i, s, b] = std::tuple() : ";
+	std::cout << i << " ";
+	std::cout << s << " ";
+	std::cout << b << " ";
+	std::cout << std::endl;
+}
+
 auto GetData(const int dataId)
 {
 	switch (dataId)
@@ -78,5 +90,6 @@ void TuplePractice()
 {
 	Tuples();
 	Tie();
+	AutoUnpack();
 	TupleValueReturn();
 }
