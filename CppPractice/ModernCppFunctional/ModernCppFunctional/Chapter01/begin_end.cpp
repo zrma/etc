@@ -8,7 +8,7 @@ void BeginEndPractice()
 	PrintTitle("[begin_end]");
 
 	// 배열 선언
-	std::array<int, 10> arr = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+	auto arr = std::array{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
 	const auto size = sizeof(arr) / sizeof(arr[0]);
 	static_assert(arr.size() == size);
@@ -26,12 +26,18 @@ void BeginEndPractice()
 	// Compile Error!
 	// arr[10] = 1;
 
+	std::for_each(arr.begin(), arr.end(), [](const auto& i)
+	{
+		std::cout << i << " ";
+	});
+	std::cout << std::endl;
+
 	for(auto i = std::begin(arr); i != std::end(arr); ++i)
 	{
 		std::cout << *i << " ";
 	}
 	std::cout << std::endl;
-
+	
 	for (const auto& i : clone)
 	{
 		std::cout << i << " ";

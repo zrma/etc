@@ -7,7 +7,7 @@ void Tuples()
 {
 	PrintTitle("tuples");
 
-	const std::tuple<int, std::string, bool> t1(1, "Robert", true);
+	const auto t1 = std::tuple(1, "Robert", true);
 	const auto t2 = std::make_tuple(2, "Anna", false);
 
 	std::cout << "t1 elements : ";
