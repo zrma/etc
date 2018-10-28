@@ -20,12 +20,12 @@ void ConvertToImmutable()
 	const auto last = "Gamble";
 	const auto d = 1500.0;
 
-	const ImmutableEmployee me(0, first, last, d);
+	const auto& me = ImmutableEmployee(0, first, last, d);
 	PrintImmutableEmployee(me);
 
-	const auto me2 = me.SetId(1);
-	const auto me3 = me.SetFirstName("Alexis");
-	const auto me4 = me.SetLastName("Andrew");
-	const auto me5 = me.SetSalary(2100.0);
+	[[maybe_unused]] const auto& me2 = me.SetId(1);
+	[[maybe_unused]] const auto& me3 = me.SetFirstName("Alexis");
+	[[maybe_unused]] const auto& me4 = me.SetLastName("Andrew");
+	const auto& me5 = me.SetSalary(2100.0);
 	PrintImmutableEmployee(me5);
 }
