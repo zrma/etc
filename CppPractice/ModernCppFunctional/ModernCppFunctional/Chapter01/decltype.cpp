@@ -12,7 +12,7 @@ void DeclTypePractice()
 {
 	PrintTitle("DeclType");
 
-	std::cout << "result of add : " << Add<int, int>(3, 5) << std::endl;
+	std::cout << "result of add : " << Add(3, 5) << std::endl;
 
 	const auto i = 0;
 	const X* x = new X();
