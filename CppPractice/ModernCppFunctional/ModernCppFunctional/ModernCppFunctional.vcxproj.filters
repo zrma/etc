@@ -21,6 +21,9 @@
     <Filter Include="Common">
       <UniqueIdentifier>{ed7fb092-e0d1-4212-8919-d58cba26fd35}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Chapter04">
+      <UniqueIdentifier>{adc577e7-93ae-4fac-b0d4-25dfe83c5628}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -95,6 +98,18 @@
     <ClInclude Include="Chapter03\convert_to_immutable.h">
       <Filter>Chapter03</Filter>
     </ClInclude>
+    <ClInclude Include="Chapter04\chapter04.h">
+      <Filter>Chapter04</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter04\pch.h">
+      <Filter>Chapter04</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter04\factorial.h">
+      <Filter>Chapter04</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter04\fibonacci.h">
+      <Filter>Chapter04</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -159,6 +174,15 @@
     </ClCompile>
     <ClCompile Include="Chapter01\auto.cpp">
       <Filter>Chapter01</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04\chapter04.cpp">
+      <Filter>Chapter04</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04\factorial.cpp">
+      <Filter>Chapter04</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04\fibonacci.cpp">
+      <Filter>Chapter04</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
