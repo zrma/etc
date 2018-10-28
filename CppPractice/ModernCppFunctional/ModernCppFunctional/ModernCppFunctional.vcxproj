@@ -192,12 +192,19 @@
     <ClInclude Include="Chapter03\immutable.h" />
     <ClInclude Include="Chapter03\mutable.h" />
     <ClInclude Include="Chapter03\pch.h" />
+    <ClInclude Include="Chapter04\chapter04.h" />
+    <ClInclude Include="Chapter04\fibonacci.h" />
+    <ClInclude Include="Chapter04\pch.h" />
+    <ClInclude Include="Chapter04\factorial.h" />
     <ClInclude Include="Common\pch.h" />
     <ClInclude Include="Common\util.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chapter03\mutable.cpp" />
+    <ClCompile Include="Chapter04\chapter04.cpp" />
+    <ClCompile Include="Chapter04\factorial.cpp" />
+    <ClCompile Include="Chapter04\fibonacci.cpp" />
     <ClCompile Include="Common\util.cpp" />
     <ClCompile Include="ModernCppFunctional.cpp" />
     <ClCompile Include="pch.cpp">
