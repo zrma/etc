@@ -109,6 +109,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,6 +146,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -196,6 +198,7 @@
     <ClInclude Include="Chapter04\fibonacci.h" />
     <ClInclude Include="Chapter04\pch.h" />
     <ClInclude Include="Chapter04\factorial.h" />
+    <ClInclude Include="Chapter04\tail_recursion.h" />
     <ClInclude Include="Common\pch.h" />
     <ClInclude Include="Common\util.h" />
     <ClInclude Include="pch.h" />
@@ -205,6 +208,7 @@
     <ClCompile Include="Chapter04\chapter04.cpp" />
     <ClCompile Include="Chapter04\factorial.cpp" />
     <ClCompile Include="Chapter04\fibonacci.cpp" />
+    <ClCompile Include="Chapter04\tail_recursion.cpp" />
     <ClCompile Include="Common\util.cpp" />
     <ClCompile Include="ModernCppFunctional.cpp" />
     <ClCompile Include="pch.cpp">
