@@ -113,6 +113,9 @@
     <ClInclude Include="Chapter04\tail_recursion.h">
       <Filter>Chapter04</Filter>
     </ClInclude>
+    <ClInclude Include="Chapter04\exponential.h">
+      <Filter>Chapter04</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -188,6 +191,9 @@
       <Filter>Chapter04</Filter>
     </ClCompile>
     <ClCompile Include="Chapter04\tail_recursion.cpp">
+      <Filter>Chapter04</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04\exponential.cpp">
       <Filter>Chapter04</Filter>
     </ClCompile>
   </ItemGroup>
