@@ -40,6 +40,21 @@ auto FactorialRecursion(const int n)
 	return n * FactorialRecursion(n - 1);
 }
 
+auto FactorialTail(const int n, const int i)
+{
+	if ( n == 0 )
+	{
+		return i;
+	}
+
+	return FactorialTail(n - 1, n * 1);
+}
+
+auto FactorialTailRecursion(const int n)
+{
+	return FactorialTail(n, 1);
+}
+
 void FactorialWhileLoopPractice()
 {
 	PrintTitle("factorial_iteration_do_while");
@@ -70,9 +85,20 @@ void FactorialRecursionPractice()
 	}
 }
 
+void FactorialTailRecursionPractice()
+{
+	PrintTitle("factorial_tail_recursion");
+
+	for (const auto i : boost::irange(10))
+	{
+		std::cout << i << "! = " << FactorialTailRecursion(i) << std::endl;
+	}
+}
+
 void FactorialPractice()
 {
 	FactorialWhileLoopPractice();
 	FactorialForLoopPractice();
 	FactorialRecursionPractice();
+	FactorialTailRecursionPractice();
 }
