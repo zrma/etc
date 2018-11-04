@@ -199,6 +199,7 @@
     <ClInclude Include="Chapter04\fibonacci.h" />
     <ClInclude Include="Chapter04\pch.h" />
     <ClInclude Include="Chapter04\factorial.h" />
+    <ClInclude Include="Chapter04\Permute.h" />
     <ClInclude Include="Chapter04\tail_recursion.h" />
     <ClInclude Include="Common\pch.h" />
     <ClInclude Include="Common\util.h" />
@@ -210,6 +211,7 @@
     <ClCompile Include="Chapter04\exponential.cpp" />
     <ClCompile Include="Chapter04\factorial.cpp" />
     <ClCompile Include="Chapter04\fibonacci.cpp" />
+    <ClCompile Include="Chapter04\Permute.cpp" />
     <ClCompile Include="Chapter04\tail_recursion.cpp" />
     <ClCompile Include="Common\util.cpp" />
     <ClCompile Include="ModernCppFunctional.cpp" />

@@ -116,6 +116,9 @@
     <ClInclude Include="Chapter04\exponential.h">
       <Filter>Chapter04</Filter>
     </ClInclude>
+    <ClInclude Include="Chapter04\Permute.h">
+      <Filter>Chapter04</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -194,6 +197,9 @@
       <Filter>Chapter04</Filter>
     </ClCompile>
     <ClCompile Include="Chapter04\exponential.cpp">
+      <Filter>Chapter04</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04\Permute.cpp">
       <Filter>Chapter04</Filter>
     </ClCompile>
   </ItemGroup>
