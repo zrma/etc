@@ -17,7 +17,7 @@ void FindPractice()
 	const Vehicle bicycle("bicycle", 2);
 	const Vehicle bus("bus", 6);
 
-	const std::vector<Vehicle> vehicles = { car, bike, bicycle, bus };
+	const auto vehicles = std::vector{ { car, bike, bicycle, bus } };
 
 	std::cout << "vehicle full list" << std::endl;
 	std::for_each(vehicles.begin(), vehicles.end(), [](const Vehicle& vehicle)
@@ -30,7 +30,7 @@ void FindPractice()
 		std::cout << it.GetType() << " : " << it.GetNumOfWheel() << std::endl;
 	}
 
-	const auto isTwoWheel = [](const Vehicle &vehicle)
+	const auto isTwoWheel = [](const auto &vehicle)
 	{
 		return vehicle.HasTwoWheel();
 	};

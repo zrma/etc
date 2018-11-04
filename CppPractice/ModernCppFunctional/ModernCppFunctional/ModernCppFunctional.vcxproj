@@ -109,6 +109,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <LanguageStandard>stdcpp17</LanguageStandard>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -145,6 +146,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -154,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Chapter01\auto.cpp" />
     <ClCompile Include="Chapter01\begin_end.cpp" />
     <ClCompile Include="Chapter01\chapter01.cpp" />
     <ClCompile Include="Chapter01\decltype.cpp" />
@@ -191,12 +194,27 @@
     <ClInclude Include="Chapter03\immutable.h" />
     <ClInclude Include="Chapter03\mutable.h" />
     <ClInclude Include="Chapter03\pch.h" />
+    <ClInclude Include="Chapter04\chapter04.h" />
+    <ClInclude Include="Chapter04\exponential.h" />
+    <ClInclude Include="Chapter04\fibonacci.h" />
+    <ClInclude Include="Chapter04\LabyrinthPractice.h" />
+    <ClInclude Include="Chapter04\pch.h" />
+    <ClInclude Include="Chapter04\factorial.h" />
+    <ClInclude Include="Chapter04\permutation.h" />
+    <ClInclude Include="Chapter04\tail_recursion.h" />
     <ClInclude Include="Common\pch.h" />
     <ClInclude Include="Common\util.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Chapter03\mutable.cpp" />
+    <ClCompile Include="Chapter04\chapter04.cpp" />
+    <ClCompile Include="Chapter04\exponential.cpp" />
+    <ClCompile Include="Chapter04\factorial.cpp" />
+    <ClCompile Include="Chapter04\fibonacci.cpp" />
+    <ClCompile Include="Chapter04\LabyrinthPractice.cpp" />
+    <ClCompile Include="Chapter04\permutation.cpp" />
+    <ClCompile Include="Chapter04\tail_recursion.cpp" />
     <ClCompile Include="Common\util.cpp" />
     <ClCompile Include="ModernCppFunctional.cpp" />
     <ClCompile Include="pch.cpp">
