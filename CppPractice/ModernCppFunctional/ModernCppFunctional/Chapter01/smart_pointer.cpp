@@ -103,7 +103,7 @@ void SharedPtr()
 void WeakPtr()
 {
 	auto sp = std::make_shared<int>(12345);
-	auto wp = std::weak_ptr<int>{ sp };
+	auto wp = std::weak_ptr{ sp };
 	if(wp.expired())
 	{
 		std::cout << "wp is expired" << std::endl;

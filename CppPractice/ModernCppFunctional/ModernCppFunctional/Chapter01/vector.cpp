@@ -6,7 +6,7 @@ void VectorPractice()
 {
 	PrintTitle("vector");
 
-	std::vector<int> vec = { 0, 1, 2 };
+	auto vec = std::vector{ { 0, 1, 2 } };
 
 	for (const auto& it : vec)
 	{
@@ -31,4 +31,9 @@ void VectorPractice()
 		std::cout << *it << " ";
 	}
 	std::cout << std::endl;
+
+	for (auto && it : vec)
+	{
+		std::cout << it << " ";
+	}
 }

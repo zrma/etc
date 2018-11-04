@@ -7,7 +7,7 @@ void Tuples()
 {
 	PrintTitle("tuples");
 
-	const std::tuple<int, std::string, bool> t1(1, "Robert", true);
+	const auto t1 = std::tuple(1, "Robert", true);
 	const auto t2 = std::make_tuple(2, "Anna", false);
 
 	std::cout << "t1 elements : ";
@@ -49,6 +49,18 @@ void Tie()
 	std::cout << std::endl;
 }
 
+void AutoUnpack()
+{
+	PrintTitle("auto_unpack");
+
+	auto[i, s, b] = std::tuple(1, "Robert", true);
+	std::cout << "auto [i, s, b] = std::tuple() : ";
+	std::cout << i << " ";
+	std::cout << s << " ";
+	std::cout << b << " ";
+	std::cout << std::endl;
+}
+
 auto GetData(const int dataId)
 {
 	switch (dataId)
@@ -78,5 +90,6 @@ void TuplePractice()
 {
 	Tuples();
 	Tie();
+	AutoUnpack();
 	TupleValueReturn();
 }

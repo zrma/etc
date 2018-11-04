@@ -66,7 +66,8 @@ void ConstPractice()
 {
 	PrintTitle("const");
 
-	const Age ageNow, ageLater(8);
+	const auto ageNow = Age();
+	const auto ageLater = Age(8);
 	std::cout << "My current Value is " << ageNow << std::endl;
 	std::cout << "My age in eight years later is " << ageLater << std::endl;
 
