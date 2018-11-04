@@ -3,7 +3,7 @@
 #include <boost/range/adaptor/indexed.hpp>
 #include <thread>
 
-#include "LabyrinthPractice.h"
+#include "labyrinth_practice.h"
 #include "../Common/util.h"
 
 const int ROWS = 8;
