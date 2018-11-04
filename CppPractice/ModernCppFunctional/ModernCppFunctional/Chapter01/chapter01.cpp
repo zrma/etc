@@ -1,9 +1,9 @@
 ﻿#include "pch.h"
 
-#include "auto.h"
 #include "decltype.h"
 
 #include "chapter01.h"
+#include "auto.h"
 #include "begin_end.h"
 #include "vector.h"
 #include "sort.h"
@@ -14,7 +14,7 @@
 
 void Chapter01()
 {
-	std::cout << AutoPractice() << std::endl;
+	AutoPractice();
 	DeclTypePractice();
 	BeginEndPractice();
 	VectorPractice();

@@ -5,22 +5,22 @@
 
 void MutableEmployee::SetId(const int id)
 {
-	m_Id = id;
+	this->m_Id = id;
 }
 
 void MutableEmployee::SetFirstName(const std::string& firstName)
 {
-	m_FirstName = firstName;
+	this->m_FirstName = firstName;
 }
 
 void MutableEmployee::SetLastName(const std::string& lastName)
 {
-	m_LastName = lastName;
+	this->m_LastName = lastName;
 }
 
 void MutableEmployee::SetSalary(const double& salary)
 {
-	m_Salary = salary;
+	this->m_Salary = salary;
 }
 
 void PrintMutableEmployee(MutableEmployee& me)
@@ -40,7 +40,7 @@ void MutablePractice()
 	const auto last = "Gamble";
 	const auto d = 1500.0;
 
-	MutableEmployee me(0, first, last, d);
+	auto me = MutableEmployee(0, first, last, d);
 	PrintMutableEmployee(me);
 
 	me.SetId(1);
