@@ -116,7 +116,10 @@
     <ClInclude Include="Chapter04\exponential.h">
       <Filter>Chapter04</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter04\Permute.h">
+    <ClInclude Include="Chapter04\permutation.h">
+      <Filter>Chapter04</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter04\LabyrinthPractice.h">
       <Filter>Chapter04</Filter>
     </ClInclude>
   </ItemGroup>
@@ -199,7 +202,10 @@
     <ClCompile Include="Chapter04\exponential.cpp">
       <Filter>Chapter04</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter04\Permute.cpp">
+    <ClCompile Include="Chapter04\permutation.cpp">
+      <Filter>Chapter04</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04\LabyrinthPractice.cpp">
       <Filter>Chapter04</Filter>
     </ClCompile>
   </ItemGroup>

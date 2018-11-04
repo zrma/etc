@@ -1,6 +1,10 @@
 ﻿#include "pch.h"
-#include "Permute.h"
+
+#include <boost/range/adaptor/indexed.hpp>
+
+#include "permutation.h"
 #include "../Common/util.h"
+
 
 void Permute(const std::string& chosen, const std::string& remain)
 {
@@ -10,10 +14,10 @@ void Permute(const std::string& chosen, const std::string& remain)
 	}
 	else
 	{
-		for (const auto& it : remain)
+		for (const auto& it : remain | boost::adaptors::indexed(0))
 		{
-			const auto pos = remain.find(it);
-			Permute(chosen + it, remain.substr(0, pos) + remain.substr(pos + 1));
+			const auto pos = it.index();
+			Permute(chosen + it.value() , remain.substr(0, pos) + remain.substr(pos + 1));
 		}
 	}
 }

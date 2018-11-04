@@ -4,8 +4,9 @@
 #include "factorial.h"
 #include "fibonacci.h"
 #include "tail_recursion.h"
-#include "Permute.h"
+#include "permutation.h"
 #include "exponential.h"
+#include "LabyrinthPractice.h"
 
 void Chapter04()
 {
@@ -14,4 +15,5 @@ void Chapter04()
 	TailRecursionPractice();
 	ExponentialPractice();
 	PermutationPractice();
+	LabyrinthPractice();
 }
