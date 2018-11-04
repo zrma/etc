@@ -24,7 +24,7 @@ auto FactorialForLoop(const int n)
 
 	for (const auto i : boost::irange(n))
 	{
-		result *= (i + 1);
+		result *= i + 1;
 	}
 	
 	return result;
