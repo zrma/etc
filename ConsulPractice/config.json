@@ -1,7 +1,0 @@
-{
-  "server": false,
-  "datacenter": "test",
-  "data_dir": "./data",
-  "encrypt": "REPLACE_WITH_BASE64_GOSSIP_KEY",
-  "start_join": ["consul-server.example.invalid"]
-}
