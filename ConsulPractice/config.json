@@ -1,7 +1,0 @@
-{
-  "server": false,
-  "datacenter": "test",
-  "data_dir": "./data",
-  "encrypt": "HkV5zCj3ZRmrKEbDH7+WYg==",
-  "start_join": ["172.30.1.20"]
-}

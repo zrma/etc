@@ -1,0 +1,24 @@
+name: todo
+version: "1.0"
+author: zrma <bulbitain@gmail.com>
+about: todo rust programming practice
+args:
+subcommands:
+- add:
+    about: add task
+    version: "1.0"
+    author: zrma <bulbitain@gmail.com>
+    args:
+    - INPUT:
+        help: task string
+        required: true
+        multiple: true
+- done:
+      about: done task
+      version: "1.0"
+      author: zrma <bulbitain@gmail.com>
+      args:
+      - INPUT:
+            help: finish task
+            required: true
+            index: 1
