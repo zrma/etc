@@ -10,15 +10,19 @@ subcommands:
     author: zrma <bulbitain@gmail.com>
     args:
     - INPUT:
-        help: task string
+        help: add <task>
         required: true
         multiple: true
+- list:
+    about: get a list of tasks
+    version: "1.0"
+    author: zrma <bulbitain@gmail.com>
 - done:
       about: done task
       version: "1.0"
       author: zrma <bulbitain@gmail.com>
       args:
       - INPUT:
-            help: finish task
+            help: done <task>
             required: true
             index: 1
