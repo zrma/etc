@@ -5,7 +5,10 @@ use clap::App;
 
 mod task;
 use task::build_task;
-use task::Descript;
+
+mod todo;
+use todo::todo;
+use todo::Description;
 
 fn main() {
     let yaml = load_yaml!("cli.yml");
@@ -20,10 +23,28 @@ fn main() {
         let text = t.description();
 
         println!("{}", text)
+    } else if let Some(matches) = matches.subcommand_matches("list") {
+        println!("tasks \n{}", "Hello World");
     } else if let Some(matches) = matches.subcommand_matches("done") {
         let input = matches.value_of("INPUT").unwrap();
         println!("done task {}", input);
-    } else {
-        println!("oops!");
+    }
+}
+
+#[test]
+fn test_main() {
+    let mut t = todo();
+
+    let msg = "buy a car";
+    t.add(msg);
+    {
+        let list = t.list();
+        assert_eq!(list.description(), msg);
+    }
+
+    t.done(0);
+    {
+        let list = t.list();
+        assert_eq!(list[0].done, true);
     }
 }

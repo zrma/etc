@@ -1,14 +1,10 @@
-pub trait Descript {
-    fn description(&self) -> String;
-}
-
 pub struct Task {
     pub done: bool,
     pub desc: String,
 }
 
-impl Descript for Task {
-    fn description(&self) -> String {
+impl Task {
+    pub fn description(&self) -> String {
         format!("{}", self.desc)
     }
 }
