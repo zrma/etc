@@ -49,7 +49,7 @@ auto Navigate(Labyrinth labyrinth, const int row, const int col)
 
 	std::cout << "Checking cell (" << col << ", " << row << ")" << std::endl;
 
-	const std::chrono::seconds duration(1);
+	const std::chrono::milliseconds duration(10);
 	std::this_thread::sleep_for(duration);
 
 	auto& cur = labyrinth.at(row).at(col);

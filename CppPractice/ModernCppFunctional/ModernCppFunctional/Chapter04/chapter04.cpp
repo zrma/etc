@@ -6,7 +6,7 @@
 #include "tail_recursion.h"
 #include "permutation.h"
 #include "exponential.h"
-#include "LabyrinthPractice.h"
+#include "labyrinth_practice.h"
 
 void Chapter04()
 {
