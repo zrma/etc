@@ -119,7 +119,7 @@
     <ClInclude Include="Chapter04\permutation.h">
       <Filter>Chapter04</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter04\LabyrinthPractice.h">
+    <ClInclude Include="Chapter04\labyrinth_practice.h">
       <Filter>Chapter04</Filter>
     </ClInclude>
   </ItemGroup>
@@ -205,7 +205,7 @@
     <ClCompile Include="Chapter04\permutation.cpp">
       <Filter>Chapter04</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter04\LabyrinthPractice.cpp">
+    <ClCompile Include="Chapter04\labyrinth_practice.cpp">
       <Filter>Chapter04</Filter>
     </ClCompile>
   </ItemGroup>
