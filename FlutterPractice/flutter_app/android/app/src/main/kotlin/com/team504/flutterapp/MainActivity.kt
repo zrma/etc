@@ -1,4 +1,4 @@
-package com.team504.helloworld
+package com.team504.flutterapp
 
 import android.os.Bundle
 
