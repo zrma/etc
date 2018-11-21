@@ -1,21 +1,19 @@
 ﻿using System;
-using System.IO;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace RiderSample
 {
-    internal class Program
+    internal static class Program
     {
-        public static void Main(string[] args)
+        private static void Test(IEnumerable<int> container)
         {
-            // Put all file names in root directory into array.
-            var array1 = Directory.GetFiles("/");
-
-            // Display all files.
-            Console.WriteLine("--- Files: ---");
-            foreach (var name in array1)
-            {
-                Console.WriteLine(name);
-            }
+            container.ToList().ForEach(Console.WriteLine);
+        }
+        
+        public static void Main()
+        {
+            Test(Enumerable.Range(1, 10).Select(x => x * x));
         }
     }
 }
