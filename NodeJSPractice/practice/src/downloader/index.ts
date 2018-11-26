@@ -1,19 +1,21 @@
-import * as path from 'path';
 import {execAsync} from 'async-child-process';
 import {PromisePool} from 'es6-promise-pool';
+import * as path from 'path';
 
+import * as fs from 'fs-extra';
 import * as _ from 'lodash';
 import * as sleep from 'sleep-promise';
-import * as fs from 'fs-extra';
 
 import * as csv from 'csvtojson';
-import {Movie, File} from './movie';
+import {File, Movie} from './movie';
 
 import * as Raven from 'raven';
 
-Raven.config('https://c6d70268440f40da8d0a3edabaac8f34:4c9871dda7594070af88d9d53d5e13d5@sentry.team504.co.kr//3').install();
+Raven.config('https://c6d70268440f40da8d0a3edabaac8f34:4c9871dda7594070af88d9d53d5e13d5@sentry.team504.co.kr//3')
+    .install();
 
 const filePath = path.join(__dirname, 'portal.csv');
+const logger = console;
 
 const loadMovies = async () => {
     const data: Movie[] = [];
@@ -45,14 +47,14 @@ const loadMovies = async () => {
     };
 
     const invalidMovies = _.filter(movies, invalidFilter);
-    console.log('유효성 체크 실패, 무시 목록');
-    console.log('----------------------------------------');
+    logger.log('유효성 체크 실패, 무시 목록');
+    logger.log('----------------------------------------');
 
     _.each(invalidMovies, (movie) => {
         const msg = `${movie.year}년 ${movie.term}학기 - ${movie.title}_${movie.name} [${movie.lecture}]`;
-        console.log(msg);
+        logger.log(msg);
     });
-    console.log('----------------------------------------');
+    logger.log('----------------------------------------');
 
     const validMovies = _.filter(movies, (movie) => {
         return !invalidFilter(movie);
@@ -75,7 +77,7 @@ ${movie.lecture}
 ----------------------------------------
 세부사항 ${!_.isEmpty(movie.excerpt) ? '- ' : ''}${movie.excerpt}
 ----------------------------------------
-파일 목록 
+파일 목록
 `;
         const readmePath = path.join(currentPath, `readme.md`);
         if (await fs.pathExists(readmePath)) {
@@ -106,13 +108,12 @@ ${movie.lecture}
     });
 
     const task = async (cmd: string) => {
-        console.log(cmd);
+        logger.log(cmd);
         return new Promise(async (resolve) => {
             try {
                 await execAsync(cmd, {maxBuffer: 500 * 1024 * 1024});
                 return resolve();
-            }
-            catch (e) {
+            } catch (e) {
                 console.error('[*failed*]', cmd);
                 return resolve();
             }
@@ -133,7 +134,7 @@ ${movie.lecture}
     const concurrency = 20;
     const pool = new PromisePool(promiseProducer, concurrency);
     pool.start()
-        .then(function () {
-            console.log('Complete')
+        .then(() => {
+            logger.log('Complete');
         });
 })();
