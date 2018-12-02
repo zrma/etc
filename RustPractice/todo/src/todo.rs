@@ -1,14 +1,13 @@
-use task::Task;
 use task::build_task;
+use task::Task;
 
 pub trait Description {
     fn description(&self) -> String;
 }
 
 pub struct Store {
-    tasks: Vec<Task>
+    tasks: Vec<Task>,
 }
-
 
 impl Store {
     pub fn add(&mut self, s: &str) {
@@ -16,8 +15,8 @@ impl Store {
         self.tasks.push(task)
     }
 
-    pub fn list(&self) -> &Vec<Task>{
-        return &self.tasks
+    pub fn list(&self) -> &Vec<Task> {
+        return &self.tasks;
     }
 
     pub fn done(&mut self, idx: usize) {
@@ -33,13 +32,12 @@ impl Description for Vec<Task> {
             s += &t.desc;
         }
 
-        return s
+        return s;
     }
 }
-
 
 pub fn todo() -> Store {
     let v = vec![];
 
-    return Store { tasks: v};
+    return Store { tasks: v };
 }
