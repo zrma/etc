@@ -19,7 +19,10 @@ const FILE_NAME: &str = "./libembed.dylib";
 fn main() {
     let lib = Library::open(FILE_NAME).expect("Failed to load library");
 
-    let func = unsafe { lib.symbol_cstr::<fn()>(const_cstr!("process").as_cstr()) }.unwrap();
+    let func = match unsafe { lib.symbol_cstr::<fn()>(const_cstr!("process").as_cstr()) } {
+        Ok(x) => x,
+        Err(_) => panic!(),
+    };
 
     func();
     println!("done!");
