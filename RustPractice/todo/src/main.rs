@@ -4,9 +4,11 @@ extern crate clap;
 use clap::App;
 
 mod task;
+
 use task::build_task;
 
 mod todo;
+
 use todo::todo;
 use todo::Description;
 
@@ -14,20 +16,20 @@ fn main() {
     let yaml = load_yaml!("cli.yml");
     let matches = App::from_yaml(yaml).get_matches();
 
+    let mut t = todo();
+
     if let Some(matches) = matches.subcommand_matches("add") {
         let input = matches.values_of("INPUT").unwrap();
         let desc = input.map(|s| &*s).collect::<Vec<&str>>().join(" ");
         println!("add task {}", desc);
-
-        let t = build_task(&*desc);
-        let text = t.description();
-
-        println!("{}", text)
+        t.add(&desc)
     } else if let Some(matches) = matches.subcommand_matches("list") {
-        println!("tasks \n{}", "Hello World");
+        let list = t.list();
+        println!("total \n {}", list.description());
     } else if let Some(matches) = matches.subcommand_matches("done") {
-        let input = matches.value_of("INPUT").unwrap();
+        let input = matches.value_of("INPUT").unwrap().parse::<usize>().unwrap();
         println!("done task {}", input);
+        t.done(input)
     }
 }
 
