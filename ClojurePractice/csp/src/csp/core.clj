@@ -5,7 +5,7 @@
 (defn func
 	"This is comment."
 	[x]
-	(println "Hello," (join "" [g])))
+	(println "Hello," (join "" [x])))
 
 (defn multiple
 	[]
@@ -15,4 +15,4 @@
 
 
 (func "World")
-;; (multiple)
+(multiple)
