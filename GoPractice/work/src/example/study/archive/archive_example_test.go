@@ -19,7 +19,7 @@ func ExampleTar() {
 }
 
 func ExampleZip() {
-	fileName := "/tmp/test.zip"
+	fileName := "test.zip"
 
 	buffer := Zip()
 	util.WriteFile(buffer, fileName)

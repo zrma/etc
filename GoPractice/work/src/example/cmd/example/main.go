@@ -1,4 +1,5 @@
-package main
+// main.go
+package main // import "github.com/zrma/PolyGlot/GoPractice/work"
 
 import (
 	"log"
