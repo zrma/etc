@@ -15,7 +15,7 @@ func TestWriteFile(t *testing.T) {
 	buf := new(bytes.Buffer)
 	buf.ReadFrom(reader)
 
-	fileName := "/tmp/test.txt"
+	fileName := "test.txt"
 
 	WriteFile(buf, fileName)
 	_, err := os.Stat(fileName)
