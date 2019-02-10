@@ -71,7 +71,7 @@ void FactorialForLoopPractice()
 
 	for (const auto i : boost::irange(10))
 	{
-		std::cout << i << "! = " << FactorialWhileLoop(i) << std::endl;
+		std::cout << i << "! = " << FactorialForLoop(i) << std::endl;
 	}
 }
 
@@ -81,7 +81,7 @@ void FactorialRecursionPractice()
 
 	for (const auto i : boost::irange(10))
 	{
-		std::cout << i << "! = " << FactorialWhileLoop(i) << std::endl;
+		std::cout << i << "! = " << FactorialRecursion(i) << std::endl;
 	}
 }
 
