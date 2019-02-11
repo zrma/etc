@@ -21,5 +21,6 @@ bin/
 *github.com/
 *golang.org/
 *gopkg.in/
+*gonum.org/
 
 reports/
