@@ -2,9 +2,9 @@
 #include "vector.h"
 #include "../Common/util.h"
 
-void VectorPractice()
+void vector_practice()
 {
-	PrintTitle("vector");
+	print_title("vector");
 
 	auto vec = std::vector{ { 0, 1, 2 } };
 

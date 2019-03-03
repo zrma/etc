@@ -5,9 +5,9 @@
 #include "high_order_function.h"
 #include "curry.h"
 
-void Chapter02Functional()
+void chapter02_functional()
 {
-	FirstClass();
-	HighOrderFunctionPractice();
-	CurryPractice();
+	first_class();
+	high_order_function_practice();
+	curry_practice();
 }

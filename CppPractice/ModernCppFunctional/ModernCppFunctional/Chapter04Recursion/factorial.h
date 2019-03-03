@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void FactorialPractice();
+void factorial_practice();

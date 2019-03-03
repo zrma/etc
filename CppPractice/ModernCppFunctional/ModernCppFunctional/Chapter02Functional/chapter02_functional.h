@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void Chapter02Functional();
+void chapter02_functional();

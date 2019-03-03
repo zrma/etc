@@ -3,42 +3,42 @@
 #include "first_class.h"
 #include "../Common/util.h"
 
-using FuncType = std::function<int(int, int)>;
+using func_type = std::function<int(int, int)>;
 
-auto Addition(const int x, const int y)
+auto addition(const int x, const int y)
 {
 	return x + y;
 }
 
-auto Subtraction(const int x, const int y)
+auto subtraction(const int x, const int y)
 {
 	return x - y;
 }
 
-auto Multiplication(const int x, const int y)
+auto multiplication(const int x, const int y)
 {
 	return x * y;
 }
 
-auto Division(const int x, const int y)
+auto division(const int x, const int y)
 {
 	return x / y;
 }
 
-void PassingFunc(const FuncType fn, const int x, const int y)
+void passing_func(const func_type fn, const int x, const int y)
 {
 	std::cout << "Result = " << fn(x, y) << std::endl;
 }
 
-void FirstClass()
+void first_class()
 {
-	PrintTitle("fist_class");
-	std::array<FuncType, 4> functions = {Addition, Subtraction, Multiplication, Division};
+	print_title("fist_class");
+	std::array<func_type, 4> functions = {addition, subtraction, multiplication, division};
 
 	while(true)
 	{
 		auto i = 0, a = 0, b = 0;
-		FuncType func;
+		func_type func;
 
 		std::cout << "Select mode : " << std::endl;
 		std::cout << "  1. Addition" << std::endl;
@@ -91,6 +91,6 @@ void FirstClass()
 			std::cin >> b;
 		}
 
-		PassingFunc(functions.at(i - 1), a, b);
+		passing_func(functions.at(i - 1), a, b);
 	}
 }

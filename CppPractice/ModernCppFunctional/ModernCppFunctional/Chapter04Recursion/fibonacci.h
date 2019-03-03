@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void FibonacciPractice();
+void fibonacci_practice();

@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 template<typename Func, typename... Args>
-auto Curry(Func func, Args... args)
+auto curry(Func func, Args... args)
 {
 	return [=](auto... others)
 	{
@@ -10,15 +10,15 @@ auto Curry(Func func, Args... args)
 }
 
 template<typename T>
-decltype(auto) AreaOfRect(const T width, const T height)
+decltype(auto) area_of_rect(const T width, const T height)
 {
 	return width * height;
 }
 
 template<typename T>
-decltype(auto) VolumeOfRect(const T width, const T height, const T depth)
+decltype(auto) volume_of_rect(const T width, const T height, const T depth)
 {
 	return width * height * depth;
 }
 
-void CurryPractice();
+void curry_practice();

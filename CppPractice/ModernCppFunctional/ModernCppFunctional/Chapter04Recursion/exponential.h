@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void ExponentialPractice();
+void exponential_practice();

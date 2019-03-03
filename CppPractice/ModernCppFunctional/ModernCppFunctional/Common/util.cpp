@@ -2,7 +2,7 @@
 
 #include "util.h"
 
-void PrintTitle(const std::string&& title)
+void print_title(const std::string&& title)
 {
 	std::cout << "[" << title << "]" << std::endl;
 }

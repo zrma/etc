@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void TuplePractice();
+void tuple_practice();

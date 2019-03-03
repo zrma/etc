@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void FirstClass();
+void first_class();

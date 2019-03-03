@@ -8,12 +8,12 @@
 #include "exponential.h"
 #include "labyrinth_practice.h"
 
-void Chapter04Recursion()
+void chapter04_recursion()
 {
-	FactorialPractice();
-	FibonacciPractice();
-	TailRecursionPractice();
-	ExponentialPractice();
-	PermutationPractice();
-	LabyrinthPractice();
+	factorial_practice();
+	fibonacci_practice();
+	tail_recursion_practice();
+	exponential_practice();
+	permutation_practice();
+	labyrinth_practice();
 }

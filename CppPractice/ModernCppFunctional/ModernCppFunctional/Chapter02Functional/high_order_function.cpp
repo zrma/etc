@@ -4,9 +4,9 @@
 #include "../Common/util.h"
 #include <boost/range/irange.hpp>
 
-using HyperbolicFunc = std::function<double(double)>;
+using hyperbolic_func = std::function<double(double)>;
 
-std::array<HyperbolicFunc, 4> Functions = {
+std::array<hyperbolic_func, 4> functions = {
 	[](const double x) {
 		return std::sinh(x);
 	},
@@ -22,7 +22,7 @@ std::array<HyperbolicFunc, 4> Functions = {
 	}
 };
 
-std::array<HyperbolicFunc, 4> InverseFunctions = {
+std::array<hyperbolic_func, 4> inverse_functions = {
 	[](const double x) {
 		return std::asinh(x);
 	},
@@ -39,7 +39,7 @@ std::array<HyperbolicFunc, 4> InverseFunctions = {
 };
 
 template <typename A, typename B, typename C>
-auto Compose(std::function<C(B)> f, std::function<B(A)> g)
+auto compose(std::function<C(B)> f, std::function<B(A)> g)
 {
 	return [f, g](A x)
 	{
@@ -47,25 +47,25 @@ auto Compose(std::function<C(B)> f, std::function<B(A)> g)
 	};
 }
 
-void HighOrderFunction()
+void high_order_function()
 {
-	PrintTitle("high_order_function");
+	print_title("high_order_function");
 
-	std::vector<HyperbolicFunc> composedFunctions;
+	std::vector<hyperbolic_func> composed_functions;
 	std::array<double, 4> numbers;
 	std::generate(numbers.begin(), numbers.end(), [n = 1]() mutable { return 0.2 * n++; });
 
 	std::transform(
-		InverseFunctions.begin(),
-		InverseFunctions.end(),
-		Functions.begin(),
-		std::back_inserter(composedFunctions),
-		Compose<double, double, double>
+		inverse_functions.begin(),
+		inverse_functions.end(),
+		functions.begin(),
+		std::back_inserter(composed_functions),
+		compose<double, double, double>
 	);
 
 	for (const auto number : numbers)
 	{
-		for (const auto& function : composedFunctions)
+		for (const auto& function : composed_functions)
 		{
 			std::cout << "f(g(" << number << ")) = " << function(number) << std::endl;
 		}
@@ -73,9 +73,9 @@ void HighOrderFunction()
 	}
 }
 
-void Map()
+void map()
 {
-	PrintTitle("high_order_function_map");
+	print_title("high_order_function_map");
 
 	std::array<int, 5> arr;
 	std::iota(arr.begin(), arr.end(), 0);
@@ -84,12 +84,12 @@ void Map()
 
 	std::transform(arr.begin(), arr.end(), vec.begin(), [](auto i) { return i * i; });
 	std::cout << "before : ";
-	PrintContainer(arr);
+	print_container(arr);
 	std::cout << "after  : ";
-	PrintContainer(vec);
+	print_container(vec);
 }
 
-auto FilterPrimeNumbers(std::vector<int> src)
+auto filter_prime_numbers(std::vector<int> src)
 {	
 	std::vector<int> dest;
 	std::copy_if(src.begin(), src.end(), std::back_inserter(dest), [](auto n)
@@ -98,14 +98,11 @@ auto FilterPrimeNumbers(std::vector<int> src)
 		{
 			return n != 0;
 		}
-		else
+		for (auto i : boost::irange(2, n))
 		{
-			for (auto i : boost::irange(2, n))
+			if (n % i == 0)
 			{
-				if (n % i == 0)
-				{
-					return false;
-				}
+				return false;
 			}
 		}
 
@@ -115,7 +112,7 @@ auto FilterPrimeNumbers(std::vector<int> src)
 	return std::move(dest);
 }
 
-auto FilterNonPrimeNumbers(std::vector<int> src)
+auto filter_non_prime_numbers(std::vector<int> src)
 {
 	std::vector<int> dest;
 	std::remove_copy_if(src.begin(), src.end(), std::back_inserter(dest), [](auto n)
@@ -124,14 +121,11 @@ auto FilterNonPrimeNumbers(std::vector<int> src)
 		{
 			return n != 0;
 		}
-		else
+		for (auto i : boost::irange(2, n))
 		{
-			for (auto i : boost::irange(2, n))
+			if (n % i == 0)
 			{
-				if (n % i == 0)
-				{
-					return false;
-				}
+				return false;
 			}
 		}
 
@@ -141,32 +135,32 @@ auto FilterNonPrimeNumbers(std::vector<int> src)
 	return std::move(dest);
 }
 
-void Filter()
+void filter()
 {
-	PrintTitle("high_order_function_filter");
+	print_title("high_order_function_filter");
 
-	std::vector<int> vec(20);
+	std::vector<int> vec{ 20 };
 	std::iota(vec.begin(), vec.end(), 0);
 
-	const auto primeNumbers = FilterPrimeNumbers(vec);
-	const auto nonPrimeNumbers = FilterNonPrimeNumbers(vec);
+	const auto prime_numbers = filter_prime_numbers(vec);
+	const auto non_prime_numbers = filter_non_prime_numbers(vec);
 	
 	std::cout << "original number  : ";
-	PrintContainer(vec);
+	print_container(vec);
 	std::cout << "the prime number : ";
-	PrintContainer(primeNumbers);
+	print_container(prime_numbers);
 	std::cout << "non-prime number : ";
-	PrintContainer(nonPrimeNumbers);
+	print_container(non_prime_numbers);
 }
 
-void Reduce()
+void reduce()
 {
-	PrintTitle("high_order_function_reduce");
+	print_title("high_order_function_reduce");
 
 	std::array<int, 5> arr;
 	std::iota(arr.begin(), arr.end(), 0);
 
-	const auto reduceOp = [](auto lhs, auto rhs)
+	const auto reduce_op = [](auto lhs, auto rhs)
 	{
 		std::cout << "lhs(" << lhs << ") + ";
 		std::cout << "rhs(" << rhs << ") = ";
@@ -175,20 +169,20 @@ void Reduce()
 		return lhs + rhs;
 	};
 	std::cout << "foldLeft" << std::endl;
-	const auto foldLeftResult = std::accumulate(arr.begin(), arr.end(), 0, reduceOp);
-	std::cout << "foldLeft result = " << foldLeftResult;
+	const auto fold_left_result = std::accumulate(arr.begin(), arr.end(), 0, reduce_op);
+	std::cout << "foldLeft result = " << fold_left_result;
 	std::cout << std::endl;
 
 	std::cout << "foldRight" << std::endl;
-	const auto foldRightResult = std::accumulate(arr.rbegin(), arr.rend(), 0, reduceOp);
-	std::cout << "foldRight result = " << foldRightResult;
+	const auto fold_right_result = std::accumulate(arr.rbegin(), arr.rend(), 0, reduce_op);
+	std::cout << "foldRight result = " << fold_right_result;
 	std::cout << std::endl;
 }
 
-void HighOrderFunctionPractice()
+void high_order_function_practice()
 {
-	HighOrderFunction();
-	Map();
-	Filter();
-	Reduce();
+	high_order_function();
+	map();
+	filter();
+	reduce();
 }

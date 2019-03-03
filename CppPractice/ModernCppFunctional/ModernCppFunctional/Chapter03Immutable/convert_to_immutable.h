@@ -1,42 +1,42 @@
 ﻿#pragma once
 
-class ImmutableEmployee
+class immutable_employee
 {
 public:
-	ImmutableEmployee(
+	immutable_employee(
 		const int& id,
-		const std::string& firstName,
-		const std::string& lastName,
+		const std::string& first_name,
+		const std::string& last_name,
 		const double& salary
-	) : m_Id(id), m_FirstName(firstName), m_LastName(lastName), m_Salary(salary) {}
-	ImmutableEmployee() = default;
+	) : id_(id), first_name_(first_name), last_name_(last_name), salary_(salary) {}
+	immutable_employee() = default;
 
-	ImmutableEmployee SetId(const int& id) const
+	immutable_employee set_id(const int& id) const
 	{
-		return std::move(ImmutableEmployee(id, m_FirstName, m_LastName, m_Salary));
+		return std::move(immutable_employee(id, first_name_, last_name_, salary_));
 	}
-	ImmutableEmployee SetFirstName(const std::string& firstName) const
+	immutable_employee set_first_name(const std::string& first_name) const
 	{
-		return std::move(ImmutableEmployee(m_Id, firstName, m_LastName, m_Salary));
+		return std::move(immutable_employee(id_, first_name, last_name_, salary_));
 	}
-	ImmutableEmployee SetLastName(const std::string& lastName) const
+	immutable_employee set_last_name(const std::string& last_name) const
 	{
-		return std::move(ImmutableEmployee(m_Id, m_FirstName, lastName, m_Salary));
+		return std::move(immutable_employee(id_, first_name_, last_name, salary_));
 	}
-	ImmutableEmployee SetSalary(const double& salary) const
+	immutable_employee set_salary(const double& salary) const
 	{
-		return std::move(ImmutableEmployee(m_Id, m_FirstName, m_LastName, salary));
+		return std::move(immutable_employee(id_, first_name_, last_name_, salary));
 	}
 
-	const auto& Id() const { return m_Id; }
-	const auto& FirstName() const { return m_FirstName; }
-	const auto& LastName() const { return m_LastName; }
-	const auto& Salary() const { return m_Salary; }
+	const auto& id() const { return id_; }
+	const auto& first_name() const { return first_name_; }
+	const auto& last_name() const { return last_name_; }
+	const auto& salary() const { return salary_; }
 private:
-	const int m_Id = 0;
-	const std::string m_FirstName{};
-	const std::string m_LastName{};
-	const double m_Salary = 0;
+	const int id_ = 0;
+	const std::string first_name_{};
+	const std::string last_name_{};
+	const double salary_ = 0;
 };
 
-void ConvertToImmutable();
+void convert_to_immutable();

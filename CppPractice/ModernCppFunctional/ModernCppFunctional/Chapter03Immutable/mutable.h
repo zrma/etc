@@ -1,30 +1,30 @@
 ﻿#pragma once
 
-class MutableEmployee
+class mutable_employee
 {
 public:
-	MutableEmployee(
+	mutable_employee(
 		const int id,
-		const std::string& firstName,
-		const std::string& lastName,
+		const std::string& first_name,
+		const std::string& last_name,
 		const double& salary
-	) : m_Id(id), m_FirstName(firstName), m_LastName(lastName), m_Salary(salary) {}
-	MutableEmployee() = default;
+	) : id_(id), first_name_(first_name), last_name_(last_name), salary_(salary) {}
+	mutable_employee() = default;
 
-	void SetId(int id);
-	void SetFirstName(const std::string& firstName);
-	void SetLastName(const std::string& lastName);
-	void SetSalary(const double& salary);
+	void set_id(int id);
+	void set_first_name(const std::string& first_name);
+	void set_last_name(const std::string& last_name);
+	void set_salary(const double& salary);
 
-	auto Id() const { return m_Id; }
-	auto FirstName() const { return m_FirstName; }
-	auto LastName() const { return m_LastName; }
-	auto Salary() const { return m_Salary; }
+	auto id() const { return id_; }
+	auto first_name() const { return first_name_; }
+	auto last_name() const { return last_name_; }
+	auto salary() const { return salary_; }
 private:
-	int m_Id = 0;
-	std::string m_FirstName{};
-	std::string m_LastName{};
-	double m_Salary = 0;
+	int id_ = 0;
+	std::string first_name_{};
+	std::string last_name_{};
+	double salary_ = 0;
 };
 
-void MutablePractice();
+void mutable_practice();
