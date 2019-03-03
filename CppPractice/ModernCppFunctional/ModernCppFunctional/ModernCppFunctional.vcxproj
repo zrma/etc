@@ -205,6 +205,10 @@
     <ClInclude Include="Chapter04Recursion\pch.h" />
     <ClInclude Include="Chapter04Recursion\permutation.h" />
     <ClInclude Include="Chapter04Recursion\tail_recursion.h" />
+    <ClInclude Include="Chapter05LazyEvaluation\chapter05_lazy_evaluation.h" />
+    <ClInclude Include="Chapter05LazyEvaluation\non_strict.h" />
+    <ClInclude Include="Chapter05LazyEvaluation\pch.h" />
+    <ClInclude Include="Chapter05LazyEvaluation\strict.h" />
     <ClInclude Include="Common\pch.h" />
     <ClInclude Include="Common\util.h" />
     <ClInclude Include="pch.h" />
@@ -221,6 +225,9 @@
     <ClCompile Include="Chapter04Recursion\labyrinth_practice.cpp" />
     <ClCompile Include="Chapter04Recursion\permutation.cpp" />
     <ClCompile Include="Chapter04Recursion\tail_recursion.cpp" />
+    <ClCompile Include="Chapter05LazyEvaluation\chapter05_lazy_evaluation.cpp" />
+    <ClCompile Include="Chapter05LazyEvaluation\non_strict.cpp" />
+    <ClCompile Include="Chapter05LazyEvaluation\strict.cpp" />
     <ClCompile Include="Common\util.cpp" />
     <ClCompile Include="ModernCppFunctional.cpp" />
     <ClCompile Include="pch.cpp">
