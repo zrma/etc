@@ -8,8 +8,8 @@ use clap::App;
 use store::store;
 use store::Description;
 
-mod task;
 mod store;
+mod task;
 
 fn main() {
     let yaml = load_yaml!("cli.yml");
@@ -43,7 +43,10 @@ fn test_main() {
 
     {
         let list = t.list();
-        assert_eq!(list.description(), "[{\"done\":false,\"desc\":\"buy a car\"}]");
+        assert_eq!(
+            list.description(),
+            "[{\"done\":false,\"desc\":\"buy a car\"}]"
+        );
     }
 
     t.done(0);
