@@ -56,7 +56,7 @@ impl Description for Vec<Task> {
 
 pub fn store(name: &str) -> Store {
     let v: Vec<Task> = match name {
-        "" => { vec![] }
+        "" => vec![],
         _ => {
             let mut file = File::open(name).unwrap();
             let mut contents = String::new();
@@ -66,5 +66,8 @@ pub fn store(name: &str) -> Store {
         }
     };
 
-    return Store { file: name.to_string(), tasks: v };
+    return Store {
+        file: name.to_string(),
+        tasks: v,
+    };
 }
