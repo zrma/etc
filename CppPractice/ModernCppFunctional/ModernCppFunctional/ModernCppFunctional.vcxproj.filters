@@ -24,6 +24,9 @@
     <Filter Include="Chapter04Recursion">
       <UniqueIdentifier>{adc577e7-93ae-4fac-b0d4-25dfe83c5628}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Chapter05LazyEvaluation">
+      <UniqueIdentifier>{ba518903-9439-48d1-976e-c880f31964b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -122,6 +125,18 @@
     <ClInclude Include="Chapter04Recursion\chapter04_recursion.h">
       <Filter>Chapter04Recursion</Filter>
     </ClInclude>
+    <ClInclude Include="Chapter05LazyEvaluation\chapter05_lazy_evaluation.h">
+      <Filter>Chapter05LazyEvaluation</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter05LazyEvaluation\pch.h">
+      <Filter>Chapter05LazyEvaluation</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter05LazyEvaluation\strict.h">
+      <Filter>Chapter05LazyEvaluation</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter05LazyEvaluation\non_strict.h">
+      <Filter>Chapter05LazyEvaluation</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -207,6 +222,15 @@
     </ClCompile>
     <ClCompile Include="Chapter04Recursion\chapter04_recursion.cpp">
       <Filter>Chapter04Recursion</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter05LazyEvaluation\chapter05_lazy_evaluation.cpp">
+      <Filter>Chapter05LazyEvaluation</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter05LazyEvaluation\strict.cpp">
+      <Filter>Chapter05LazyEvaluation</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter05LazyEvaluation\non_strict.cpp">
+      <Filter>Chapter05LazyEvaluation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
