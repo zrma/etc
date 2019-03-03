@@ -3,7 +3,7 @@
 #include <boost/range/irange.hpp>
 #include "../Common/util.h"
 
-auto Power(const int base, const int exp)
+auto power(const int base, const int exp)
 {
 	auto result = 1;
 
@@ -15,36 +15,36 @@ auto Power(const int base, const int exp)
 	return result;
 }
 
-auto PowerRecursion(const int base, const int exp)
+auto power_recursion(const int base, const int exp)
 {
 	if (exp == 0)
 	{
 		return 1;
 	}
-	return base * PowerRecursion(base, exp - 1);
+	return base * power_recursion(base, exp - 1);
 }
 
-void ExponentialIterationPractice()
+void exponential_iteration_practice()
 {
-	PrintTitle("exponential_iteration");
+	print_title("exponential_iteration");
 
 	for( const auto i : boost::irange(6))
 	{
-		std::cout << "power (2, " << i << ") = " << Power(2, i) << std::endl;
+		std::cout << "power (2, " << i << ") = " << power(2, i) << std::endl;
 	}
 }
 
-void ExponentialRecursionPractice()
+void exponential_recursion_practice()
 {
-	PrintTitle("exponential_recursion");
+	print_title("exponential_recursion");
 
 	for (const auto i : boost::irange(6))
 	{
-		std::cout << "power (2, " << i << ") = " << PowerRecursion(2, i) << std::endl;
+		std::cout << "power (2, " << i << ") = " << power_recursion(2, i) << std::endl;
 	}
 }
 
-void ExponentialPractice()
+void exponential_practice()
 {
-	ExponentialIterationPractice();
+	exponential_iteration_practice();
 }

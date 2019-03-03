@@ -5,79 +5,79 @@
 #include "mutable.h"
 
 template<typename T, typename U>
-class IToString
+class to_string
 {
 public:
-	const U Value;
+	const U value;
 
-	explicit IToString(U value) :Value(value) {}
+	explicit to_string(U value) :value(value) {}
 };
 
 template<typename T, typename U>
-std::ostream& operator<<(std::ostream& os, const IToString<T, U>& object)
+std::ostream& operator<<(std::ostream& os, const to_string<T, U>& object)
 {
-	os << object.Value;
+	os << object.value;
 	return os;
 }
 
-class Age :public IToString<Age, int>
+class age :public to_string<age, int>
 {
 public:
-	explicit Age(const int initAge = 20) : IToString<Age, int>(initAge) {}
+	explicit age(const int init_age = 20) : to_string<age, int>(init_age) {}
 };
 
-class Integer :public IToString<Integer, int>
+class integer :public to_string<integer, int>
 {
 public:
-	explicit Integer(const int n) : IToString<Integer, int>(n) {}
+	explicit integer(const int n) : to_string<integer, int>(n) {}
 };
 
-class Function
+class function
 {
 public:
-	const int X, Y;
+	const int x, y;
 
-	Function(const int x, const int y): X(x), Y(y)
+	function(const int x, const int y): x(x), y(y)
 	{		
 	}
 
-	auto Addition() const
+	auto addition() const
 	{
-		return Integer(X + Y);
+		return integer(x + y);
 	}
 
-	auto Subtraction() const
+	auto subtraction() const
 	{
-		return Integer(X - Y);
+		return integer(x - y);
 	}
 
-	auto Multiplication() const
+	auto multiplication() const
 	{
-		return Integer(X * Y);
+		return integer(x * y);
 	}
 
-	auto Division() const
+	auto division() const
 	{
-		return Integer(X / Y);
+		return integer(x / y);
 	}
 };
 
-void ConstPractice()
+void const_practice()
 {
-	PrintTitle("const");
+	print_title("const");
 
-	const auto ageNow = Age();
-	const auto ageLater = Age(8);
-	std::cout << "My current Value is " << ageNow << std::endl;
-	std::cout << "My age in eight years later is " << ageLater << std::endl;
+	const auto age_now = age();
+	const auto age_later = age(8);
+	std::cout << "My current Value is " << age_now << std::endl;
+	std::cout << "My age in eight years later is " << age_later << std::endl;
 
 	// compile error!
 	// ageNow.Value = 10;
 }
 
-void FirstClassPureImmutablePractice()
+void first_class_pure_immutable_practice()
 {
-	PrintTitle("first_class_pure_immutable");
+	print_title("first_class_pure_immutable");
 
 	const auto a = 100;
 	const auto b = 10;
@@ -86,28 +86,28 @@ void FirstClassPureImmutablePractice()
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
 
-	Function func(a, b);
+	function func(a, b);
 	
-	const auto callableAdd = std::mem_fn(&Function::Addition);
-	const auto callableSub = std::mem_fn(&Function::Subtraction);
-	const auto callableMul = std::mem_fn(&Function::Multiplication);
-	const auto callableDiv = std::mem_fn(&Function::Division);
+	const auto callable_add = std::mem_fn(&function::addition);
+	const auto callable_sub = std::mem_fn(&function::subtraction);
+	const auto callable_mul = std::mem_fn(&function::multiplication);
+	const auto callable_div = std::mem_fn(&function::division);
 
-	const auto resultAdd = callableAdd(func);
-	const auto resultSub = callableSub(func);
-	const auto resultMul = callableMul(func);
-	const auto resultDiv = callableDiv(func);
+	const auto result_add = callable_add(func);
+	const auto result_sub = callable_sub(func);
+	const auto result_mul = callable_mul(func);
+	const auto result_div = callable_div(func);
 
 	std::cout << "The result" << std::endl;
-	std::cout << "add = " << resultAdd << std::endl;
-	std::cout << "sub = " << resultSub << std::endl;
-	std::cout << "mul = " << resultMul << std::endl;
-	std::cout << "div = " << resultDiv << std::endl;
+	std::cout << "add = " << result_add << std::endl;
+	std::cout << "sub = " << result_sub << std::endl;
+	std::cout << "mul = " << result_mul << std::endl;
+	std::cout << "div = " << result_div << std::endl;
 }
 
-void ImmutablePractice()
+void immutable_practice()
 {
-	ConstPractice();
-	FirstClassPureImmutablePractice();
-	MutablePractice();
+	const_practice();
+	first_class_pure_immutable_practice();
+	mutable_practice();
 }

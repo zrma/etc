@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void AutoPractice();
+void auto_practice();

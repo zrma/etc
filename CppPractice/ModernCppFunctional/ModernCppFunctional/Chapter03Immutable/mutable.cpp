@@ -3,49 +3,49 @@
 #include "mutable.h"
 #include "../Common/util.h"
 
-void MutableEmployee::SetId(const int id)
+void mutable_employee::set_id(const int id)
 {
-	this->m_Id = id;
+	this->id_ = id;
 }
 
-void MutableEmployee::SetFirstName(const std::string& firstName)
+void mutable_employee::set_first_name(const std::string& first_name)
 {
-	this->m_FirstName = firstName;
+	this->first_name_ = first_name;
 }
 
-void MutableEmployee::SetLastName(const std::string& lastName)
+void mutable_employee::set_last_name(const std::string& last_name)
 {
-	this->m_LastName = lastName;
+	this->last_name_ = last_name;
 }
 
-void MutableEmployee::SetSalary(const double& salary)
+void mutable_employee::set_salary(const double& salary)
 {
-	this->m_Salary = salary;
+	this->salary_ = salary;
 }
 
-void PrintMutableEmployee(MutableEmployee& me)
+void print_mutable_employee(mutable_employee& me)
 {
 	std::cout << "Content of MutableEmployee instance" << std::endl;
-	std::cout << "Id : " << me.Id() << std::endl;
-	std::cout << "Name : " << me.FirstName();
-	std::cout << " " << me.LastName() << std::endl;
-	std::cout << "Salary : " << me.Salary() << std::endl;
+	std::cout << "Id : " << me.id() << std::endl;
+	std::cout << "Name : " << me.first_name();
+	std::cout << " " << me.last_name() << std::endl;
+	std::cout << "Salary : " << me.salary() << std::endl;
 }
 
-void MutablePractice()
+void mutable_practice()
 {
-	PrintTitle("mutable");
+	print_title("mutable");
 
 	const auto first = "Frankie";
 	const auto last = "Gamble";
 	const auto d = 1500.0;
 
-	auto me = MutableEmployee(0, first, last, d);
-	PrintMutableEmployee(me);
+	auto me = mutable_employee(0, first, last, d);
+	print_mutable_employee(me);
 
-	me.SetId(1);
-	me.SetFirstName("Alexis");
-	me.SetLastName("Andrews");
-	me.SetSalary(2100.0);
-	PrintMutableEmployee(me);
+	me.set_id(1);
+	me.set_first_name("Alexis");
+	me.set_last_name("Andrews");
+	me.set_salary(2100.0);
+	print_mutable_employee(me);
 }

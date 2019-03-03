@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void TailRecursionPractice();
+void tail_recursion_practice();

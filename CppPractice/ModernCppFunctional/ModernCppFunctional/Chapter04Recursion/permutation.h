@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void PermutationPractice();
+void permutation_practice();

@@ -3,84 +3,84 @@
 #include "smart_pointer.h"
 #include "../Common/util.h"
 
-struct BodyMass
+struct body_mass
 {
-	int Id = 0;
-	float Weight = 0;
+	int id = 0;
+	float weight = 0;
 
-	BodyMass(const int id, const float weight): Id(id), Weight(weight)
+	body_mass(const int id, const float weight): id(id), weight(weight)
 	{
 		std::cout << "BodyMass is constructed!" << std::endl;
-		std::cout << "Id = " << Id << std::endl;
-		std::cout << "Weight = " << Weight << std::endl;
+		std::cout << "Id = " << id << std::endl;
+		std::cout << "Weight = " << weight << std::endl;
 	}
-	BodyMass(const BodyMass& other) : Id(other.Id), Weight(other.Weight)
+	body_mass(const body_mass& other) : id(other.id), weight(other.weight)
 	{
 		// use default 경고 우회
-		Id = other.Id;
+		id = other.id;
 
 		std::cout << "BodyMass is copy constructed!" << std::endl;
-		std::cout << "Id = " << Id << std::endl;
-		std::cout << "Weight = " << Weight << std::endl;
+		std::cout << "Id = " << id << std::endl;
+		std::cout << "Weight = " << weight << std::endl;
 	}
-	BodyMass& operator= (const BodyMass&) = default;
-	BodyMass(const BodyMass&& other) noexcept: Id(std::move(other.Id)), Weight(std::move(other.Weight))
+	body_mass& operator= (const body_mass&) = default;
+	body_mass(const body_mass&& other) noexcept: id(std::move(other.id)), weight(std::move(other.weight))
 	{
 		std::cout << "BodyMass is move constructed!" << std::endl;
 	}
-	BodyMass& operator= (BodyMass&& other) noexcept
+	body_mass& operator= (body_mass&& other) noexcept
 	{
 		if( this != &other)
 		{
-			Id = std::move(other.Id);
-			Weight = std::move(other.Weight);
+			id = std::move(other.id);
+			weight = std::move(other.weight);
 		}
 
 		std::cout << "BodyMass is move assigned!" << std::endl;
 		return *this;
 	}
 
-	~BodyMass()
+	~body_mass()
 	{
-		Id = 0;
-		Weight = 0;
+		id = 0;
+		weight = 0;
 		std::cout << "BodyMass is destructed!" << std::endl;
 	}
 };
 
-auto GetBodyMass()
+auto get_body_mass()
 {
-	return std::make_unique<BodyMass>(1, 165.3f);
+	return std::make_unique<body_mass>(1, 165.3f);
 }
 
-auto UpdateBodyMass(std::unique_ptr<BodyMass> bodyMass)
+auto update_body_mass(std::unique_ptr<body_mass> body_mass)
 {
-	bodyMass->Weight += 1.0f;
-	return bodyMass;
+	body_mass->weight += 1.0f;
+	return body_mass;
 }
 
-void UniquePtr()
+void unique_ptr()
 {
-	PrintTitle("unique_ptr");
+	print_title("unique_ptr");
 
 	{
-		const auto weight = std::make_unique<BodyMass>(1, 165.3f);
+		const auto weight = std::make_unique<body_mass>(1, 165.3f);
 		// compile error!
 		// auto weight2 = weight;
-		const auto weightClone = *weight;
-		const auto weight2 = std::make_shared<BodyMass>(weightClone);
+		const auto weight_clone = *weight;
+		const auto weight2 = std::make_shared<body_mass>(weight_clone);
 		std::cout << "in scope" << std::endl;
 	}
 
 	{
-		auto weight = GetBodyMass();
-		std::cout << "Current weight = " << weight->Weight << std::endl;
-		weight = UpdateBodyMass(std::move(weight));
-		std::cout << "Updated weight = " << weight->Weight << std::endl;
+		auto weight = get_body_mass();
+		std::cout << "Current weight = " << weight->weight << std::endl;
+		weight = update_body_mass(std::move(weight));
+		std::cout << "Updated weight = " << weight->weight << std::endl;
 	}
 }
 
-void SharedPtr()
+void shared_ptr()
 {
 	const auto sp1 = std::make_shared<int>();
 	if(sp1)
@@ -100,7 +100,7 @@ void SharedPtr()
 	std::cout << "sp1 pointing counter = " << sp1.use_count() << std::endl;
 }
 
-void WeakPtr()
+void weak_ptr()
 {
 	auto sp = std::make_shared<int>(12345);
 	auto wp = std::weak_ptr{ sp };
@@ -124,7 +124,7 @@ void WeakPtr()
 		wp.reset();
 	}
 
-	sp = nullptr;
+	sp.reset();
 	if (wp.expired())
 	{
 		std::cout << "wp is expired" << std::endl;
@@ -146,9 +146,9 @@ void WeakPtr()
 	}
 }
 
-void SmartPointerPractice()
+void smart_pointer_practice()
 {
-	UniquePtr();
-	SharedPtr();
-	WeakPtr();
+	unique_ptr();
+	shared_ptr();
+	weak_ptr();
 }

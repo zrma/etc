@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void SortPractice();
+void sort_practice();

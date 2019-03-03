@@ -2,7 +2,7 @@
 #include "tail_recursion.h"
 #include "../Common/util.h"
 
-void SimpleTailRecursion(const long long n)
+void simple_tail_recursion(const long long n)
 {
 	std::cout << n << std::endl;
 
@@ -11,8 +11,8 @@ void SimpleTailRecursion(const long long n)
 #endif // _DEBUG
 }
 
-void TailRecursionPractice()
+void tail_recursion_practice()
 {
-	PrintTitle("tail_recursion");
-	SimpleTailRecursion(0);
+	print_title("tail_recursion");
+	simple_tail_recursion(0);
 }

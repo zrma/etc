@@ -1,3 +1,3 @@
 #pragma once
 
-void VectorPractice();
+void vector_practice();

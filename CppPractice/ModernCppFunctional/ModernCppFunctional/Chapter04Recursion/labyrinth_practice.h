@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void LabyrinthPractice();
+void labyrinth_practice();
