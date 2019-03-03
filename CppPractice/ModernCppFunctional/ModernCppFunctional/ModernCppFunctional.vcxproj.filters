@@ -5,23 +5,23 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Chapter01">
-      <UniqueIdentifier>{0fa98b5b-8ae6-4d07-aded-c6c5f86a986b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Main">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Chapter02">
-      <UniqueIdentifier>{51bffccd-eba0-4911-8f1e-befe160f51f1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Chapter03">
-      <UniqueIdentifier>{3b23f2a3-45db-441e-ab8d-3464f1aae6d5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Common">
       <UniqueIdentifier>{ed7fb092-e0d1-4212-8919-d58cba26fd35}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Chapter04">
+    <Filter Include="Chapter02Functional">
+      <UniqueIdentifier>{51bffccd-eba0-4911-8f1e-befe160f51f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Chapter03Immutable">
+      <UniqueIdentifier>{3b23f2a3-45db-441e-ab8d-3464f1aae6d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Chapter01ModernCpp">
+      <UniqueIdentifier>{0fa98b5b-8ae6-4d07-aded-c6c5f86a986b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Chapter04Recursion">
       <UniqueIdentifier>{adc577e7-93ae-4fac-b0d4-25dfe83c5628}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -29,98 +29,98 @@
     <ClInclude Include="pch.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter01\auto.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter01\begin_end.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter01\chapter01.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter01\decltype.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter01\find.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter01\lambda.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter01\smart_pointer.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter01\sort.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter01\tuple.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter01\vector.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter01\pch.h">
-      <Filter>Chapter01</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter02\chapter02.h">
-      <Filter>Chapter02</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter02\curry.h">
-      <Filter>Chapter02</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter02\first_class.h">
-      <Filter>Chapter02</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter02\high_order_function.h">
-      <Filter>Chapter02</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter02\pch.h">
-      <Filter>Chapter02</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter03\chapter03.h">
-      <Filter>Chapter03</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter03\immutable.h">
-      <Filter>Chapter03</Filter>
-    </ClInclude>
-    <ClInclude Include="Chapter03\pch.h">
-      <Filter>Chapter03</Filter>
-    </ClInclude>
     <ClInclude Include="Common\util.h">
       <Filter>Common</Filter>
     </ClInclude>
     <ClInclude Include="Common\pch.h">
       <Filter>Common</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter03\mutable.h">
-      <Filter>Chapter03</Filter>
+    <ClInclude Include="Chapter01ModernCpp\auto.h">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter03\convert_to_immutable.h">
-      <Filter>Chapter03</Filter>
+    <ClInclude Include="Chapter01ModernCpp\begin_end.h">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter04\chapter04.h">
-      <Filter>Chapter04</Filter>
+    <ClInclude Include="Chapter01ModernCpp\decltype.h">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter04\pch.h">
-      <Filter>Chapter04</Filter>
+    <ClInclude Include="Chapter01ModernCpp\find.h">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter04\factorial.h">
-      <Filter>Chapter04</Filter>
+    <ClInclude Include="Chapter01ModernCpp\lambda.h">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter04\fibonacci.h">
-      <Filter>Chapter04</Filter>
+    <ClInclude Include="Chapter01ModernCpp\pch.h">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter04\tail_recursion.h">
-      <Filter>Chapter04</Filter>
+    <ClInclude Include="Chapter01ModernCpp\smart_pointer.h">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter04\exponential.h">
-      <Filter>Chapter04</Filter>
+    <ClInclude Include="Chapter01ModernCpp\sort.h">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter04\permutation.h">
-      <Filter>Chapter04</Filter>
+    <ClInclude Include="Chapter01ModernCpp\tuple.h">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClInclude>
-    <ClInclude Include="Chapter04\labyrinth_practice.h">
-      <Filter>Chapter04</Filter>
+    <ClInclude Include="Chapter01ModernCpp\vector.h">
+      <Filter>Chapter01ModernCpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter02Functional\curry.h">
+      <Filter>Chapter02Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter02Functional\first_class.h">
+      <Filter>Chapter02Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter02Functional\high_order_function.h">
+      <Filter>Chapter02Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter02Functional\pch.h">
+      <Filter>Chapter02Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter03Immutable\convert_to_immutable.h">
+      <Filter>Chapter03Immutable</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter03Immutable\immutable.h">
+      <Filter>Chapter03Immutable</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter03Immutable\mutable.h">
+      <Filter>Chapter03Immutable</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter03Immutable\pch.h">
+      <Filter>Chapter03Immutable</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter04Recursion\exponential.h">
+      <Filter>Chapter04Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter04Recursion\factorial.h">
+      <Filter>Chapter04Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter04Recursion\fibonacci.h">
+      <Filter>Chapter04Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter04Recursion\labyrinth_practice.h">
+      <Filter>Chapter04Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter04Recursion\pch.h">
+      <Filter>Chapter04Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter04Recursion\permutation.h">
+      <Filter>Chapter04Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter04Recursion\tail_recursion.h">
+      <Filter>Chapter04Recursion</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter01ModernCpp\chapter01_modern_cpp.h">
+      <Filter>Chapter01ModernCpp</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter02Functional\chapter02_functional.h">
+      <Filter>Chapter02Functional</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter03Immutable\chapter03_immutable.h">
+      <Filter>Chapter03Immutable</Filter>
+    </ClInclude>
+    <ClInclude Include="Chapter04Recursion\chapter04_recursion.h">
+      <Filter>Chapter04Recursion</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -130,83 +130,83 @@
     <ClCompile Include="ModernCppFunctional.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter01\begin_end.cpp">
-      <Filter>Chapter01</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter01\chapter01.cpp">
-      <Filter>Chapter01</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter01\decltype.cpp">
-      <Filter>Chapter01</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter01\find.cpp">
-      <Filter>Chapter01</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter01\lambda.cpp">
-      <Filter>Chapter01</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter01\smart_pointer.cpp">
-      <Filter>Chapter01</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter01\sort.cpp">
-      <Filter>Chapter01</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter01\tuple.cpp">
-      <Filter>Chapter01</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter01\vector.cpp">
-      <Filter>Chapter01</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter02\chapter02.cpp">
-      <Filter>Chapter02</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter02\curry.cpp">
-      <Filter>Chapter02</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter02\first_class.cpp">
-      <Filter>Chapter02</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter02\high_order_function.cpp">
-      <Filter>Chapter02</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter03\chapter03.cpp">
-      <Filter>Chapter03</Filter>
-    </ClCompile>
-    <ClCompile Include="Chapter03\immutable.cpp">
-      <Filter>Chapter03</Filter>
-    </ClCompile>
     <ClCompile Include="Common\util.cpp">
       <Filter>Common</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter03\mutable.cpp">
-      <Filter>Chapter03</Filter>
+    <ClCompile Include="Chapter01ModernCpp\auto.cpp">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter03\convert_to_immutable.cpp">
-      <Filter>Chapter03</Filter>
+    <ClCompile Include="Chapter01ModernCpp\begin_end.cpp">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter01\auto.cpp">
-      <Filter>Chapter01</Filter>
+    <ClCompile Include="Chapter01ModernCpp\decltype.cpp">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter04\chapter04.cpp">
-      <Filter>Chapter04</Filter>
+    <ClCompile Include="Chapter01ModernCpp\find.cpp">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter04\factorial.cpp">
-      <Filter>Chapter04</Filter>
+    <ClCompile Include="Chapter01ModernCpp\lambda.cpp">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter04\fibonacci.cpp">
-      <Filter>Chapter04</Filter>
+    <ClCompile Include="Chapter01ModernCpp\smart_pointer.cpp">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter04\tail_recursion.cpp">
-      <Filter>Chapter04</Filter>
+    <ClCompile Include="Chapter01ModernCpp\sort.cpp">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter04\exponential.cpp">
-      <Filter>Chapter04</Filter>
+    <ClCompile Include="Chapter01ModernCpp\tuple.cpp">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter04\permutation.cpp">
-      <Filter>Chapter04</Filter>
+    <ClCompile Include="Chapter01ModernCpp\vector.cpp">
+      <Filter>Chapter01ModernCpp</Filter>
     </ClCompile>
-    <ClCompile Include="Chapter04\labyrinth_practice.cpp">
-      <Filter>Chapter04</Filter>
+    <ClCompile Include="Chapter02Functional\curry.cpp">
+      <Filter>Chapter02Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter02Functional\first_class.cpp">
+      <Filter>Chapter02Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter02Functional\high_order_function.cpp">
+      <Filter>Chapter02Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter03Immutable\convert_to_immutable.cpp">
+      <Filter>Chapter03Immutable</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter03Immutable\immutable.cpp">
+      <Filter>Chapter03Immutable</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter03Immutable\mutable.cpp">
+      <Filter>Chapter03Immutable</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04Recursion\exponential.cpp">
+      <Filter>Chapter04Recursion</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04Recursion\factorial.cpp">
+      <Filter>Chapter04Recursion</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04Recursion\fibonacci.cpp">
+      <Filter>Chapter04Recursion</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04Recursion\labyrinth_practice.cpp">
+      <Filter>Chapter04Recursion</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04Recursion\permutation.cpp">
+      <Filter>Chapter04Recursion</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04Recursion\tail_recursion.cpp">
+      <Filter>Chapter04Recursion</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter01ModernCpp\chapter01_modern_cpp.cpp">
+      <Filter>Chapter01ModernCpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter02Functional\chapter02_functional.cpp">
+      <Filter>Chapter02Functional</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter03Immutable\chapter03_immutable.cpp">
+      <Filter>Chapter03Immutable</Filter>
+    </ClCompile>
+    <ClCompile Include="Chapter04Recursion\chapter04_recursion.cpp">
+      <Filter>Chapter04Recursion</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
