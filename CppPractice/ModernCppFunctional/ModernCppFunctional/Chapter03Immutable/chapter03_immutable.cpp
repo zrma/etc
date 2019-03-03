@@ -1,9 +1,9 @@
 ﻿#include "pch.h"
 
-#include "chapter03.h"
+#include "chapter03_immutable.h"
 #include "immutable.h"
 
-void Chapter03()
+void Chapter03Immutable()
 {
 	ImmutablePractice();
 }
