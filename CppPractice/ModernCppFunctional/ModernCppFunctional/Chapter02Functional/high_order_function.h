@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void HighOrderFunctionPractice();
+void high_order_function_practice();

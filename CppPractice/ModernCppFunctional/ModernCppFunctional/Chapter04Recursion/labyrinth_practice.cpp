@@ -6,14 +6,14 @@
 #include "labyrinth_practice.h"
 #include "../Common/util.h"
 
-const int ROWS = 8;
-const int COLS = 8;
+const int rows = 8;
+const int cols = 8;
 
-using Labyrinth = std::vector<std::vector<char>>;
+using labyrinth = std::vector<std::vector<char>>;
 
-auto CreateLabyrinth()
+auto create_labyrinth()
 {
-	return Labyrinth {
+	return labyrinth {
 		{ '#', '#', '#', '#', '#', '#', '#', '#' },
 		{ '#', 'S', ' ', ' ', ' ', ' ', ' ', '#' },
 		{ '#', '#', '#', ' ', '#', '#', '#', '#' },
@@ -25,7 +25,7 @@ auto CreateLabyrinth()
 	};
 }
 
-void DisplayLabyrinth(const Labyrinth labyrinth)
+void display_labyrinth(const labyrinth labyrinth)
 {
 	std::cout << std::endl;
 	std::cout << "========================" << std::endl;
@@ -43,9 +43,9 @@ void DisplayLabyrinth(const Labyrinth labyrinth)
 	std::cout << "========================" << std::endl << std::endl;
 }
 
-auto Navigate(Labyrinth labyrinth, const int row, const int col)
+auto navigate(labyrinth labyrinth, const int row, const int col)
 {
-	DisplayLabyrinth(labyrinth);
+	display_labyrinth(labyrinth);
 
 	std::cout << "Checking cell (" << col << ", " << row << ")" << std::endl;
 
@@ -67,19 +67,19 @@ auto Navigate(Labyrinth labyrinth, const int row, const int col)
 		cur = '*';
 	}
 
-	if (row + 1 < ROWS && Navigate(labyrinth, row + 1, col))
+	if (row + 1 < rows && navigate(labyrinth, row + 1, col))
 	{
 		return true;
 	}
-	if (col + 1 < COLS && Navigate(labyrinth, row, col + 1))
+	if (col + 1 < cols && navigate(labyrinth, row, col + 1))
 	{
 		return true;
 	}
-	if (row - 1 >= 0 && Navigate(labyrinth, row - 1, col))
+	if (row - 1 >= 0 && navigate(labyrinth, row - 1, col))
 	{
 		return true;
 	}
-	if (col - 1 >= 0 && Navigate(labyrinth, row, col - 1))
+	if (col - 1 >= 0 && navigate(labyrinth, row, col - 1))
 	{
 		return true;
 	}
@@ -87,10 +87,10 @@ auto Navigate(Labyrinth labyrinth, const int row, const int col)
 	return false;
 }
 
-auto IsLabyrinthSolvable(const Labyrinth labyrinth)
+auto is_labyrinth_solvable(const labyrinth labyrinth)
 {
-	auto startRow = -1;
-	auto startCol = -1;
+	auto start_row = -1;
+	auto start_col = -1;
 
 	for (const auto& row : labyrinth | boost::adaptors::indexed(0))
 	{
@@ -98,35 +98,35 @@ auto IsLabyrinthSolvable(const Labyrinth labyrinth)
 		{
 			if (col.value() == 'S')
 			{
-				startRow = static_cast<int>(row.index());
-				startCol = static_cast<int>(col.index());
+				start_row = static_cast<int>(row.index());
+				start_col = static_cast<int>(col.index());
 				break;
 			}
 		}
 	}
 
-	if ( startRow == -1 || startCol == -1 )
+	if ( start_row == -1 || start_col == -1 )
 	{
 		std::cerr << "No valid starting point found!" << std::endl;
 		return false;
 	}
 
-	std::cout << "Starting at point (" << startRow << ", " << startCol << ")" << std::endl;
-	return Navigate(labyrinth, startRow, startCol);
+	std::cout << "Starting at point (" << start_row << ", " << start_col << ")" << std::endl;
+	return navigate(labyrinth, start_row, start_col);
 }
 
-void LabyrinthPractice()
+void labyrinth_practice()
 {
-	PrintTitle("labyrinth");
+	print_title("labyrinth");
 
-	const auto labyrinth = CreateLabyrinth();
-	DisplayLabyrinth(labyrinth);
+	const auto labyrinth = create_labyrinth();
+	display_labyrinth(labyrinth);
 
 	std::string line;
 	std::cout << std::endl << "Press enter to continue..." << std::endl;
 	std::getline(std::cin, line);
 
-	if( IsLabyrinthSolvable(labyrinth))
+	if( is_labyrinth_solvable(labyrinth))
 	{
 		std::cout << "Labyrinth solved!" << std::endl;
 	}

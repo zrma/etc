@@ -3,7 +3,7 @@
 #include "chapter03_immutable.h"
 #include "immutable.h"
 
-void Chapter03Immutable()
+void chapter03_immutable()
 {
-	ImmutablePractice();
+	immutable_practice();
 }

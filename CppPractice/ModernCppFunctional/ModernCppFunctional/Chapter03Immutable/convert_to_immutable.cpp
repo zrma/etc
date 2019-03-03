@@ -3,29 +3,29 @@
 #include "convert_to_immutable.h"
 #include "../Common/util.h"
 
-void PrintImmutableEmployee(const ImmutableEmployee& me)
+void print_immutable_employee(const immutable_employee& me)
 {
 	std::cout << "Content of MutableEmployee instance" << std::endl;
-	std::cout << "Id : " << me.Id() << std::endl;
-	std::cout << "Name : " << me.FirstName();
-	std::cout << " " << me.LastName() << std::endl;
-	std::cout << "Salary : " << me.Salary() << std::endl;
+	std::cout << "Id : " << me.id() << std::endl;
+	std::cout << "Name : " << me.first_name();
+	std::cout << " " << me.last_name() << std::endl;
+	std::cout << "Salary : " << me.salary() << std::endl;
 }
 
-void ConvertToImmutable()
+void convert_to_immutable()
 {
-	PrintTitle("convert_to_immutable");
+	print_title("convert_to_immutable");
 
 	const auto first = "Frankie";
 	const auto last = "Gamble";
 	const auto d = 1500.0;
 
-	const auto& me = ImmutableEmployee(0, first, last, d);
-	PrintImmutableEmployee(me);
+	const auto& me = immutable_employee(0, first, last, d);
+	print_immutable_employee(me);
 
-	[[maybe_unused]] const auto& me2 = me.SetId(1);
-	[[maybe_unused]] const auto& me3 = me.SetFirstName("Alexis");
-	[[maybe_unused]] const auto& me4 = me.SetLastName("Andrew");
-	const auto& me5 = me.SetSalary(2100.0);
-	PrintImmutableEmployee(me5);
+	[[maybe_unused]] const auto& me2 = me.set_id(1);
+	[[maybe_unused]] const auto& me3 = me.set_first_name("Alexis");
+	[[maybe_unused]] const auto& me4 = me.set_last_name("Andrew");
+	const auto& me5 = me.set_salary(2100.0);
+	print_immutable_employee(me5);
 }

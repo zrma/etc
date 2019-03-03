@@ -6,7 +6,7 @@
 #include "../Common/util.h"
 
 
-void Permute(const std::string& chosen, const std::string& remain)
+void permute(const std::string& chosen, const std::string& remain)
 {
 	if( remain == "")
 	{
@@ -17,19 +17,19 @@ void Permute(const std::string& chosen, const std::string& remain)
 		for (const auto& it : remain | boost::adaptors::indexed(0))
 		{
 			const auto pos = it.index();
-			Permute(chosen + it.value() , remain.substr(0, pos) + remain.substr(pos + 1));
+			permute(chosen + it.value() , remain.substr(0, pos) + remain.substr(pos + 1));
 		}
 	}
 }
 
-void Permutation(const std::string& s)
+void permutation(const std::string& s)
 {
-	Permute("", s);
+	permute("", s);
 }
 
-void PermutationPractice()
+void permutation_practice()
 {
-	PrintTitle("permutation");
+	print_title("permutation");
 
 	std::string str;
 	std::cout << "Permutation of a string" << std::endl;
@@ -38,5 +38,5 @@ void PermutationPractice()
 	std::getline(std::cin, str);
 
 	std::cout << std::endl << "The possibility permutation of " << str << std::endl;
-	Permutation(str);
+	permutation(str);
 }

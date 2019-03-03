@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void SmartPointerPractice();
+void smart_pointer_practice();

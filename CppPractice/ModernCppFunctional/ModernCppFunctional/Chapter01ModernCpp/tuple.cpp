@@ -3,9 +3,9 @@
 #include "tuple.h"
 #include "../Common/util.h"
 
-void Tuples()
+void tuples()
 {
-	PrintTitle("tuples");
+	print_title("tuples");
 
 	const auto t1 = std::tuple(1, "Robert", true);
 	const auto t2 = std::make_tuple(2, "Anna", false);
@@ -23,9 +23,9 @@ void Tuples()
 	std::cout << std::endl;
 }
 
-void Tie()
+void tie()
 {
-	PrintTitle("tuple_tie");
+	print_title("tuple_tie");
 
 	const std::tuple<int, std::string, bool> t1(1, "Robert", true);
 	const auto t2 = std::make_tuple(2, "Anna", false);
@@ -49,9 +49,9 @@ void Tie()
 	std::cout << std::endl;
 }
 
-void AutoUnpack()
+void auto_unpack()
 {
-	PrintTitle("auto_unpack");
+	print_title("auto_unpack");
 
 	auto[i, s, b] = std::tuple(1, "Robert", true);
 	std::cout << "auto [i, s, b] = std::tuple() : ";
@@ -61,9 +61,9 @@ void AutoUnpack()
 	std::cout << std::endl;
 }
 
-auto GetData(const int dataId)
+auto get_data(const int data_id)
 {
-	switch (dataId)
+	switch (data_id)
 	{
 	case 1:
 		return std::make_tuple(0, "Chloe", false);
@@ -74,11 +74,11 @@ auto GetData(const int dataId)
 	}
 }
 
-void TupleValueReturn()
+void tuple_value_return()
 {
-	PrintTitle("tuple_value_return");
+	print_title("tuple_value_return");
 
-	auto people = GetData(1);
+	auto people = get_data(1);
 	std::cout << "name = " << std::get<1>(people) << std::endl;
 	
 	std::string name = "";
@@ -86,10 +86,10 @@ void TupleValueReturn()
 	std::cout << "name = " << name << std::endl;
 }
 
-void TuplePractice()
+void tuple_practice()
 {
-	Tuples();
-	Tie();
-	AutoUnpack();
-	TupleValueReturn();
+	tuples();
+	tie();
+	auto_unpack();
+	tuple_value_return();
 }

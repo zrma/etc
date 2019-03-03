@@ -3,51 +3,51 @@
 #include "find.h"
 #include "../Common/util.h"
 
-auto Vehicle::HasTwoWheel() const
+auto vehicle::has_two_wheel() const
 {
-	return this->GetNumOfWheel() == 2;
+	return this->get_num_of_wheel() == 2;
 }
 
-void FindPractice()
+void find_practice()
 {
-	PrintTitle("find");
+	print_title("find");
 
-	const Vehicle car("car", 4);
-	const Vehicle bike("bike", 2);
-	const Vehicle bicycle("bicycle", 2);
-	const Vehicle bus("bus", 6);
+	const vehicle car("car", 4);
+	const vehicle bike("bike", 2);
+	const vehicle bicycle("bicycle", 2);
+	const vehicle bus("bus", 6);
 
 	const auto vehicles = std::vector{ { car, bike, bicycle, bus } };
 
 	std::cout << "vehicle full list" << std::endl;
-	std::for_each(vehicles.begin(), vehicles.end(), [](const Vehicle& vehicle)
+	std::for_each(vehicles.begin(), vehicles.end(), [](const vehicle& vehicle)
 	{
-		std::cout << vehicle.GetType() << std::endl;
+		std::cout << vehicle.get_type() << std::endl;
 	});
 
 	for (const auto& it : vehicles)
 	{
-		std::cout << it.GetType() << " : " << it.GetNumOfWheel() << std::endl;
+		std::cout << it.get_type() << " : " << it.get_num_of_wheel() << std::endl;
 	}
 
-	const auto isTwoWheel = [](const auto &vehicle)
+	const auto is_two_wheel = [](const auto &vehicle)
 	{
-		return vehicle.HasTwoWheel();
+		return vehicle.has_two_wheel();
 	};
 
 	std::cout << "two wheel only" << std::endl;
-	auto&& tw = std::find_if(vehicles.begin(), vehicles.end(), isTwoWheel);
+	auto&& tw = std::find_if(vehicles.begin(), vehicles.end(), is_two_wheel);
 	while (tw != vehicles.end())
 	{
-		std::cout << tw->GetType() << std::endl;
-		tw = std::find_if(++tw, vehicles.end(), isTwoWheel);
+		std::cout << tw->get_type() << std::endl;
+		tw = std::find_if(++tw, vehicles.end(), is_two_wheel);
 	}
 
 	std::cout << "none two wheel only" << std::endl;
-	auto&& ntw = std::find_if_not(std::begin(vehicles), std::end(vehicles), isTwoWheel);
+	auto&& ntw = std::find_if_not(std::begin(vehicles), std::end(vehicles), is_two_wheel);
 	while (ntw != std::end(vehicles))
 	{
-		std::cout << ntw->GetType() << std::endl;
-		ntw = std::find_if_not(++ntw, std::end(vehicles), isTwoWheel);
+		std::cout << ntw->get_type() << std::endl;
+		ntw = std::find_if_not(++ntw, std::end(vehicles), is_two_wheel);
 	}
 }

@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void ImmutablePractice();
+void immutable_practice();

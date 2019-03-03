@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void LambdaPractice();
+void lambda_practice();

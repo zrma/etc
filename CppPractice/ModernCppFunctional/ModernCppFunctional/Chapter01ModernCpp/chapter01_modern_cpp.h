@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void Chapter01ModernCpp();
+void chapter01_modern_cpp();

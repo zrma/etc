@@ -1,9 +1,9 @@
 ﻿#pragma once
 
 template<typename I, typename J>
-auto Add(I i, J j) -> decltype(i + j)
+auto add(I i, J j) -> decltype(i + j)
 {
 	return i + j;
 }
 
-void DeclTypePractice();
+void decl_type_practice();

@@ -5,7 +5,7 @@
 
 #include <boost/range/irange.hpp>
 
-auto FactorialWhileLoop(const int n)
+auto factorial_while_loop(const int n)
 {
 	auto result = 1;
 	auto i = 1;
@@ -18,7 +18,7 @@ auto FactorialWhileLoop(const int n)
 	return result;
 }
 
-auto FactorialForLoop(const int n)
+auto factorial_for_loop(const int n)
 {
 	auto result = 1;
 
@@ -30,75 +30,75 @@ auto FactorialForLoop(const int n)
 	return result;
 }
 
-auto FactorialRecursion(const int n)
+auto factorial_recursion(const int n)
 {
 	if ( n == 0 )
 	{
 		return 1;
 	}
 
-	return n * FactorialRecursion(n - 1);
+	return n * factorial_recursion(n - 1);
 }
 
-auto FactorialTail(const int n, const int i)
+auto factorial_tail(const int n, const int i)
 {
 	if ( n == 0 )
 	{
 		return i;
 	}
 
-	return FactorialTail(n - 1, n * 1);
+	return factorial_tail(n - 1, n * 1);
 }
 
-auto FactorialTailRecursion(const int n)
+auto factorial_tail_recursion(const int n)
 {
-	return FactorialTail(n, 1);
+	return factorial_tail(n, 1);
 }
 
-void FactorialWhileLoopPractice()
+void factorial_while_loop_practice()
 {
-	PrintTitle("factorial_iteration_do_while");
+	print_title("factorial_iteration_do_while");
 
 	for(const auto i : boost::irange(10))
 	{
-		std::cout << i << "! = " << FactorialWhileLoop(i) << std::endl;
+		std::cout << i << "! = " << factorial_while_loop(i) << std::endl;
 	}
 }
 
-void FactorialForLoopPractice()
+void factorial_for_loop_practice()
 {
-	PrintTitle("factorial_iteration_for_loop");
+	print_title("factorial_iteration_for_loop");
 
 	for (const auto i : boost::irange(10))
 	{
-		std::cout << i << "! = " << FactorialForLoop(i) << std::endl;
+		std::cout << i << "! = " << factorial_for_loop(i) << std::endl;
 	}
 }
 
-void FactorialRecursionPractice()
+void factorial_recursion_practice()
 {
-	PrintTitle("factorial_recursion");
+	print_title("factorial_recursion");
 
 	for (const auto i : boost::irange(10))
 	{
-		std::cout << i << "! = " << FactorialRecursion(i) << std::endl;
+		std::cout << i << "! = " << factorial_recursion(i) << std::endl;
 	}
 }
 
-void FactorialTailRecursionPractice()
+void factorial_tail_recursion_practice()
 {
-	PrintTitle("factorial_tail_recursion");
+	print_title("factorial_tail_recursion");
 
 	for (const auto i : boost::irange(10))
 	{
-		std::cout << i << "! = " << FactorialTailRecursion(i) << std::endl;
+		std::cout << i << "! = " << factorial_tail_recursion(i) << std::endl;
 	}
 }
 
-void FactorialPractice()
+void factorial_practice()
 {
-	FactorialWhileLoopPractice();
-	FactorialForLoopPractice();
-	FactorialRecursionPractice();
-	FactorialTailRecursionPractice();
+	factorial_while_loop_practice();
+	factorial_for_loop_practice();
+	factorial_recursion_practice();
+	factorial_tail_recursion_practice();
 }

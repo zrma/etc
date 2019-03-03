@@ -5,7 +5,7 @@
 
 #include <boost/range/irange.hpp>
 
-auto FibonacciForLoop(const int n)
+auto fibonacci_for_loop(const int n)
 {
 	if (n <= 0)
 	{
@@ -24,40 +24,40 @@ auto FibonacciForLoop(const int n)
 	return cur;
 }
 
-auto FibonacciRecursion(const int n)
+auto fibonacci_recursion(const int n)
 {
 	if (n <= 1)
 	{
 		return n;
 	}
 
-	return FibonacciRecursion(n - 1) + FibonacciRecursion(n - 2);
+	return fibonacci_recursion(n - 1) + fibonacci_recursion(n - 2);
 }
 
-void FibonacciForLoopPractice()
+void fibonacci_for_loop_practice()
 {
-	PrintTitle("fibonacci_iteration");
+	print_title("fibonacci_iteration");
 
 	for (const auto i : boost::irange(10))
 	{
-		std::cout << FibonacciForLoop(i) << " ";
+		std::cout << fibonacci_for_loop(i) << " ";
 	}
 	std::cout << std::endl;
 }
 
-void FibonacciRecursionPractice()
+void fibonacci_recursion_practice()
 {
-	PrintTitle("fibonacci_recursion");
+	print_title("fibonacci_recursion");
 
 	for (const auto i : boost::irange(10))
 	{
-		std::cout << FibonacciRecursion(i) << " ";
+		std::cout << fibonacci_recursion(i) << " ";
 	}
 	std::cout << std::endl;
 }
 
-void FibonacciPractice()
+void fibonacci_practice()
 {
-	FibonacciForLoopPractice();
-	FibonacciRecursionPractice();
+	fibonacci_for_loop_practice();
+	fibonacci_recursion_practice();
 }

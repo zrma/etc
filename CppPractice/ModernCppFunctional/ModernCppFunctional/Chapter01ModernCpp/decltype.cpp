@@ -3,41 +3,41 @@
 #include "decltype.h"
 #include "../Common/util.h"
 
-int Func1();
-const int& Func2();
+int func1();
+const int& func2();
 
-struct X { double D;  };
+struct struct_x { double d;  };
 
-void DeclTypePractice()
+void decl_type_practice()
 {
-	PrintTitle("DeclType");
+	print_title("DeclType");
 
-	std::cout << "result of add : " << Add(3, 5) << std::endl;
+	std::cout << "result of add : " << add(3, 5) << std::endl;
 
 	const auto i = 0;
-	const X* x = new X();
+	const struct_x* x = new struct_x();
 
-	decltype(Func1) F1;
-	decltype(Func2) F2;
+	decltype(func1) f1;
+	decltype(func2) f2;
 	// decl type(i) i1 = i;
 	[[maybe_unused]] const auto i1 = i;
 	
-	const decltype(x->D) d1 = 0;
-	// decl type((x->d)) d2 = d1;
+	const decltype(x->d) d1 = 0;
+	// decl type((struct_x->d)) d2 = d1;
 	[[maybe_unused]] const auto& d2 = d1;
 
-	std::cout << typeid(F1).name() << std::endl;
-	std::cout << typeid(F2).name() << std::endl;
+	std::cout << typeid(f1).name() << std::endl;
+	std::cout << typeid(f2).name() << std::endl;
 	
 	delete x;
 }
 
-int Func1()
+int func1()
 {
 	return 0;
 }
 
-const int & Func2()
+const int & func2()
 {
 	return std::forward<int&&>(0);
 }

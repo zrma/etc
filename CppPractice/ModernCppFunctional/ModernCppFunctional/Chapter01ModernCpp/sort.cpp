@@ -4,14 +4,14 @@
 #include "../Common/util.h"
 
 template<typename T>
-auto Comparer(const T a, const T b)
+auto comparer(const T a, const T b)
 {
 	return a > b;
 }
 
-void SortPractice()
+void sort_practice()
 {
-	PrintTitle("sort");
+	print_title("sort");
 
 	auto vec = std::vector{ { 20, 43, 11, 78, 5, 96 } };
 	for (const auto& it : vec)
@@ -27,7 +27,7 @@ void SortPractice()
 	}
 	std::cout << std::endl;
 
-	constexpr auto c = Comparer<decltype(vec.at(0))>;
+	constexpr auto c = comparer<decltype(vec.at(0))>;
 	std::sort(std::begin(vec), std::end(vec), c);
 	for (const auto& it : vec)
 	{

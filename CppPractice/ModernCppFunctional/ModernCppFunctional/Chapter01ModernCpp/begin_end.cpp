@@ -3,9 +3,9 @@
 #include "begin_end.h"
 #include "../Common/util.h"
 
-void BeginEndPractice()
+void begin_end_practice()
 {
-	PrintTitle("[begin_end]");
+	print_title("[begin_end]");
 
 	// 배열 선언
 	auto arr = std::array{ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };

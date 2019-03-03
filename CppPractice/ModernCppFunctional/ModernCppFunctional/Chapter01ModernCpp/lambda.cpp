@@ -6,9 +6,9 @@
 #include <boost/array.hpp>
 #include <boost/range/irange.hpp>
 
-void MultiLineLambda()
+void multi_line_lambda()
 {
-	PrintTitle("lambda_multiline_func");
+	print_title("lambda_multiline_func");
 
 	std::array<int, 10> arr;
 	std::generate(arr.begin(), arr.end(), [n = 0]() mutable { return n++; });
@@ -63,30 +63,30 @@ void MultiLineLambda()
 	}
 }
 
-void ReturnValueLambda()
+void return_value_lambda()
 {
-	PrintTitle("lambda_return_value");
+	print_title("lambda_return_value");
 
 	std::array<int, 10> arr;
 	std::iota(arr.begin(), arr.end(), 0);
-	PrintContainer(arr);
+	print_container(arr);
 	
 	std::vector<int> vec;
 	vec.reserve(arr.size());
 	std::transform(arr.begin(), arr.end(), std::back_inserter(vec), [](auto n) { return static_cast<int>(std::pow(n, 2)); });
-	PrintContainer(vec);
+	print_container(vec);
 
 	std::list<double> list;
 	list.assign(arr.begin(), arr.end());
-	PrintContainer(list);
+	print_container(list);
 	
 	std::transform(vec.begin(), vec.end(), list.begin(), [](auto n) -> double { return n / 2.0; });
-	PrintContainer(list);
+	print_container(list);
 }
 
-void LambdaCaptureByValue()
+void lambda_capture_by_value()
 {
-	PrintTitle("lambda_capture_by_value");
+	print_title("lambda_capture_by_value");
 
 	std::array<int, 10> arr;
 	std::iota(arr.begin(), arr.end(), 0);
@@ -116,14 +116,14 @@ void LambdaCaptureByValue()
 		a = b;
 		b = old;
 	});
-	PrintContainer(arr);
+	print_container(arr);
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
 }
 
-void LambdaCaptureByReference()
+void lambda_capture_by_reference()
 {
-	PrintTitle("lambda_capture_by_reference");
+	print_title("lambda_capture_by_reference");
 
 	std::array<int, 10> arr;
 	std::iota(arr.begin(), arr.end(), 0);
@@ -137,14 +137,14 @@ void LambdaCaptureByReference()
 		a = b;
 		b = old;
 	});
-	PrintContainer(arr);
+	print_container(arr);
 	std::cout << "a = " << a << std::endl;
 	std::cout << "b = " << b << std::endl;
 }
 
-void LambdaInitializationCapture()
+void lambda_initialization_capture()
 {
-	PrintTitle("lambda_initialization_capture");
+	print_title("lambda_initialization_capture");
 	auto a = 5;
 	const auto lambda = [&x = a]() { x += 2; };
 
@@ -153,27 +153,27 @@ void LambdaInitializationCapture()
 	std::cout << "new a = " << a << std::endl;
 }
 
-void LambdaExpressionGeneric()
+void lambda_expression_generic()
 {
-	PrintTitle("lambda_expression_generic");
+	print_title("lambda_expression_generic");
 
-	const auto findMax = [](auto& x, auto& y)
+	const auto find_max = [](auto& x, auto& y)
 	{
 		return std::max(x, y);
 	};
 
 	const auto i1 = 5, i2 = 3;
 	const auto f1 = 2.5f, f2 = 2.05f;
-	std::cout << findMax(i1, i2) << std::endl;
-	std::cout << findMax(f1, f2) << std::endl;
+	std::cout << find_max(i1, i2) << std::endl;
+	std::cout << find_max(f1, f2) << std::endl;
 }
 
-void LambdaPractice()
+void lambda_practice()
 {
-	MultiLineLambda();
-	ReturnValueLambda();
-	LambdaCaptureByValue();
-	LambdaCaptureByReference();
-	LambdaInitializationCapture();
-	LambdaExpressionGeneric();
+	multi_line_lambda();
+	return_value_lambda();
+	lambda_capture_by_value();
+	lambda_capture_by_reference();
+	lambda_initialization_capture();
+	lambda_expression_generic();
 }

@@ -1,35 +1,35 @@
 ﻿#pragma once
 
-class Vehicle
+class vehicle
 {
 public:
-	Vehicle(const std::string &type, const int wheel) : m_VehicleType(type), m_TotalOfWheeI(wheel) {}
-	Vehicle() = default;
-	~Vehicle() = default;
-	Vehicle(const Vehicle&) = default;
-	Vehicle& operator=(const Vehicle&) = default;
-	Vehicle(const Vehicle&& other) noexcept
+	vehicle(const std::string &type, const int wheel) : vehicle_type_(type), total_of_wheel_i_(wheel) {}
+	vehicle() = default;
+	~vehicle() = default;
+	vehicle(const vehicle&) = default;
+	vehicle& operator=(const vehicle&) = default;
+	vehicle(const vehicle&& other) noexcept
 	{
-		this->m_VehicleType = other.m_VehicleType;
-		this->m_TotalOfWheeI = other.m_TotalOfWheeI;
+		this->vehicle_type_ = other.vehicle_type_;
+		this->total_of_wheel_i_ = other.total_of_wheel_i_;
 	}
-	Vehicle& operator=(Vehicle&& other) noexcept
+	vehicle& operator=(vehicle&& other) noexcept
 	{
 		if( this != &other)
 		{
-			m_VehicleType = other.m_VehicleType;
-			m_TotalOfWheeI = other.m_TotalOfWheeI;
+			vehicle_type_ = other.vehicle_type_;
+			total_of_wheel_i_ = other.total_of_wheel_i_;
 		}
 
 		return *this;
 	}
 
-	auto HasTwoWheel() const;
-	auto GetType() const { return m_VehicleType; }
-	auto GetNumOfWheel() const { return m_TotalOfWheeI; }
+	auto has_two_wheel() const;
+	auto get_type() const { return vehicle_type_; }
+	auto get_num_of_wheel() const { return total_of_wheel_i_; }
 private:
-	std::string m_VehicleType{};
-	int m_TotalOfWheeI = 0;
+	std::string vehicle_type_{};
+	int total_of_wheel_i_ = 0;
 };
 
-void FindPractice();
+void find_practice();

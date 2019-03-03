@@ -1,3 +1,3 @@
 ﻿#pragma once
 
-void Chapter04Recursion();
+void chapter04_recursion();

@@ -12,15 +12,15 @@
 #include "smart_pointer.h"
 #include "tuple.h"
 
-void Chapter01ModernCpp()
+void chapter01_modern_cpp()
 {
-	AutoPractice();
-	DeclTypePractice();
-	BeginEndPractice();
-	VectorPractice();
-	SortPractice();
-	FindPractice();
-	LambdaPractice();
-	SmartPointerPractice();
-	TuplePractice();
+	auto_practice();
+	decl_type_practice();
+	begin_end_practice();
+	vector_practice();
+	sort_practice();
+	find_practice();
+	lambda_practice();
+	smart_pointer_practice();
+	tuple_practice();
 }
