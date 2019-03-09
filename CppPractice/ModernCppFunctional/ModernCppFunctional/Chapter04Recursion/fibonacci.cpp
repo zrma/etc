@@ -14,7 +14,7 @@ auto fibonacci_for_loop(const int n)
 
 	auto[prev, cur] = std::tuple(0, 1);
 
-	for ([[maybe_unused]] auto _ : boost::irange(n - 1))
+	for ([[maybe_unused]] auto _ : boost::irange(0, n - 1))
 	{
 		const auto next = prev + cur;
 		prev = cur;
@@ -38,7 +38,7 @@ void fibonacci_for_loop_practice()
 {
 	print_title("fibonacci_iteration");
 
-	for (const auto i : boost::irange(10))
+	for (const auto i : boost::irange(0, 10))
 	{
 		std::cout << fibonacci_for_loop(i) << " ";
 	}
@@ -49,7 +49,7 @@ void fibonacci_recursion_practice()
 {
 	print_title("fibonacci_recursion");
 
-	for (const auto i : boost::irange(10))
+	for (const auto i : boost::irange(0, 10))
 	{
 		std::cout << fibonacci_recursion(i) << " ";
 	}

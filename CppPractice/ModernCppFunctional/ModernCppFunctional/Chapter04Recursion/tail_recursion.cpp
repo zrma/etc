@@ -7,7 +7,9 @@ void simple_tail_recursion(const long long n)
 	std::cout << n << std::endl;
 
 #ifndef _DEBUG
-	SimpleTailRecursion(n + 1);
+	if(n < 100000) {
+		simple_tail_recursion(n + 1);
+	}
 #endif // _DEBUG
 }
 

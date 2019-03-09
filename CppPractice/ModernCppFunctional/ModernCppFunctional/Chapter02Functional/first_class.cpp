@@ -25,7 +25,7 @@ auto division(const int x, const int y)
 	return x / y;
 }
 
-void passing_func(const func_type fn, const int x, const int y)
+void passing_func(const func_type &fn, const int x, const int y)
 {
 	std::cout << "Result = " << fn(x, y) << std::endl;
 }
@@ -69,7 +69,7 @@ void first_class()
 			std::cin.clear();
 
 			// 마지막 입력 무시
-			std::cin.ignore(INT_MAX, '\n');
+			std::cin.ignore(INT8_MAX, '\n');
 			std::cout << "You can only enter numbers." << std::endl;
 			std::cout << "Enter a number for variable a : ";
 			std::cin >> a;
@@ -85,12 +85,12 @@ void first_class()
 			std::cin.clear();
 
 			// 마지막 입력 무시
-			std::cin.ignore(INT_MAX, '\n');
+			std::cin.ignore(INT8_MAX, '\n');
 			std::cout << "You can only enter numbers." << std::endl;
 			std::cout << "Enter a number for variable b : ";
 			std::cin >> b;
 		}
 
-		passing_func(functions.at(i - 1), a, b);
+		passing_func(functions.at(static_cast<unsigned long>(i - 1)), a, b);
 	}
 }
