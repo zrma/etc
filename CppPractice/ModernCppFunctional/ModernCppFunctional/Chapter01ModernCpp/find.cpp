@@ -17,7 +17,7 @@ void find_practice()
 	const vehicle bicycle("bicycle", 2);
 	const vehicle bus("bus", 6);
 
-	const auto vehicles = std::vector{ { car, bike, bicycle, bus } };
+	const auto vehicles = std::vector{ car, bike, bicycle, bus };
 
 	std::cout << "vehicle full list" << std::endl;
 	std::for_each(vehicles.begin(), vehicles.end(), [](const vehicle& vehicle)

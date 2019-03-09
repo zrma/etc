@@ -22,7 +22,7 @@ auto factorial_for_loop(const int n)
 {
 	auto result = 1;
 
-	for (const auto i : boost::irange(n))
+	for (const auto i : boost::irange(0, n))
 	{
 		result *= i + 1;
 	}
@@ -59,7 +59,7 @@ void factorial_while_loop_practice()
 {
 	print_title("factorial_iteration_do_while");
 
-	for(const auto i : boost::irange(10))
+	for(const auto i : boost::irange(0, 10))
 	{
 		std::cout << i << "! = " << factorial_while_loop(i) << std::endl;
 	}
@@ -69,7 +69,7 @@ void factorial_for_loop_practice()
 {
 	print_title("factorial_iteration_for_loop");
 
-	for (const auto i : boost::irange(10))
+	for (const auto i : boost::irange(0, 10))
 	{
 		std::cout << i << "! = " << factorial_for_loop(i) << std::endl;
 	}
@@ -79,7 +79,7 @@ void factorial_recursion_practice()
 {
 	print_title("factorial_recursion");
 
-	for (const auto i : boost::irange(10))
+	for (const auto i : boost::irange(0, 10))
 	{
 		std::cout << i << "! = " << factorial_recursion(i) << std::endl;
 	}
@@ -89,7 +89,7 @@ void factorial_tail_recursion_practice()
 {
 	print_title("factorial_tail_recursion");
 
-	for (const auto i : boost::irange(10))
+	for (const auto i : boost::irange(0, 10))
 	{
 		std::cout << i << "! = " << factorial_tail_recursion(i) << std::endl;
 	}
