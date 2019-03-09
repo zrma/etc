@@ -13,7 +13,7 @@ void sort_practice()
 {
 	print_title("sort");
 
-	auto vec = std::vector{ { 20, 43, 11, 78, 5, 96 } };
+	auto vec = std::vector{ 20, 43, 11, 78, 5, 96 };
 	for (const auto& it : vec)
 	{
 		std::cout << it << " ";

@@ -6,7 +6,7 @@ void vector_practice()
 {
 	print_title("vector");
 
-	auto vec = std::vector{ { 0, 1, 2 } };
+	auto vec = std::vector{ 0, 1, 2 };
 
 	for (const auto& it : vec)
 	{
