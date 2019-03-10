@@ -9,15 +9,15 @@
 #include "Chapter04Recursion/chapter04_recursion.h"
 #include "Chapter05LazyEvaluation/chapter05_lazy_evaluation.h"
 
-auto main() -> int
-{
-	chapter01_modern_cpp();
-	chapter02_functional();
-	chapter03_immutable();
-	chapter04_recursion();
-	chapter05_lazy_evaluation();
+auto main() -> int {
 
-	return 0;
+    chapter01_modern_cpp();
+    chapter02_functional();
+    chapter03_immutable();
+    chapter04_recursion();
+    chapter05_lazy_evaluation();
+
+    return 0;
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴

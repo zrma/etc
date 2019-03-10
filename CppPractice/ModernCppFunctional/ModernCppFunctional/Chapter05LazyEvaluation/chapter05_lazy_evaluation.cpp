@@ -4,8 +4,7 @@
 #include "strict.h"
 #include "non_strict.h"
 
-void chapter05_lazy_evaluation()
-{
-	strict();
-	non_strict();
+void chapter05_lazy_evaluation() {
+    strict();
+    non_strict();
 }
