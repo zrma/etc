@@ -8,8 +8,10 @@
 void curry_practice() {
     print_title("curry");
 
-    const auto f = area_of_rect<int>;
-    const auto width5 = curry(f, 5);
+    [[maybe_unused]] const auto _ = area_of_rect<int>;
+    [[maybe_unused]] const auto __ = volume_of_rect<double>;
+
+    const auto width5 = curry(area_of_rect<int>, 5);
     std::cout << "Curried with specific width = 5" << std::endl;
 
     for (const auto height : boost::irange(0, 5)) {
@@ -17,8 +19,7 @@ void curry_practice() {
         std::cout << std::endl;
     }
 
-    const auto f2 = volume_of_rect<int>;
-    const auto width5_height4 = curry(f2, 5, 4);
+    const auto width5_height4 = curry(volume_of_rect<double>, 5, 4);
     std::cout << "Curried with specific width = 5, height = 4" << std::endl;
 
     for (const auto depth : boost::irange(0, 5)) {
