@@ -8,9 +8,6 @@
 void curry_practice() {
     print_title("curry");
 
-    [[maybe_unused]] const auto _ = area_of_rect<int>;
-    [[maybe_unused]] const auto __ = volume_of_rect<double>;
-
     const auto width5 = curry(area_of_rect<int>, 5);
     std::cout << "Curried with specific width = 5" << std::endl;
 

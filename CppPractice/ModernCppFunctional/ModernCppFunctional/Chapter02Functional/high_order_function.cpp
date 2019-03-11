@@ -50,13 +50,12 @@ void high_order_function() {
     std::array<double, 4> numbers{};
     std::generate(numbers.begin(), numbers.end(), [n = 1]() mutable { return 0.2 * n++; });
 
-    const auto f = compose<double, double, double>;
     std::transform(
             inverse_functions.begin(),
             inverse_functions.end(),
             functions.begin(),
             std::back_inserter(composed_functions),
-            f
+            compose<double, double, double>
     );
 
     for (const auto number : numbers) {
