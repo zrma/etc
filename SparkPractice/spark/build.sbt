@@ -1,11 +1,7 @@
-name := "spark"
-
-version := "0.1"
-
-scalaVersion := "2.11.12"
-
-val sparkVersion = "2.3.0"
-
+val name = "spark"
+val version = "0.1"
+val scalaVersion = "2.12.8"
+val sparkVersion = "2.4.3"
 val sparkDependencyScope = "provided"
 
 libraryDependencies ++= Seq(
