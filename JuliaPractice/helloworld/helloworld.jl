@@ -1,4 +1,4 @@
-function test( n::Int64 )
+function test( n )
     total = 0
 
     for i in 1:n
