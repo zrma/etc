@@ -13,5 +13,5 @@ end
 @time result = test( 10 )
 println( result )
 
-@time result = test( 1000000000 )
+@time result = test( 10000000 )
 println( result )
