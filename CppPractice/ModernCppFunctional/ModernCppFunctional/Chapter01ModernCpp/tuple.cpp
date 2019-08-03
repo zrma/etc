@@ -29,7 +29,7 @@ void tie() {
     const auto t2 = std::make_tuple(2, "Anna", false);
 
     auto i = 0;
-    std::string s = "";
+    std::string s;
     auto b = false;
 
     std::tie(i, s, b) = t1;
@@ -75,7 +75,7 @@ void tuple_value_return() {
     auto people = get_data(1);
     std::cout << "name = " << std::get<1>(people) << std::endl;
 
-    std::string name = "";
+    std::string name;
     std::tie(std::ignore, name, std::ignore) = people;
     std::cout << "name = " << name << std::endl;
 }

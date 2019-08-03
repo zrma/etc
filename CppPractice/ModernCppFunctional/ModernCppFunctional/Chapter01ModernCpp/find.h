@@ -1,8 +1,9 @@
 ﻿#pragma once
+#include <utility>
 
 class vehicle {
 public:
-    vehicle(const std::string &type, const int wheel) : vehicle_type_(type), total_of_wheel_i_(wheel) {}
+    vehicle(std::string type, const int wheel) : vehicle_type_(std::move(type)), total_of_wheel_i_(wheel) {}
 
     vehicle() = default;
 
@@ -26,11 +27,11 @@ public:
         return *this;
     }
 
-    auto has_two_wheel() const;
+    [[nodiscard]] auto has_two_wheel() const;
 
-    auto get_type() const { return vehicle_type_; }
+    [[nodiscard]] auto get_type() const { return vehicle_type_; }
 
-    auto get_num_of_wheel() const { return total_of_wheel_i_; }
+    [[nodiscard]] auto get_num_of_wheel() const { return total_of_wheel_i_; }
 
 private:
     std::string vehicle_type_{};

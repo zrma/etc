@@ -10,7 +10,7 @@ auto outer_formula_non_strict(
         const int x,
         const int y,
         const int z,
-        const std::function<int(int, int)> yz_func
+        const std::function<int(int, int)>& yz_func
 ) {
     std::cout << "calculate " << x << " + ";
     std::cout << "inner_formula(" << y << ", ";

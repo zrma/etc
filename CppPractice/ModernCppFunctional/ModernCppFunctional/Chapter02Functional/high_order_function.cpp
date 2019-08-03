@@ -96,7 +96,7 @@ auto filter_prime_numbers(std::vector<int> src) {
         return true;
     });
 
-    return std::move(dest);
+    return dest;
 }
 
 auto filter_non_prime_numbers(std::vector<int> src) {
@@ -114,7 +114,7 @@ auto filter_non_prime_numbers(std::vector<int> src) {
         return true;
     });
 
-    return std::move(dest);
+    return dest;
 }
 
 void filter() {

@@ -7,7 +7,7 @@
 
 
 void permute(const std::string &chosen, const std::string &remain) {
-    if (remain == "") {
+    if (remain.empty()) {
         std::cout << chosen << std::endl;
     } else {
         for (const auto &it : remain | boost::adaptors::indexed(0)) {

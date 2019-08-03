@@ -24,7 +24,7 @@ auto create_labyrinth() {
     };
 }
 
-void display_labyrinth(const labyrinth labyrinth) {
+void display_labyrinth(const labyrinth& labyrinth) {
     std::cout << std::endl;
     std::cout << "========================" << std::endl;
     std::cout << "The Labyrinth" << std::endl;
@@ -75,7 +75,7 @@ auto navigate(labyrinth labyrinth, const int row, const int col) {
     return false;
 }
 
-auto is_labyrinth_solvable(const labyrinth labyrinth) {
+auto is_labyrinth_solvable(const labyrinth& labyrinth) {
     auto start_row = -1;
     auto start_col = -1;
 
