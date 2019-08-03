@@ -12,7 +12,7 @@ void begin_end_practice() {
     const auto size = sizeof arr / sizeof arr[0];
     static_assert(arr.size() == size);
 
-    for (auto i = 0; i < size; ++i) {
+    for (auto i = 0; static_cast<decltype(size)>(i) < size; ++i) {
         std::cout << arr[i] << " ";
     }
     std::cout << std::endl;
