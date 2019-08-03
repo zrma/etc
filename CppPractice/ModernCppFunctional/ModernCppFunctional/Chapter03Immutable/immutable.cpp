@@ -35,19 +35,19 @@ public:
     function(const int x, const int y) : x(x), y(y) {
     }
 
-    auto addition() const {
+    [[nodiscard]] auto addition() const {
         return integer(x + y);
     }
 
-    auto subtraction() const {
+    [[nodiscard]] auto subtraction() const {
         return integer(x - y);
     }
 
-    auto multiplication() const {
+    [[nodiscard]] auto multiplication() const {
         return integer(x * y);
     }
 
-    auto division() const {
+    [[nodiscard]] auto division() const {
         return integer(x / y);
     }
 };
