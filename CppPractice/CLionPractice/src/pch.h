@@ -3,14 +3,13 @@
 
 //////////////////////////////////////////////////////////////////////////
 
-#include <memory>
-
-#include <random>
-#include <iostream>
-
-#include <list>
 #include <deque>
-#include <vector>
+#include <functional>
+#include <iostream>
+#include <list>
+#include <memory>
+#include <random>
 #include <unordered_set>
+#include <vector>
 
 #endif //CLION_PRACTICE_CPH_H
