@@ -4,17 +4,16 @@ extern crate dlopen;
 
 use dlopen::symbor::Library;
 
-#[cfg(target_os = "windows")]
-const FILE_NAME: &str = "./embed.dll";
-
-#[cfg(target_os = "linux")]
-const FILE_NAME: &str = "./libembed.so";
-
-#[cfg(target_os = "macos")]
-const FILE_NAME: &str = "./libembed.dylib";
-
 fn main() {
-    let lib = Library::open(FILE_NAME).expect("Failed to load library");
+    let file_name = if cfg!(windows) {
+        "./embed.dll"
+    } else if cfg!(macos) {
+        "./libembed.dylib"
+    } else {
+        "./libembed.so"
+    };
+
+    let lib = Library::open(file_name).expect("Failed to load library");
 
     let func = match unsafe { lib.symbol_cstr::<fn()>(const_cstr!("process").as_cstr()) } {
         Ok(x) => x,
@@ -23,4 +22,15 @@ fn main() {
 
     func();
     println!("done!");
+}
+
+#[test]
+fn test_main() {
+    let mut total = 0;
+
+    for i in 1..10 {
+        total += i
+    }
+
+    println!("{}", total)
 }
