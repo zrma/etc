@@ -1,7 +1,7 @@
 %{
-  "erlport": {:hex, :erlport, "0.9.8", "b7dc57eb87f215a671926bfbcd23e6e9c76f8653b0d072627b41431ef51c4d20", [:rebar3], [], "hexpm"},
+  "erlport": {:hex, :erlport, "0.10.1", "c96ffa51bbcab0298232fcdfe8c3e110f1598011de71ae6b9082b80c9e2e476a", [:rebar3], [], "hexpm"},
   "export": {:hex, :export, "0.1.1", "6dfd268b0692428f89b9285859a2dc02b6dcd2e8fdfbca34ac6e6a331351df91", [:mix], [{:erlport, "~> 0.9", [hex: :erlport, optional: false]}]},
-  "flow": {:hex, :flow, "0.14.0", "a84a4afc8559e3eb9c3b73c7dd0b348817405f3208bb1a42cfea69a83ec17f35", [:mix], [{:gen_stage, "~> 0.14.0", [hex: :gen_stage, repo: "hexpm", optional: false]}], "hexpm"},
-  "gen_stage": {:hex, :gen_stage, "0.14.0", "65ae78509f85b59d360690ce3378d5096c3130a0694bab95b0c4ae66f3008fad", [:mix], [], "hexpm"},
+  "flow": {:hex, :flow, "0.14.3", "0d92991fe53035894d24aa8dec10dcfccf0ae00c4ed436ace3efa9813a646902", [:mix], [{:gen_stage, "~> 0.14.0", [hex: :gen_stage, repo: "hexpm", optional: false]}], "hexpm"},
+  "gen_stage": {:hex, :gen_stage, "0.14.2", "6a2a578a510c5bfca8a45e6b27552f613b41cf584b58210f017088d3d17d0b14", [:mix], [], "hexpm"},
   "piton": {:hex, :piton, "0.3.0", "9d45f9863f402292c8f3904ab6060bbf9e59862d64bfef27daada8aeac95741a", [:mix], [{:erlport, "~> 0.9.8", [hex: :erlport, repo: "hexpm", optional: false]}], "hexpm"},
 }
