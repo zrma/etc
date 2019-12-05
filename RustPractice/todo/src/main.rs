@@ -41,17 +41,13 @@ fn test_main() {
     let msg = "buy a car";
     t.add(msg);
 
-    {
-        let list = t.list();
-        assert_eq!(
-            list.description(),
-            "[{\"done\":false,\"desc\":\"buy a car\"}]"
-        );
-    }
+    let list = t.list();
+    assert_eq!(
+        list.description(),
+        "[{\"done\":false,\"desc\":\"buy a car\"}]"
+    );
 
     t.done(0);
-    {
-        let list = t.list();
-        assert_eq!(list[0].done, true);
-    }
+    let list = t.list();
+    assert_eq!(list[0].done, true);
 }
