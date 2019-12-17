@@ -12,12 +12,19 @@ defmodule Crawl do
       :world
 
   """
-  def hello do
-    :world
+  def hello, do: :world
+  def hello(name) do
+    cond do
+      String.valid?(name) ->
+        name
+      Kernel.is_list(name) ->
+        name
+        |> Enum.join(",")
+    end
   end
 
-  def pipe do
-    "Elixir rocks"
+  def pipe(input) do
+    input
     |> String.split()
     |> Enum.map(
          &(
