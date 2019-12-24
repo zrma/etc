@@ -4,6 +4,9 @@ import org.apache.spark.mllib.clustering.KMeans
 import org.apache.spark.mllib.linalg.Vectors
 import org.apache.spark.sql.SparkSession
 
+import scala.reflect.io.{Directory, File}
+
+
 // 주어진 데이터를 K개의 군집(클러스터)로 묶는 알고리즘.
 // 비지도 학습의 일종으로 레이블이 없는 데이터를 사용한다.
 object SimpleKMeans {
@@ -13,6 +16,7 @@ object SimpleKMeans {
       .master("local[*]")
       .appName("K-Means")
       .getOrCreate()
+
     //noinspection SpellCheckingInspection
     val data = ss.sparkContext.textFile("data/chapter8/kmeans_data.txt")
 
@@ -43,6 +47,11 @@ object SimpleKMeans {
     val withinSetSumOfSquaredErrors = clusters.computeCost(parsedData)
     println(s"Within Set Sum Of Squared Errors = $withinSetSumOfSquaredErrors")
 
-    clusters.save(ss.sparkContext, "output/KMeans_Model")
+    try {
+      val directory = Directory(File("output/KMeans_Model"))
+      directory.deleteRecursively()
+    } finally {
+      clusters.save(ss.sparkContext, "output/KMeans_Model")
+    }
   }
 }
