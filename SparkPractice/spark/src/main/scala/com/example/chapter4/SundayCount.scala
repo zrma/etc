@@ -7,11 +7,11 @@ import org.joda.time.format.DateTimeFormat
 
 object SundayCount {
   def main(args: Array[String]): Unit = {
-    if (args.length < 1) {
-      throw new IllegalArgumentException("parameter needs - file path")
+    var filePath = "data/chapter4/date.txt": String
+    if (args.length > 0) {
+      filePath = args(0);
     }
 
-    val filePath = args(0)
     val conf = new SparkConf().setAppName("SundayCount").setMaster("local")
     val sc = new SparkContext(conf)
 

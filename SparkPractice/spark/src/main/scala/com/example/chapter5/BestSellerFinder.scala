@@ -9,6 +9,8 @@ import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 
 import scala.collection.mutable
+import scala.collection.mutable.{ArrayBuffer, ListBuffer}
+import scala.reflect.io.{Directory, File}
 
 object BestSellerFinder {
   private def createSaleRDD(csvFile: String, sc: SparkContext) = {
@@ -54,9 +56,9 @@ object BestSellerFinder {
   }
 
   private def createResultRDD(
-    broadcastedMap: Broadcast[_ <: mutable.Map[String, (String, Int)]],
-    rdd: RDD[(String, Int)]
-  ) = {
+                               broadcastedMap: Broadcast[_ <: mutable.Map[String, (String, Int)]],
+                               rdd: RDD[(String, Int)]
+                             ) = {
     rdd.map {
       case (productId, amount) =>
         val productsMap = broadcastedMap.value
@@ -66,12 +68,24 @@ object BestSellerFinder {
   }
 
   def main(args: Array[String]): Unit = {
-    require(args.length >= 4, """
-              |args1 : <첫번째 달의 판매 데이터 파일 경로>
-              |args2 : <두번째 달의 판매 데이터 파일 경로>
-              |args3 : <상품의 마스터 데이터 파일 경로>
-              |args4 : <출력 파일 경로>를 지정해주세요
-              |""".stripMargin)
+    var params = new ArrayBuffer[String]()
+    try {
+      require(args.length >= 4,
+        """
+          |args1 : <첫번째 달의 판매 데이터 파일 경로>
+          |args2 : <두번째 달의 판매 데이터 파일 경로>
+          |args3 : <상품의 마스터 데이터 파일 경로>
+          |args4 : <출력 파일 경로>를 지정해주세요
+          |""".stripMargin)
+      args.copyToBuffer(params)
+    } catch {
+      case _: IllegalArgumentException => {
+        params += "data/chapter5/sales-october.csv"
+        params += "data/chapter5/sales-november.csv"
+        params += "data/chapter5/products.csv"
+        params += "output/BestSellerFinder"
+      }
+    }
 
     val conf = new SparkConf()
       .setAppName("BestSellerFinder")
@@ -81,7 +95,7 @@ object BestSellerFinder {
 
     try {
       val Array(salesCSVFile1, salesCSVFile2, productsCSVFile, outputPath) =
-        args.take(4)
+        params.toArray.take(4)
 
       val salesRDD1 = createSaleRDD(salesCSVFile1, sc)
       val salesRDD2 = createSaleRDD(salesCSVFile2, sc)
@@ -99,7 +113,14 @@ object BestSellerFinder {
       val broadcastedMap = sc.broadcast(productMap)
 
       val resultRDD = createResultRDD(broadcastedMap, over10SoldAndAmountRDD)
-      resultRDD.saveAsTextFile(outputPath)
+
+      try {
+        val directory = Directory(File(outputPath))
+        directory.deleteRecursively()
+      } finally {
+        resultRDD.saveAsTextFile(outputPath)
+      }
+
     } finally {
       sc.stop()
     }
