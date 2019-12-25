@@ -89,7 +89,7 @@ object BestSellerFinder {
 
     val conf = new SparkConf()
       .setAppName("BestSellerFinder")
-      .setMaster("local")
+      .setMaster("local[*]")
       .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
     val sc = new SparkContext(conf)
 
