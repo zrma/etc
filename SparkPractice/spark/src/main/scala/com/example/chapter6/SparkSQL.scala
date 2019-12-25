@@ -6,8 +6,9 @@ import org.apache.spark.sql.functions._
 import org.apache.spark.sql.types._
 import org.apache.spark.sql.Row
 import org.apache.spark.sql.expressions.MutableAggregationBuffer
-
 import java.math.BigDecimal
+
+import scala.reflect.io.File
 
 //noinspection SpellCheckingInspection
 case class Dessert(menuId: String, name: String, price: Int, kcal: Int)
@@ -50,8 +51,8 @@ case class DecimalTypeContainer(data: BigDecimal)
 object SparkSQL {
   def main(args: Array[String]): Unit = {
     import org.apache.spark.sql.Encoders
-    val warehouseLocation =
-      "/Users/zrma/Documents/Code/PolyGlot/SparkPractice/spark/spark-warehouse"
+    val warehouseLocation = File("data/spark-warehouse").toAbsolute.toString()
+
     val ss = SparkSession
       .builder()
       .master("local[*]")
