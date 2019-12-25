@@ -5,16 +5,25 @@ import org.apache.spark.SparkConf
 import org.apache.spark.SparkContext
 import org.apache.spark.rdd.RDD
 
+import scala.collection.mutable.ArrayBuffer
+
 case class Accumulator(initialValue: Int = 0, initialDescription: String = "")
-    extends AccumulatorV2[Int, Int] {
+  extends AccumulatorV2[Int, Int] {
   private var _value = new Integer(initialValue)
   private val _description = new String(initialDescription)
+
   override def value: Int = _value
+
   override def isZero: Boolean = value == 0
+
   override def copy(): AccumulatorV2[Int, Int] = Accumulator(value, description)
+
   override def reset(): Unit = _value = new Integer(0)
+
   override def add(v: Int): Unit = _value = value + v
+
   override def merge(other: AccumulatorV2[Int, Int]): Unit = add(other.value)
+
   def description: String = _description
 }
 
@@ -63,18 +72,27 @@ object QuestionnaireSummarize {
   }
 
   def main(args: Array[String]): Unit = {
-    require(args.length >= 1, """
-            |args1 : <CSV 파일 경로>
+    var params = new ArrayBuffer[String]()
+    try {
+      require(args.length >= 1,
+        """
+          |args1 : <CSV 파일 경로>
         """.stripMargin)
+      args.copyToBuffer(params)
+    } catch {
+      case _: IllegalArgumentException => {
+        params += "data/chapter5/questionnaire.csv"
+      }
+    }
 
     val conf = new SparkConf()
       .setAppName("QuestionnaireSummarize")
-      .setMaster("local")
+      .setMaster("local[*]")
       .set("spark.serializer", "org.apache.spark.serializer.KryoSerializer")
     val sc = new SparkContext(conf)
 
     try {
-      val filePath = args(0)
+      val Array(filePath) = params.toArray.take(1)
 
       val questionnaireRDD = sc.textFile(filePath).map { record =>
         val splitRecord = record.split(",")
