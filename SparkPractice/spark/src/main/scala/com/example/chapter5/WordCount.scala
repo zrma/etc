@@ -6,7 +6,7 @@ object WordCount {
   def main(args: Array[String]): Unit = {
     require(args.length >= 1, "parameter needs - file path")
 
-    val conf = new SparkConf().setAppName("WordCount").setMaster("local")
+    val conf = new SparkConf().setAppName("WordCount").setMaster("local[*]")
     val sc = new SparkContext(conf)
 
     try {
