@@ -6,6 +6,8 @@ import org.apache.spark.storage.StorageLevel
 import org.apache.spark.streaming.dstream.InputDStream
 import org.apache.spark.streaming.{Milliseconds, Seconds, StreamingContext}
 
+import scala.collection.mutable.ArrayBuffer
+
 object StreamingHandling {
   private def transform(lines: InputDStream[String]): Unit = {
     val splitLines = lines.map(_.trim).map(_.split("[\\s]+"))
@@ -75,20 +77,15 @@ object StreamingHandling {
   }
 
   def main(args: Array[String]): Unit = {
-
-    val parser = new scopt.OptionParser[SimpleReceiverConfig]("SimplePrinter") {
-      arg[String]("hostname") required () action { (x, c) =>
-        c.copy(hostname = x)
-      } text "The hostname to accept connections from remote hosts"
-
-      arg[Int]("port") required () action { (x, c) => c.copy(port = x)
-      } text "The port number to accept connections from remote hosts"
-
-      arg[Int]("interval") required () action { (x, c) => c.copy(interval = x)
-      } text "The interval to process data [msec]"
+    var params = new ArrayBuffer[String]()
+    params ++= args
+    if (args.length == 0) {
+      params += "localhost"
+      params += "12345"
+      params += "1000"
     }
 
-    parser.parse(args, SimpleReceiverConfig()) exists { config =>
+    Parser.receiver().parse(params.result(), SimpleReceiverConfig()) exists { config =>
       Logger.getRootLogger.setLevel(Level.WARN)
 
       val ss = SparkSession

@@ -5,6 +5,7 @@ import org.apache.spark.streaming.{Seconds, StreamingContext}
 import org.apache.log4j.{Level, Logger}
 import org.apache.spark.storage.StorageLevel
 
+// NOTE - command $ nc -lk 9999
 object SparkStreaming {
   def main(args: Array[String]): Unit = {
     Logger.getRootLogger.setLevel(Level.WARN)
