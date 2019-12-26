@@ -1,11 +1,11 @@
 package com.example.chapter8
 
-import com.twitter.penguin.korean.TwitterKoreanProcessor
-import com.twitter.penguin.korean.phrase_extractor.KoreanPhraseExtractor.KoreanPhrase
-import com.twitter.penguin.korean.tokenizer.KoreanTokenizer.KoreanToken
 import org.apache.spark.mllib.feature.{Word2Vec, Word2VecModel}
-import org.apache.spark.sql.SparkSession
 import org.apache.spark.mllib.linalg.Vectors
+import org.apache.spark.sql.SparkSession
+import org.openkoreantext.processor.OpenKoreanTextProcessor
+import org.openkoreantext.processor.phrase_extractor.KoreanPhraseExtractor.KoreanPhrase
+import org.openkoreantext.processor.tokenizer.KoreanTokenizer.KoreanToken
 
 // 단어를 계산 가능하도록 벡터로 변환(숫자화)하는 알고리즘
 // 문장의 다음에 올 단어를 예측하는 Word2Vec 모델에 사용한다
@@ -14,20 +14,16 @@ object SimpleWord2Vec {
     val sentence = "이 책은 무슨 책입니까"
 
     // Normalize
-    val normalized: CharSequence = TwitterKoreanProcessor.normalize(sentence)
+    val normalized: CharSequence = OpenKoreanTextProcessor.normalize(sentence)
     println(normalized)
 
     // Tokenize
-    val tokens: Seq[KoreanToken] = TwitterKoreanProcessor.tokenize(normalized)
+    val tokens: Seq[KoreanToken] = OpenKoreanTextProcessor.tokenize(normalized)
     println(tokens)
-
-    // Stem extraction
-    val stem: Seq[KoreanToken] = TwitterKoreanProcessor.stem(tokens)
-    println(stem)
 
     // Phrase extraction
     val phrases: Seq[KoreanPhrase] =
-      TwitterKoreanProcessor.extractPhrases(
+      OpenKoreanTextProcessor.extractPhrases(
         tokens,
         filterSpam = true,
         enableHashtags = true
@@ -61,10 +57,10 @@ object SimpleWord2Vec {
       .textFile("data/chapter8/words_data.txt")
       .map(
         line =>
-          TwitterKoreanProcessor.tokensToStrings(
-            TwitterKoreanProcessor
-              .tokenize(TwitterKoreanProcessor.normalize(line))
-        )
+          OpenKoreanTextProcessor.tokensToStrings(
+            OpenKoreanTextProcessor
+              .tokenize(OpenKoreanTextProcessor.normalize(line))
+          )
       )
 
     val word2vec = new Word2Vec()
