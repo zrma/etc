@@ -48,6 +48,8 @@ class CustomSum extends UserDefinedAggregateFunction {
 
 case class DecimalTypeContainer(data: BigDecimal)
 
+// NOTE - Do not use Java 11 with Spark / pyspark 2.4.x
+//        https://stackoverflow.com/questions/39183011/why-does-pyspark-fail-with-unable-to-locate-hive-jars-to-connect-to-metastore
 object SparkSQL {
   def main(args: Array[String]): Unit = {
     import org.apache.spark.sql.Encoders
