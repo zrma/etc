@@ -1,11 +1,13 @@
 package com.example.chapter8
 
-import org.apache.spark.mllib.clustering.KMeans
-import org.apache.spark.mllib.linalg.Vectors
-import org.apache.spark.sql.SparkSession
+import org.apache.spark.ml.clustering.KMeans
+import org.apache.spark.ml.evaluation.ClusteringEvaluator
+import org.apache.spark.ml.feature.VectorAssembler
+import org.apache.spark.sql.{Encoders, SparkSession}
 
 import scala.reflect.io.{Directory, File}
 
+case class Point(x: Double, y: Double, z: Double)
 
 // 주어진 데이터를 K개의 군집(클러스터)로 묶는 알고리즘.
 // 비지도 학습의 일종으로 레이블이 없는 데이터를 사용한다.
@@ -16,42 +18,57 @@ object SimpleKMeans {
       .master("local[*]")
       .appName("K-Means")
       .getOrCreate()
-
-    //noinspection SpellCheckingInspection
-    val data = ss.sparkContext.textFile("data/chapter8/kmeans_data.txt")
-
-    val parsedData = data
-      .map {
-        // dense : 밀집, sparse : 희소
-        s => Vectors.dense(s.split(' ').map(_.toDouble))
-      }
-      .cache()
-
-    val clusterCount = 2
-    val iterationCount = 20
-    val clusters = KMeans.train(parsedData, clusterCount, iterationCount)
-
-    println(s"Cluster count : ${clusters.k}")
-    println(s"Cluster centers : ${clusters.clusterCenters.mkString(",")}")
-
-    val vec1 = Vectors.dense(0.3, 0.3, 0.3)
-    println(s"${vec1.toString} predict : ${clusters.predict(vec1)}")
-    val vec2 = Vectors.dense(8.0, 8.0, 8.0)
-    println(s"${vec2.toString} predict : ${clusters.predict(vec2)}")
-
-    parsedData.foreach(
-      vec => println(s"${vec.toString} predict : ${clusters.predict(vec)}")
-    )
-
-    // 입력 벡터 집합과 소속 클러스터의 중심과의 오차 제곱 합(SSE)
-    val withinSetSumOfSquaredErrors = clusters.computeCost(parsedData)
-    println(s"Within Set Sum Of Squared Errors = $withinSetSumOfSquaredErrors")
-
     try {
-      val directory = Directory(File("output/KMeans_Model"))
-      directory.deleteRecursively()
+      val dataEncoder = Encoders.product[Point]
+      val ds = ss.read.schema(dataEncoder.schema).csv("data/chapter8/kmeans_data.csv").as[Point](dataEncoder)
+
+      ds.printSchema()
+      ds.show(3)
+
+      val assembler = new VectorAssembler().setInputCols(Array("x", "y", "z")).setOutputCol("features")
+      val df = assembler.transform(ds)
+
+      df.printSchema()
+      df.show(3)
+
+      val clusterCount = 2
+      val iterationCount = 20
+      val kMeans = new KMeans().setK(clusterCount).setInitSteps(iterationCount)
+      val model = kMeans.fit(df)
+
+      println(s"Cluster count : ${model.k}")
+      println(s"Cluster centers : ${model.clusterCenters.mkString(",")}")
+      // Shows the result.
+      println("Cluster Centers: ")
+      model.clusterCenters.foreach(println)
+
+      val predictions = model.transform(df)
+      predictions.foreach(
+        vec => println(s"${vec.toString}")
+      )
+
+      val evaluator = new ClusteringEvaluator()
+      val silhouette = evaluator.evaluate(predictions)
+      println(s"Silhouette with squared euclidean distance = $silhouette")
+
+      import ss.implicits._
+      val ds2 = ss.sqlContext.createDataset(Array(
+        Point(0.3, 0.3, 0.3),
+        Point(8.0, 8.0, 8.0)
+      ))
+      val df2 = assembler.transform(ds2)
+      model.transform(df2).foreach(
+        vec => println(s"${vec.toString}")
+      )
+
+      try {
+        val directory = Directory(File("output/KMeans_Model/new"))
+        directory.deleteRecursively()
+      } finally {
+        kMeans.save("output/KMeans_Model/new")
+      }
     } finally {
-      clusters.save(ss.sparkContext, "output/KMeans_Model")
+      ss.stop()
     }
   }
 }
