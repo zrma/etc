@@ -1,0 +1,25 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ghost
+  namespace: ingress-example
+spec:
+  replicas: 4
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: ghost
+    spec:
+      containers:
+      - image: ghost:latest
+        imagePullPolicy: IfNotPresent
+        name: ghost
+        ports:
+        - containerPort: 2368
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
