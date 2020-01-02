@@ -2,10 +2,10 @@ apiVersion: v1
 kind: Service
 metadata:
   name: ingress-nginx
-  namespace: default
+  namespace: ingress-example
   labels:
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/part-of: ingress-example
 spec:
   type: NodePort
   ports:
@@ -19,7 +19,4 @@ spec:
       protocol: TCP
   selector:
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
-
----
-
+    app.kubernetes.io/part-of: ingress-example
