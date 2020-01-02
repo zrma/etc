@@ -25,7 +25,5 @@ wget https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/st
 
 * nginx-ingress : simple ingress route example
 
-> kubectl expose deployments nginx --port=80 --type=NodePort
 
-
-nginx -> nginx-ingress(route) -> nginx-ingress-controller -> ingress-nginx
+nginx(deploy/app) <- nginx(svc) <- nginx-public(ingress/route) <- nginx-ingress-controller(deploy/infra) <- ingress-nginx(svc)
