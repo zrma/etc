@@ -1,60 +1,60 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: ingress-nginx
+  name: ingress-example
   labels:
-    app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/name: ingress-example
+    app.kubernetes.io/part-of: ingress-example
 
 ---
-
 kind: ConfigMap
 apiVersion: v1
 metadata:
   name: nginx-configuration
-  namespace: default
+  namespace: ingress-example
   labels:
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/part-of: ingress-example
 
 ---
 kind: ConfigMap
 apiVersion: v1
 metadata:
   name: tcp-services
-  namespace: default
+  namespace: ingress-example
   labels:
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/part-of: ingress-example
 
 ---
 kind: ConfigMap
 apiVersion: v1
 metadata:
   name: udp-services
-  namespace: default
+  namespace: ingress-example
   labels:
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/part-of: ingress-example
 
 ---
 apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: nginx-ingress-serviceaccount
-  namespace: default
+  namespace: ingress-example
   labels:
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/part-of: ingress-example
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRole
 metadata:
   name: nginx-ingress-clusterrole
+  namespace: ingress-example
   labels:
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/part-of: ingress-example
 rules:
   - apiGroups:
       - ""
@@ -110,10 +110,10 @@ apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: Role
 metadata:
   name: nginx-ingress-role
-  namespace: default
+  namespace: ingress-example
   labels:
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/part-of: ingress-example
 rules:
   - apiGroups:
       - ""
@@ -155,10 +155,10 @@ apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: RoleBinding
 metadata:
   name: nginx-ingress-role-nisa-binding
-  namespace: default
+  namespace: ingress-example
   labels:
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/part-of: ingress-example
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -166,16 +166,17 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: nginx-ingress-serviceaccount
-    namespace: default
+    namespace: ingress-example
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: ClusterRoleBinding
 metadata:
   name: nginx-ingress-clusterrole-nisa-binding
+  namespace: ingress-example
   labels:
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/part-of: ingress-example
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -183,7 +184,7 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: nginx-ingress-serviceaccount
-    namespace: default
+    namespace: ingress-example
 
 ---
 
@@ -191,21 +192,21 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-ingress-controller
-  namespace: default
+  namespace: ingress-example
   labels:
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/part-of: ingress-example
 spec:
   replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: ingress-nginx
-      app.kubernetes.io/part-of: ingress-nginx
+      app.kubernetes.io/part-of: ingress-example
   template:
     metadata:
       labels:
         app.kubernetes.io/name: ingress-nginx
-        app.kubernetes.io/part-of: ingress-nginx
+        app.kubernetes.io/part-of: ingress-example
       annotations:
         prometheus.io/port: "10254"
         prometheus.io/scrape: "true"
@@ -281,10 +282,10 @@ apiVersion: v1
 kind: LimitRange
 metadata:
   name: ingress-nginx
-  namespace: default
+  namespace: ingress-example
   labels:
     app.kubernetes.io/name: ingress-nginx
-    app.kubernetes.io/part-of: ingress-nginx
+    app.kubernetes.io/part-of: ingress-example
 spec:
   limits:
   - default:
