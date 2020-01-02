@@ -7,10 +7,8 @@ spec:
   ports:
   - port: 80
     protocol: TCP
-    nodePort: 30080
   selector:
     app: web
   sessionAffinity: None
-  type: NodePort
 status:
   loadBalancer: {}
