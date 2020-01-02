@@ -27,5 +27,5 @@ wget https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/st
 
 
 ```bash
-nginx(deploy/app) <- nginx(svc) <- nginx-public(ingress/route) <- nginx-ingress-controller(deploy/infra) <- ingress-nginx(svc)
+nginx(deploy/app) <- nginx(svc) <- ingress-public(ingress/route) <- nginx-ingress-controller(deploy/infra) <- ingress-nginx(svc)
 ```
