@@ -1,10 +1,13 @@
 kind: Ingress
 apiVersion: extensions/v1beta1
 metadata:
-  name: nginx-public
+  name: ingress-public
   namespace: ingress-example
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    ingress.kubernetes.io/add-base-url: "true"
 spec:
   rules:
   - host:
@@ -13,4 +16,14 @@ spec:
       - path: /web
         backend:
           serviceName: nginx
+          servicePort: 80
+
+      - path: /svc/(.*)
+        backend:
+          serviceName: svc
+          servicePort: 80
+
+      - path: /ghost
+        backend:
+          serviceName: ghost
           servicePort: 80
