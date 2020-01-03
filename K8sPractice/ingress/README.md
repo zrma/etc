@@ -25,7 +25,6 @@ wget https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/st
 
 * nginx-ingress : simple ingress route example
 
-
-```bash
+```
 nginx(deploy/app) <- nginx(svc) <- ingress-public(ingress/route) <- nginx-ingress-controller(deploy/infra) <- ingress-nginx(svc)
 ```

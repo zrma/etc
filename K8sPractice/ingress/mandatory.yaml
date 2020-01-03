@@ -288,8 +288,7 @@ metadata:
     app.kubernetes.io/part-of: ingress-example
 spec:
   limits:
-  - default:
-    min:
-      memory: 50Mi
-      cpu: 50m
-    type: Container
+    - default:
+        memory: 50Mi
+        cpu: 50m
+      type: Container
