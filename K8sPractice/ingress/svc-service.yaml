@@ -5,11 +5,9 @@ metadata:
   namespace: ingress-example
 spec:
   ports:
-  - port: 80
-    targetPort: 9876
-    protocol: TCP
+    - port: 80
+      targetPort: 9876
+      protocol: TCP
   selector:
     app: svc
   sessionAffinity: None
-status:
-  loadBalancer: {}
