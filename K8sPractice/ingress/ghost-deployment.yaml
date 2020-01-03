@@ -1,10 +1,10 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ghost
   namespace: ingress-example
 spec:
-  replicas: 4
+  replicas: 2
   strategy:
     rollingUpdate:
       maxSurge: 1
@@ -16,10 +16,25 @@ spec:
         app: ghost
     spec:
       containers:
-      - image: ghost:latest
-        imagePullPolicy: IfNotPresent
-        name: ghost
-        ports:
-        - containerPort: 2368
+        - image: ghost:latest
+          imagePullPolicy: IfNotPresent
+          name: ghost
+          ports:
+            - containerPort: 2368
+          livenessProbe:
+            initialDelaySeconds: 2
+            periodSeconds: 10
+            httpGet:
+              path: /
+              port: 2368
+          readinessProbe:
+            initialDelaySeconds: 2
+            periodSeconds: 10
+            httpGet:
+              path: /
+              port: 2368
       dnsPolicy: ClusterFirst
       restartPolicy: Always
+  selector:
+    matchLabels:
+      app: ghost
