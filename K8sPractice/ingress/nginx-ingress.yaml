@@ -21,8 +21,3 @@ spec:
             backend:
               serviceName: svc
               servicePort: 80
-
-          - path: /ghost
-            backend:
-              serviceName: ghost
-              servicePort: 80
