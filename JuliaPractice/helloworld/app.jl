@@ -1,11 +1,18 @@
-using HttpServer
+using HTTP;
+using UUIDs;
+using Random;
 
-uuid = Base.Random.uuid1()
+rng = MersenneTwister(1234);
+uuid = uuid4(rng);
 
-http = HttpHandler() do req::Request, res::Response
-    Response( ismatch(r"/", req.resource) ?
-    string("Dockerized with julia - ", uuid ) : 404 )
+HTTP.serve() do request::HTTP.Request
+   @show request
+   @show request.method
+   @show HTTP.header(request, "Content-Type")
+   @show HTTP.payload(request)
+   try
+       return HTTP.Response(string(uuid))
+   catch e
+       return HTTP.Response(404, "Error: $e")
+   end
 end
-
-server = Server( http )
-run(server, host=IPv4(0,0,0,0), port=8888)
