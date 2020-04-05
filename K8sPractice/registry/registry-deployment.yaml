@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: registry
+  namespace: default
+spec:
+  replicas: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 2
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: registry
+    spec:
+      containers:
+      - image: registry
+        imagePullPolicy: IfNotPresent
+        name: registry
+        ports:
+        - containerPort: 5000
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        env:
+        - name: REGISTRY_HTTP_ADDR
+          value: "0.0.0.0:5000"
+      volumes:
+      - name : registry
+        hostPath:
+          path: ./data
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+  selector:
+    matchLabels:
+      app: registry
