@@ -119,10 +119,14 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
-            Icon(
-              Icons.stars,
-              color: Colors.grey[500],
-            ),
+            new Expanded(
+                child: new LayoutBuilder(builder: (context, constraint) {
+              return new Icon(
+                Icons.touch_app,
+                color: Colors.grey[500],
+                size: constraint.biggest.height / 2,
+              );
+            })),
             _widgetOptions.elementAt(_selectedIndex),
           ],
         ),
