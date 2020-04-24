@@ -12,7 +12,10 @@ defmodule HelloElixir do
       :world
 
   """
-  def hello do
-    IO.puts :world
+  def start do
+    hello(System.argv())
   end
+
+  def hello, do: IO.puts :world
+  def hello(name), do: IO.puts "Hello, #{name}"
 end
