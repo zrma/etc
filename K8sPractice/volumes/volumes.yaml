@@ -11,7 +11,7 @@ spec:
   accessModes:
     - ReadWriteOnce
   hostPath:
-    path: /mnt/d/code/src/PolyGlot/K8sPractice/volumes/data
+    path: /d/code/src/PolyGlot/K8sPractice/volumes/data
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
