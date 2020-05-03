@@ -1,0 +1,12 @@
+{
+  "builders": [
+    {
+      "box_name": "example",
+      "type": "vagrant",
+      "provider": "hyperv",
+      "source_path": "ubuntu/bionic64",
+      "output_dir": "build/vagrant",
+      "communicator": "ssh"
+    }
+  ]
+}
