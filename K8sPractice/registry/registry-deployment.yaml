@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: registry
-  namespace: default
+  namespace: registry
 spec:
   replicas: 3
   strategy:
@@ -16,21 +16,24 @@ spec:
         app: registry
     spec:
       containers:
-      - image: registry
-        imagePullPolicy: IfNotPresent
-        name: registry
-        ports:
-        - containerPort: 5000
-        resources: {}
-        terminationMessagePath: /dev/termination-log
-        terminationMessagePolicy: File
-        env:
-        - name: REGISTRY_HTTP_ADDR
-          value: "0.0.0.0:5000"
+        - image: registry:2
+          imagePullPolicy: Always
+          name: registry
+          ports:
+            - containerPort: 5000
+          resources: {}
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          env:
+            - name: REGISTRY_HTTP_ADDR
+              value: "0.0.0.0:5000"
+          volumeMounts:
+            - mountPath: /var/lib/registry
+              name: registry-pv-storage
       volumes:
-      - name : registry
-        hostPath:
-          path: ./data
+        - name: registry-pv-storage
+          persistentVolumeClaim:
+            claimName: registry-pv-claim
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       schedulerName: default-scheduler
