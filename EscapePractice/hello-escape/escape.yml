@@ -7,5 +7,4 @@ includes:
 - README.md
 
 build: hello_escape.sh
-deploy:
-
+deploy: hello_escape.sh
