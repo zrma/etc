@@ -6,6 +6,6 @@ logo:
 includes:
 - README.md
 
-build: 
+build: hello_escape.sh
 deploy:
 
