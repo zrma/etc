@@ -1,0 +1,30 @@
+{
+   "name": "local-state-project",
+   "environments": {
+      "dev": {
+         "name": "dev",
+         "deployments": {
+            "quickstart/hello-escape": {
+               "name": "quickstart/hello-escape",
+               "release": "quickstart/hello-escape",
+               "stages": {
+                  "build": {
+                     "version": "0.0.0",
+                     "status": {
+                        "status": "empty",
+                        "updated_at": "2020-05-15T21:33:08.0637172+09:00"
+                     }
+                  },
+                  "deploy": {
+                     "version": "0.0.0",
+                     "status": {
+                        "status": "empty",
+                        "updated_at": "2020-05-15T21:33:08.1032783+09:00"
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
