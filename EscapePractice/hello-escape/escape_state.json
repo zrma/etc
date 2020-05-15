@@ -9,17 +9,17 @@
                "release": "quickstart/hello-escape",
                "stages": {
                   "build": {
-                     "version": "0.0.0",
+                     "version": "0.0.1",
                      "status": {
-                        "status": "empty",
-                        "updated_at": "2020-05-15T21:33:08.0637172+09:00"
+                        "status": "ok",
+                        "updated_at": "2020-05-15T22:02:10.0894101+09:00"
                      }
                   },
                   "deploy": {
-                     "version": "0.0.0",
+                     "version": "0.0.1",
                      "status": {
-                        "status": "empty",
-                        "updated_at": "2020-05-15T21:33:08.1032783+09:00"
+                        "status": "ok",
+                        "updated_at": "2020-05-15T21:45:31.5528631+09:00"
                      }
                   }
                }
