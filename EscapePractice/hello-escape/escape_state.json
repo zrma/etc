@@ -56,12 +56,15 @@
                "stages": {
                   "deploy": {
                      "inputs": {
-                        "who": "Escape"
+                        "who": "World"
+                     },
+                     "calculated_inputs": {
+                        "who": "World"
                      },
                      "version": "0.0.2",
                      "status": {
                         "status": "ok",
-                        "updated_at": "2020-05-16T11:46:20.794614+09:00"
+                        "updated_at": "2020-05-16T11:48:19.3329913+09:00"
                      }
                   }
                }
