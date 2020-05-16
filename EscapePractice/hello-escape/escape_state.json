@@ -35,6 +35,9 @@
                      "inputs": {
                         "who": "Escape"
                      },
+                     "calculated_inputs": {
+                        "who": "Escape"
+                     },
                      "deployments": {
                         "quickstart/hello-escape": {
                            "name": "quickstart/hello-escape",
@@ -42,16 +45,16 @@
                            "stages": {
                               "deploy": {
                                  "inputs": {
-                                    "who": "Everyone I know"
+                                    "who": "Escape"
                                  },
                                  "calculated_inputs": {
                                     "PREVIOUS_who": "Everyone I know",
-                                    "who": "Everyone I know"
+                                    "who": "Escape"
                                  },
                                  "version": "0.0.2",
                                  "status": {
                                     "status": "ok",
-                                    "updated_at": "2020-05-16T12:08:54.2660419+09:00"
+                                    "updated_at": "2020-05-16T12:13:12.4018885+09:00"
                                  }
                               }
                            }
@@ -60,7 +63,7 @@
                      "version": "0.0.0",
                      "status": {
                         "status": "ok",
-                        "updated_at": "2020-05-16T12:08:54.2823081+09:00"
+                        "updated_at": "2020-05-16T12:13:12.4247545+09:00"
                      }
                   },
                   "deploy": {
