@@ -32,6 +32,9 @@
                "release": "quickstart/introduction",
                "stages": {
                   "build": {
+                     "inputs": {
+                        "who": "You"
+                     },
                      "deployments": {
                         "quickstart/hello-escape": {
                            "name": "quickstart/hello-escape",
@@ -39,12 +42,13 @@
                            "stages": {
                               "deploy": {
                                  "calculated_inputs": {
-                                    "who": "World"
+                                    "PREVIOUS_who": "World",
+                                    "who": "You"
                                  },
                                  "version": "0.0.2",
                                  "status": {
                                     "status": "ok",
-                                    "updated_at": "2020-05-16T12:04:58.1330859+09:00"
+                                    "updated_at": "2020-05-16T12:05:48.0704311+09:00"
                                  }
                               }
                            }
@@ -53,7 +57,7 @@
                      "version": "0.0.0",
                      "status": {
                         "status": "ok",
-                        "updated_at": "2020-05-16T12:04:58.1541402+09:00"
+                        "updated_at": "2020-05-16T12:05:48.086481+09:00"
                      }
                   },
                   "deploy": {
