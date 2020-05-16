@@ -2,4 +2,4 @@
 
 set -euf
 
-echo "Hello Escape!"
+echo "Hello ${INPUT_who}!"
