@@ -41,14 +41,17 @@
                            "release": "quickstart/hello-escape",
                            "stages": {
                               "deploy": {
+                                 "inputs": {
+                                    "who": "Everyone I know"
+                                 },
                                  "calculated_inputs": {
-                                    "PREVIOUS_who": "World",
-                                    "who": "You"
+                                    "PREVIOUS_who": "You",
+                                    "who": "Everyone I know"
                                  },
                                  "version": "0.0.2",
                                  "status": {
                                     "status": "ok",
-                                    "updated_at": "2020-05-16T12:05:48.0704311+09:00"
+                                    "updated_at": "2020-05-16T12:08:20.8975049+09:00"
                                  }
                               }
                            }
@@ -57,7 +60,7 @@
                      "version": "0.0.0",
                      "status": {
                         "status": "ok",
-                        "updated_at": "2020-05-16T12:05:48.086481+09:00"
+                        "updated_at": "2020-05-16T12:08:20.9135583+09:00"
                      }
                   },
                   "deploy": {
