@@ -12,24 +12,17 @@
                      "inputs": {
                         "who": "You"
                      },
-                     "calculated_inputs": {
-                        "PREVIOUS_who": "You",
-                        "who": "You"
-                     },
                      "version": "0.0.2",
                      "status": {
-                        "status": "ok",
-                        "updated_at": "2020-05-16T11:30:20.8459769+09:00"
+                        "status": "empty",
+                        "updated_at": "2020-05-16T11:32:04.5200143+09:00"
                      }
                   },
                   "deploy": {
-                     "calculated_inputs": {
-                        "who": "World"
-                     },
                      "version": "0.0.2",
                      "status": {
-                        "status": "ok",
-                        "updated_at": "2020-05-16T11:31:42.8919903+09:00"
+                        "status": "empty",
+                        "updated_at": "2020-05-16T11:32:04.5923172+09:00"
                      }
                   }
                }
