@@ -4,5 +4,6 @@ description:
 logo: 
 
 depends:
-- quickstart/hello-escape-latest
-
+- release_id: quickstart/hello-escape-latest
+  mapping:
+    who: Everyone I know
