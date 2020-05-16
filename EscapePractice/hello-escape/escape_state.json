@@ -33,10 +33,11 @@
                "stages": {
                   "build": {
                      "inputs": {
-                        "who": "Escape"
+                        "who": "You"
                      },
                      "calculated_inputs": {
-                        "who": "Escape"
+                        "PREVIOUS_who": "Escape",
+                        "who": "You"
                      },
                      "deployments": {
                         "quickstart/hello-escape": {
@@ -45,16 +46,16 @@
                            "stages": {
                               "deploy": {
                                  "inputs": {
-                                    "who": "Escape"
+                                    "who": "You"
                                  },
                                  "calculated_inputs": {
-                                    "PREVIOUS_who": "Everyone I know",
-                                    "who": "Escape"
+                                    "PREVIOUS_who": "Escape",
+                                    "who": "You"
                                  },
                                  "version": "0.0.2",
                                  "status": {
                                     "status": "ok",
-                                    "updated_at": "2020-05-16T12:13:12.4018885+09:00"
+                                    "updated_at": "2020-05-16T12:14:00.8187155+09:00"
                                  }
                               }
                            }
@@ -63,7 +64,7 @@
                      "version": "0.0.0",
                      "status": {
                         "status": "ok",
-                        "updated_at": "2020-05-16T12:13:12.4247545+09:00"
+                        "updated_at": "2020-05-16T12:14:00.8352993+09:00"
                      }
                   },
                   "deploy": {
