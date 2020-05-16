@@ -23,10 +23,13 @@
                      }
                   },
                   "deploy": {
-                     "version": "0.0.1",
+                     "calculated_inputs": {
+                        "who": "World"
+                     },
+                     "version": "0.0.2",
                      "status": {
-                        "status": "empty",
-                        "updated_at": "2020-05-15T22:02:36.564445+09:00"
+                        "status": "ok",
+                        "updated_at": "2020-05-16T11:31:42.8919903+09:00"
                      }
                   }
                }
