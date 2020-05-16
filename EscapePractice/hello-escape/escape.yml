@@ -8,3 +8,9 @@ includes:
 
 build: hello_escape.sh
 deploy: hello_escape.sh
+
+inputs:
+- id: who
+  default: World
+  type: string
+  description: Who should we be greeting?
