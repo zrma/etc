@@ -6,4 +6,8 @@ logo:
 depends:
 - release_id: quickstart/hello-escape-latest
   mapping:
-    who: Everyone I know
+    who: $this.inputs.who
+
+inputs:
+- id: who
+  default: Everyone
