@@ -26,6 +26,43 @@
                      }
                   }
                }
+            },
+            "quickstart/introduction": {
+               "name": "quickstart/introduction",
+               "release": "quickstart/introduction",
+               "stages": {
+                  "build": {
+                     "deployments": {
+                        "quickstart/hello-escape": {
+                           "name": "quickstart/hello-escape",
+                           "release": "quickstart/hello-escape",
+                           "stages": {
+                              "deploy": {
+                                 "calculated_inputs": {
+                                    "who": "World"
+                                 },
+                                 "version": "0.0.2",
+                                 "status": {
+                                    "status": "ok",
+                                    "updated_at": "2020-05-16T12:04:58.1330859+09:00"
+                                 }
+                              }
+                           }
+                        }
+                     },
+                     "version": "0.0.0",
+                     "status": {
+                        "status": "ok",
+                        "updated_at": "2020-05-16T12:04:58.1541402+09:00"
+                     }
+                  },
+                  "deploy": {
+                     "status": {
+                        "status": "empty",
+                        "updated_at": "2020-05-16T12:04:58.1014633+09:00"
+                     }
+                  }
+               }
             }
          }
       },
