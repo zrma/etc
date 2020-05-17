@@ -1,0 +1,8 @@
+name: quickstart/my-provider
+version: 0.0.@
+provides:
+- introduction
+
+outputs:
+- id: credentials
+  default: "My platform specific configuration output"

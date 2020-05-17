@@ -1,0 +1,8 @@
+name: quickstart/my-consumer
+version: 0.0.@
+consumes:
+- introduction
+
+inputs:
+- id: credentials
+  default: $introduction.outputs.credentials
