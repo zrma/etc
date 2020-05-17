@@ -74,6 +74,32 @@
                      }
                   }
                }
+            },
+            "quickstart/my-provider": {
+               "name": "quickstart/my-provider",
+               "release": "quickstart/my-provider",
+               "stages": {
+                  "build": {
+                     "provides": [
+                        "introduction"
+                     ],
+                     "version": "0.0.0",
+                     "status": {
+                        "status": "empty",
+                        "updated_at": "2020-05-17T18:02:03.9359831+09:00"
+                     }
+                  },
+                  "deploy": {
+                     "provides": [
+                        "introduction"
+                     ],
+                     "version": "0.0.0",
+                     "status": {
+                        "status": "empty",
+                        "updated_at": "2020-05-17T18:02:03.9771407+09:00"
+                     }
+                  }
+               }
             }
          }
       },
