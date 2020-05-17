@@ -1,13 +1,11 @@
 name: quickstart/introduction
 version: 0.0.@
-description: 
-logo: 
+description:
+logo:
 
 depends:
-- release_id: quickstart/hello-escape-latest
-  mapping:
-    who: $this.inputs.who
+- quickstart/hello-world-latest as hello
 
 inputs:
 - id: who
-  default: Everyone
+  default: $hello.outputs.who

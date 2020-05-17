@@ -1,7 +1,7 @@
 name: quickstart/hello-escape
 version: 0.0.@
-description: 
-logo: 
+description:
+logo:
 
 includes:
 - README.md
