@@ -13,6 +13,10 @@
                         "who": "You"
                      },
                      "calculated_inputs": {
+                        "PREVIOUS_OUTPUT_literal": "Some static configuration value",
+                        "PREVIOUS_OUTPUT_script_output": "We had a great time running this script. Thanks.",
+                        "PREVIOUS_OUTPUT_who": "You",
+                        "PREVIOUS_who": "You",
                         "who": "You"
                      },
                      "calculated_outputs": {
@@ -23,7 +27,7 @@
                      "version": "0.0.4",
                      "status": {
                         "status": "ok",
-                        "updated_at": "2020-05-17T13:24:43.3630328+09:00"
+                        "updated_at": "2020-05-17T13:27:12.8826125+09:00"
                      }
                   },
                   "deploy": {
