@@ -12,10 +12,18 @@
                      "inputs": {
                         "who": "You"
                      },
-                     "version": "0.0.4",
+                     "calculated_inputs": {
+                        "who": "You"
+                     },
+                     "calculated_outputs": {
+                        "literal": "Some static configuration value",
+                        "script_output": "We had a great time running this script. Thanks.",
+                        "who": "You"
+                     },
+                     "version": "0.0.5",
                      "status": {
-                        "status": "empty",
-                        "updated_at": "2020-05-17T13:27:43.0703646+09:00"
+                        "status": "ok",
+                        "updated_at": "2020-05-17T13:30:03.1496866+09:00"
                      }
                   },
                   "deploy": {
