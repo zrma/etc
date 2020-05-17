@@ -6,6 +6,7 @@ logo:
 depends:
   - quickstart/hello-escpae-latest as hello
 
-outputs:
-  - id: who
-    default: $hello.outputs.who
+inputs:
+  - id: literal
+    default: $hello.outputs.literal
+    eval_before_dependencies: false
