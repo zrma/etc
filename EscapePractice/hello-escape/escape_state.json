@@ -13,13 +13,18 @@
                         "who": "You"
                      },
                      "calculated_inputs": {
+                        "PREVIOUS_who": "You",
+                        "who": "You"
+                     },
+                     "calculated_outputs": {
+                        "literal": "Some static configuration value",
+                        "script_output": "We had a great time running this script. Thanks.",
                         "who": "You"
                      },
                      "version": "0.0.3",
                      "status": {
-                        "status": "failure",
-                        "updated_at": "2020-05-17T13:17:06.0473443+09:00",
-                        "data": "Missing value for variable 'script_output'"
+                        "status": "ok",
+                        "updated_at": "2020-05-17T13:20:13.9923239+09:00"
                      }
                   },
                   "deploy": {
