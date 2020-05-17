@@ -12,17 +12,17 @@
                      "inputs": {
                         "who": "You"
                      },
-                     "version": "0.0.5",
+                     "version": "0.0.6",
                      "status": {
                         "status": "empty",
-                        "updated_at": "2020-05-17T13:30:18.5976886+09:00"
+                        "updated_at": "2020-05-17T18:05:17.1651665+09:00"
                      }
                   },
                   "deploy": {
-                     "version": "0.0.5",
+                     "version": "0.0.6",
                      "status": {
                         "status": "empty",
-                        "updated_at": "2020-05-17T13:30:18.6678133+09:00"
+                        "updated_at": "2020-05-17T18:05:17.2394625+09:00"
                      }
                   }
                }
