@@ -4,8 +4,8 @@ description:
 logo:
 
 depends:
-- quickstart/hello-world-latest as hello
+  - quickstart/hello-escpae-latest as hello
 
-inputs:
-- id: who
-  default: $hello.outputs.who
+outputs:
+  - id: who
+    default: $hello.outputs.who
