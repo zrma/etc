@@ -75,6 +75,28 @@
                   }
                }
             },
+            "quickstart/my-consumer": {
+               "name": "quickstart/my-consumer",
+               "release": "quickstart/my-consumer",
+               "stages": {
+                  "build": {
+                     "providers": {
+                        "introduction": "quickstart/my-provider"
+                     },
+                     "status": {
+                        "status": "failure",
+                        "updated_at": "2020-05-17T18:02:35.6414733+09:00",
+                        "data": "Couldn't run expression in default field of variable 'credentials': Failed to evaluate '$introduction.outputs.credentials': Field 'credentials' was not found (target collection was empty) in '$introduction.outputs.credentials'"
+                     }
+                  },
+                  "deploy": {
+                     "status": {
+                        "status": "empty",
+                        "updated_at": "2020-05-17T18:02:35.6338101+09:00"
+                     }
+                  }
+               }
+            },
             "quickstart/my-provider": {
                "name": "quickstart/my-provider",
                "release": "quickstart/my-provider",
