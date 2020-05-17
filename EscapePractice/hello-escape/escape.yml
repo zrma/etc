@@ -14,3 +14,13 @@ inputs:
   default: World
   type: string
   description: Who should we be greeting?
+
+outputs:
+- id: literal
+  default: "Some static configuration value"
+  description: Defining outputs as literals
+- id: who
+  default: $this.inputs.who
+  description: Defining outputs using the Escape scripting language.
+- id: script_output
+  description: This variable should be set in the hello_escape.sh script.
