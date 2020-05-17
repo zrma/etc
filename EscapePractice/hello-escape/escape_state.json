@@ -112,13 +112,16 @@
                      }
                   },
                   "deploy": {
+                     "calculated_outputs": {
+                        "credentials": "My platform specific configuration output"
+                     },
                      "provides": [
                         "introduction"
                      ],
                      "version": "0.0.0",
                      "status": {
-                        "status": "empty",
-                        "updated_at": "2020-05-17T18:02:03.9771407+09:00"
+                        "status": "ok",
+                        "updated_at": "2020-05-17T18:03:26.7398533+09:00"
                      }
                   }
                }
