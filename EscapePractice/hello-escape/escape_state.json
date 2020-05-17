@@ -12,26 +12,17 @@
                      "inputs": {
                         "who": "You"
                      },
-                     "calculated_inputs": {
-                        "PREVIOUS_who": "You",
-                        "who": "You"
-                     },
-                     "calculated_outputs": {
-                        "literal": "Some static configuration value",
-                        "script_output": "We had a great time running this script. Thanks.",
-                        "who": "You"
-                     },
                      "version": "0.0.3",
                      "status": {
-                        "status": "ok",
-                        "updated_at": "2020-05-17T13:20:13.9923239+09:00"
+                        "status": "empty",
+                        "updated_at": "2020-05-17T13:21:36.0980992+09:00"
                      }
                   },
                   "deploy": {
-                     "version": "0.0.2",
+                     "version": "0.0.3",
                      "status": {
                         "status": "empty",
-                        "updated_at": "2020-05-16T11:32:04.5923172+09:00"
+                        "updated_at": "2020-05-17T13:21:36.1681417+09:00"
                      }
                   }
                }
