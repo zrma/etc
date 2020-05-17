@@ -12,10 +12,14 @@
                      "inputs": {
                         "who": "You"
                      },
-                     "version": "0.0.2",
+                     "calculated_inputs": {
+                        "who": "You"
+                     },
+                     "version": "0.0.3",
                      "status": {
-                        "status": "empty",
-                        "updated_at": "2020-05-16T11:32:04.5200143+09:00"
+                        "status": "failure",
+                        "updated_at": "2020-05-17T13:17:06.0473443+09:00",
+                        "data": "Missing value for variable 'script_output'"
                      }
                   },
                   "deploy": {
