@@ -14,28 +14,17 @@
                         "password": "1234",
                         "username": "root"
                      },
-                     "calculated_inputs": {
-                        "PREVIOUS_OUTPUT_database_url": "${INPUT_username}:${INPUT_password}@${INPUT_host}",
-                        "PREVIOUS_host": "localhsot",
-                        "PREVIOUS_password": "1234",
-                        "PREVIOUS_username": "root",
-                        "host": "localhsot",
-                        "password": "1234",
-                        "username": "root"
-                     },
-                     "calculated_outputs": {
-                        "database_url": "${INPUT_username}:${INPUT_password}@${INPUT_host}"
-                     },
                      "version": "0.0.0",
                      "status": {
-                        "status": "ok",
-                        "updated_at": "2020-05-26T21:37:57.6474808+09:00"
+                        "status": "empty",
+                        "updated_at": "2020-05-26T21:43:51.3785557+09:00"
                      }
                   },
                   "deploy": {
                      "status": {
-                        "status": "empty",
-                        "updated_at": "2020-05-26T21:25:01.2468907+09:00"
+                        "status": "failure",
+                        "updated_at": "2020-05-26T21:43:51.3845973+09:00",
+                        "data": "Missing value for variable 'host'"
                      }
                   }
                }
