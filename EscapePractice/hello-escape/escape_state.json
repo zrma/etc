@@ -14,10 +14,18 @@
                         "password": "1234",
                         "username": "root"
                      },
-                     "version": "0.0.0",
+                     "calculated_inputs": {
+                        "host": "localhsot",
+                        "password": "1234",
+                        "username": "root"
+                     },
+                     "calculated_outputs": {
+                        "database_url": "${INPUT_username}:${INPUT_password}@${INPUT_host}"
+                     },
+                     "version": "0.0.1",
                      "status": {
-                        "status": "empty",
-                        "updated_at": "2020-05-26T21:44:44.1533554+09:00"
+                        "status": "ok",
+                        "updated_at": "2020-05-26T21:55:29.6801767+09:00"
                      }
                   },
                   "deploy": {
@@ -164,6 +172,19 @@
       "live": {
          "name": "live",
          "deployments": {
+            "_/my-database": {
+               "name": "_/my-database",
+               "release": "_/my-database",
+               "stages": {
+                  "deploy": {
+                     "status": {
+                        "status": "failure",
+                        "updated_at": "2020-05-26T21:54:59.6958809+09:00",
+                        "data": "Missing value for variable 'host'"
+                     }
+                  }
+               }
+            },
             "quickstart/hello-escape": {
                "name": "quickstart/hello-escape",
                "release": "quickstart/hello-escape",
@@ -193,6 +214,10 @@
                         "username": "root"
                      },
                      "calculated_inputs": {
+                        "PREVIOUS_OUTPUT_database_url": "${INPUT_username}:${INPUT_password}@${INPUT_host}",
+                        "PREVIOUS_host": "localhsot",
+                        "PREVIOUS_password": "1234",
+                        "PREVIOUS_username": "root",
                         "host": "localhsot",
                         "password": "1234",
                         "username": "root"
@@ -203,7 +228,7 @@
                      "version": "0.0.0",
                      "status": {
                         "status": "ok",
-                        "updated_at": "2020-05-26T21:45:50.6022131+09:00"
+                        "updated_at": "2020-05-26T21:51:59.6069004+09:00"
                      }
                   }
                }
