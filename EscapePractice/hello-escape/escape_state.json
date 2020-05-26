@@ -208,6 +208,32 @@
             }
          }
       },
+      "local": {
+         "name": "local",
+         "deployments": {
+            "_/my-database": {
+               "name": "_/my-database",
+               "release": "_/my-database",
+               "stages": {
+                  "deploy": {
+                     "calculated_inputs": {
+                        "host": "localhost",
+                        "password": "1234",
+                        "username": "root"
+                     },
+                     "calculated_outputs": {
+                        "database_url": "${INPUT_username}:${INPUT_password}@${INPUT_host}"
+                     },
+                     "version": "0.0.2",
+                     "status": {
+                        "status": "ok",
+                        "updated_at": "2020-05-26T22:06:40.6148488+09:00"
+                     }
+                  }
+               }
+            }
+         }
+      },
       "stage": {
          "name": "stage",
          "deployments": {
