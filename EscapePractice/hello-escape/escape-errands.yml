@@ -5,9 +5,12 @@ build: deploy_database.sh
 deploy: deploy_database.sh
 
 inputs:
-- host
-- username
-- password
+- id: host
+  default: localhost
+- id: username
+  default: root
+- id: password
+  default: 1234
 
 outputs:
 - id: database_url
