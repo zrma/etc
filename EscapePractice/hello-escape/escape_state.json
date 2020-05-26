@@ -169,10 +169,18 @@
                "release": "_/my-database",
                "stages": {
                   "deploy": {
+                     "calculated_inputs": {
+                        "host": "localhost",
+                        "password": "1234",
+                        "username": "root"
+                     },
+                     "calculated_outputs": {
+                        "database_url": "${INPUT_username}:${INPUT_password}@${INPUT_host}"
+                     },
+                     "version": "0.0.1",
                      "status": {
-                        "status": "failure",
-                        "updated_at": "2020-05-26T21:54:59.6958809+09:00",
-                        "data": "Missing value for variable 'host'"
+                        "status": "ok",
+                        "updated_at": "2020-05-26T21:58:35.4577399+09:00"
                      }
                   }
                }
