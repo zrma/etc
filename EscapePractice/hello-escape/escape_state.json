@@ -4,6 +4,25 @@
       "dev": {
          "name": "dev",
          "deployments": {
+            "_/my-database": {
+               "name": "_/my-database",
+               "release": "_/my-database",
+               "stages": {
+                  "build": {
+                     "status": {
+                        "status": "failure",
+                        "updated_at": "2020-05-26T21:25:30.7710494+09:00",
+                        "data": "Missing value for variable 'host'"
+                     }
+                  },
+                  "deploy": {
+                     "status": {
+                        "status": "empty",
+                        "updated_at": "2020-05-26T21:25:01.2468907+09:00"
+                     }
+                  }
+               }
+            },
             "quickstart/hello-escape": {
                "name": "quickstart/hello-escape",
                "release": "quickstart/hello-escape",
