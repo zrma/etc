@@ -14,18 +14,10 @@
                         "password": "1234",
                         "username": "root"
                      },
-                     "calculated_inputs": {
-                        "host": "localhsot",
-                        "password": "1234",
-                        "username": "root"
-                     },
-                     "calculated_outputs": {
-                        "database_url": "${INPUT_username}:${INPUT_password}@${INPUT_host}"
-                     },
                      "version": "0.0.1",
                      "status": {
-                        "status": "ok",
-                        "updated_at": "2020-05-26T21:55:29.6801767+09:00"
+                        "status": "empty",
+                        "updated_at": "2020-05-26T21:56:26.8210564+09:00"
                      }
                   },
                   "deploy": {
@@ -34,10 +26,10 @@
                         "password": "1234",
                         "username": "root"
                      },
-                     "version": "0.0.0",
+                     "version": "0.0.1",
                      "status": {
                         "status": "empty",
-                        "updated_at": "2020-05-26T21:44:44.2554742+09:00"
+                        "updated_at": "2020-05-26T21:56:26.8972558+09:00"
                      }
                   }
                }
