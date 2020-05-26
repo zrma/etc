@@ -182,6 +182,32 @@
       "stage": {
          "name": "stage",
          "deployments": {
+            "_/my-database": {
+               "name": "_/my-database",
+               "release": "_/my-database",
+               "stages": {
+                  "deploy": {
+                     "inputs": {
+                        "host": "localhsot",
+                        "password": "1234",
+                        "username": "root"
+                     },
+                     "calculated_inputs": {
+                        "host": "localhsot",
+                        "password": "1234",
+                        "username": "root"
+                     },
+                     "calculated_outputs": {
+                        "database_url": "${INPUT_username}:${INPUT_password}@${INPUT_host}"
+                     },
+                     "version": "0.0.0",
+                     "status": {
+                        "status": "ok",
+                        "updated_at": "2020-05-26T21:45:50.6022131+09:00"
+                     }
+                  }
+               }
+            },
             "quickstart/hello-escape": {
                "name": "quickstart/hello-escape",
                "release": "quickstart/hello-escape",
