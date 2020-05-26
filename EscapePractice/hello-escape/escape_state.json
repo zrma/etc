@@ -6,7 +6,7 @@
          "deployments": {
             "_/my-database": {
                "name": "_/my-database",
-               "release": "_/my-database",
+               "release": "quickstart/hello-escape",
                "stages": {
                   "build": {
                      "inputs": {
@@ -26,10 +26,18 @@
                         "password": "1234",
                         "username": "root"
                      },
-                     "version": "0.0.2",
+                     "calculated_inputs": {
+                        "who": "World"
+                     },
+                     "calculated_outputs": {
+                        "literal": "Some static configuration value",
+                        "script_output": "We had a great time running this script. Thanks.",
+                        "who": "World"
+                     },
+                     "version": "0.0.0",
                      "status": {
-                        "status": "empty",
-                        "updated_at": "2020-05-26T22:03:27.2508064+09:00"
+                        "status": "ok",
+                        "updated_at": "2020-05-26T22:05:27.8554919+09:00"
                      }
                   }
                }
