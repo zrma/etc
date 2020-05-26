@@ -217,10 +217,10 @@
                      "calculated_outputs": {
                         "database_url": "${INPUT_username}:${INPUT_password}@${INPUT_host}"
                      },
-                     "version": "0.0.0",
+                     "version": "0.0.1",
                      "status": {
                         "status": "ok",
-                        "updated_at": "2020-05-26T21:51:59.6069004+09:00"
+                        "updated_at": "2020-05-26T21:58:14.019999+09:00"
                      }
                   }
                }
