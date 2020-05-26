@@ -17,3 +17,7 @@ errands:
   backup:
     description: Backup the database.
     script: backup.sh
+    inputs:
+    - id: destination_bucket
+      default: "s3://little-backup-bucket"
+
