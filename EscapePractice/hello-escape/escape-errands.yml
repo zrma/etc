@@ -1,0 +1,19 @@
+name: my-database
+version: 0.0.@
+
+build: deploy_database.sh
+deploy: deploy_database.sh
+
+inputs:
+- host
+- username
+- password
+
+outputs:
+- id: database_url
+  description: This variable should be set in the backup.sh script.
+
+errands:
+  backup:
+    description: Backup the database.
+    script: backup.sh
