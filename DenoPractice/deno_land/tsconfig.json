@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true,
+    "plugins": [
+      {
+        "name": "typescript-deno-plugin",
+        "enable": true,
+        "importmap": "import_map.json"
+      }
+    ]
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
