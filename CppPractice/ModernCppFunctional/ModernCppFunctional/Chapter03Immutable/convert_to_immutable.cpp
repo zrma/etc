@@ -14,8 +14,8 @@ void print_immutable_employee(const immutable_employee &me) {
 void convert_to_immutable() {
     print_title("convert_to_immutable");
 
-    const auto first = "Frankie";
-    const auto last = "Gamble";
+    const auto* const first = "Frankie";
+    const auto* const last = "Gamble";
     const auto d = 1500.0;
 
     const auto &me = immutable_employee(0, first, last, d);

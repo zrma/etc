@@ -30,8 +30,8 @@ void print_mutable_employee(mutable_employee &me) {
 void mutable_practice() {
     print_title("mutable");
 
-    const auto first = "Frankie";
-    const auto last = "Gamble";
+    const auto* const first = "Frankie";
+    const auto* const last = "Gamble";
     const auto d = 1500.0;
 
     auto me = mutable_employee(0, first, last, d);
