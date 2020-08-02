@@ -8,6 +8,8 @@ import (
 	"time"
 
 	"github.com/streadway/amqp"
+
+	"PolyGlot/RabbitMQPractice/pkg/mq"
 )
 
 func failOnError(err error, msg string) {
@@ -20,27 +22,33 @@ func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
+	opt := mq.Option{
+		Host:     "localhost",
+		Port:     5672,
+		Id:       "example",
+		Password: "example",
+	}
+	client, err := mq.New(opt)
+	if err != nil {
+		log.Fatalln(err)
+	}
+	defer client.Close()
+
 	var wg sync.WaitGroup
 	wg.Add(2)
 	go func() {
-		send(cancel)
+		send(cancel, client)
 		wg.Done()
 	}()
 	go func() {
-		receive(ctx)
+		receive(ctx, client)
 		wg.Done()
 	}()
 	wg.Wait()
 }
 
-func receive(ctx context.Context) {
-	conn, err := amqp.Dial("amqp://example:example@localhost:5672/")
-	failOnError(err, "Failed to connect to RabbitMQ")
-	defer conn.Close()
-
-	ch, err := conn.Channel()
-	failOnError(err, "Failed to open a channel")
-	defer ch.Close()
+func receive(ctx context.Context, client *mq.Wrapper) {
+	ch := client.Chan
 
 	q, err := ch.QueueDeclare(
 		"hello", // name
@@ -74,14 +82,8 @@ func receive(ctx context.Context) {
 	log.Printf(" [*] Waiting for messages. To exit press CTRL+C")
 }
 
-func send(cancel context.CancelFunc) {
-	conn, err := amqp.Dial("amqp://example:example@localhost:5672/")
-	failOnError(err, "Failed to connect to RabbitMQ")
-	defer conn.Close()
-
-	ch, err := conn.Channel()
-	failOnError(err, "Failed to open a channel")
-	defer ch.Close()
+func send(cancel context.CancelFunc, client *mq.Wrapper) {
+	ch := client.Chan
 
 	q, err := ch.QueueDeclare(
 		"hello", // name
