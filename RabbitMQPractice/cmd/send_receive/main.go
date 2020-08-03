@@ -12,12 +12,6 @@ import (
 	"PolyGlot/RabbitMQPractice/pkg/mq"
 )
 
-func failOnError(err error, msg string) {
-	if err != nil {
-		log.Fatalf("%s: %s", msg, err)
-	}
-}
-
 func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
@@ -79,10 +73,11 @@ func receive(ctx context.Context, client *mq.Wrapper) {
 			log.Printf("Received a message: %s", msg.Body)
 		}
 	}
-	log.Printf(" [*] Waiting for messages. To exit press CTRL+C")
 }
 
 func send(cancel context.CancelFunc, client *mq.Wrapper) {
+	defer cancel()
+
 	ch := client.Chan
 
 	q, err := ch.QueueDeclare(
@@ -109,6 +104,10 @@ func send(cancel context.CancelFunc, client *mq.Wrapper) {
 		failOnError(err, "Failed to publish a message")
 		time.Sleep(500 * time.Millisecond)
 	}
+}
 
-	cancel()
+func failOnError(err error, msg string) {
+	if err != nil {
+		log.Fatalf("%s: %s", msg, err)
+	}
 }
