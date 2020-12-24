@@ -16,6 +16,6 @@ defmodule HelloElixir do
     hello(System.argv())
   end
 
-  def hello, do: IO.puts :world
+  def hello, do: :world
   def hello(name), do: IO.puts "Hello, #{name}"
 end
