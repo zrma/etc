@@ -1,4 +1,4 @@
-apiVersion: networking.k8s.io/v1beta1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: prometheus-ingress-public
@@ -10,10 +10,12 @@ spec:
       http:
         paths:
           - path: /
+            pathType: Prefix
             backend:
-              serviceName: prometheus-server
-              servicePort: 80
-
+              service:
+                name: prometheus-server
+                port:
+                  number: 80
   # This section is only required if TLS is to be enabled for the Ingress
 #  tls:
 #      - hosts:
