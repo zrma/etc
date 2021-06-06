@@ -1,0 +1,13 @@
+apiVersion: skaffold/v2beta16
+kind: Config
+metadata:
+  name: skaffold
+build:
+  artifacts:
+  - image: hello-skaffold
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl:
+    manifests:
+    - pod.yaml
