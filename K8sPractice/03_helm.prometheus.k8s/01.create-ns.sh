@@ -1,2 +1,0 @@
-kubectl create ns monitor
-
