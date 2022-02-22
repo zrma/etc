@@ -17,22 +17,22 @@ public:
 
 	[[nodiscard]] immutable_employee set_id(const int& id) const
 	{
-		return immutable_employee(id, first_name_, last_name_, salary_);
+		return {id, first_name_, last_name_, salary_};
 	}
 
 	[[nodiscard]] immutable_employee set_first_name(const std::string& first_name) const
 	{
-		return immutable_employee(id_, first_name, last_name_, salary_);
+		return {id_, first_name, last_name_, salary_};
 	}
 
 	[[nodiscard]] immutable_employee set_last_name(const std::string& last_name) const
 	{
-		return immutable_employee(id_, first_name_, last_name, salary_);
+		return {id_, first_name_, last_name, salary_};
 	}
 
 	[[nodiscard]] immutable_employee set_salary(const double& salary) const
 	{
-		return immutable_employee(id_, first_name_, last_name_, salary);
+		return {id_, first_name_, last_name_, salary};
 	}
 
 	[[nodiscard]] const auto& id() const { return id_; }

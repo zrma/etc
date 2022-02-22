@@ -18,15 +18,15 @@ void decl_type_practice()
 
 	std::cout << "result of add : " << add(3, 5) << std::endl;
 
-	const auto i = 0;
+	constexpr auto i = 0;
 	auto* const x = new struct_x();
 
 	decltype(func1) f1;
 	decltype(func2) f2;
 	// decl type(i) i1 = i;
-	[[maybe_unused]] const auto i1 = i;
+	[[maybe_unused]] constexpr auto i1 = i;
 
-	const decltype(x->d) d1 = 0;
+	constexpr decltype(x->d) d1 = 0;
 	// decl type((struct_x->d)) d2 = d1;
 	[[maybe_unused]] const auto& d2 = d1;
 
