@@ -3,6 +3,7 @@
 #include "high_order_function.h"
 #include "../Common/util.h"
 #include <boost/range/irange.hpp>
+#include <boost/algorithm/cxx11/all_of.hpp>
 
 using hyperbolic_func = std::function<double(double)>;
 
@@ -104,15 +105,10 @@ auto filter_prime_numbers(std::vector<int> src)
 		{
 			return n != 0;
 		}
-		for (auto i : boost::irange(2, n))
+		return boost::algorithm::all_of(boost::irange(2, n), [n](auto i)
 		{
-			if (n % i == 0)
-			{
-				return false;
-			}
-		}
-
-		return true;
+			return n % i != 0;
+		});
 	});
 
 	return dest;
@@ -127,15 +123,10 @@ auto filter_non_prime_numbers(std::vector<int> src)
 		{
 			return n != 0;
 		}
-		for (auto i : boost::irange(2, n))
+		return boost::algorithm::all_of(boost::irange(2, n), [n](auto i)
 		{
-			if (n % i == 0)
-			{
-				return false;
-			}
-		}
-
-		return true;
+			return n % i != 0;
+		});
 	});
 
 	return dest;
@@ -145,7 +136,7 @@ void filter()
 {
 	print_title("high_order_function_filter");
 
-	std::vector<int> vec{20};
+	std::vector<int> vec(20);
 	std::iota(vec.begin(), vec.end(), 0);
 
 	const auto prime_numbers = filter_prime_numbers(vec);
@@ -166,7 +157,7 @@ void reduce()
 	std::array<int, 5> arr{};
 	std::iota(arr.begin(), arr.end(), 0);
 
-	const auto reduce_op = [](auto lhs, auto rhs)
+	constexpr auto reduce_op = [](auto lhs, auto rhs)
 	{
 		std::cout << "lhs(" << lhs << ") + ";
 		std::cout << "rhs(" << rhs << ") = ";

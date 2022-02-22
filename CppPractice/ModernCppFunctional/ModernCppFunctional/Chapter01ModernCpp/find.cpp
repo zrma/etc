@@ -30,7 +30,7 @@ void find_practice()
 		std::cout << it.get_type() << " : " << it.get_num_of_wheel() << std::endl;
 	}
 
-	const auto is_two_wheel = [](const auto& vehicle)
+	constexpr auto is_two_wheel = [](const auto& vehicle)
 	{
 		return vehicle.has_two_wheel();
 	};

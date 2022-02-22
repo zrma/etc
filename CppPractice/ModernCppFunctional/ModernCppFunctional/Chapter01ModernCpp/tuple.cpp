@@ -7,8 +7,8 @@ void tuples()
 {
 	print_title("tuples");
 
-	const auto t1 = std::tuple(1, "Robert", true);
-	const auto t2 = std::make_tuple(2, "Anna", false);
+	constexpr auto t1 = std::tuple(1, "Robert", true);
+	constexpr auto t2 = std::make_tuple(2, "Anna", false);
 
 	std::cout << "t1 elements : ";
 	std::cout << std::get<0>(t1) << " ";
@@ -28,7 +28,7 @@ void tie()
 	print_title("tuple_tie");
 
 	const std::tuple<int, std::string, bool> t1(1, "Robert", true);
-	const auto t2 = std::make_tuple(2, "Anna", false);
+	constexpr auto t2 = std::make_tuple(2, "Anna", false);
 
 	auto i = 0;
 	std::string s;
@@ -78,7 +78,7 @@ void tuple_value_return()
 {
 	print_title("tuple_value_return");
 
-	auto people = get_data(1);
+	const auto people = get_data(1);
 	std::cout << "name = " << std::get<1>(people) << std::endl;
 
 	std::string name;
