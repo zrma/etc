@@ -23,9 +23,9 @@ auto outer_formula_non_strict(
 void non_strict()
 {
 	print_title("non-strict");
-	const auto x = 4;
-	const auto y = 3;
-	const auto z = 2;
+	constexpr auto x = 4;
+	constexpr auto y = 3;
+	constexpr auto z = 2;
 
 	std::cout << "calculate " << x << " + ";
 	std::cout << "(" << y << " * " << z << ")";

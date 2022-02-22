@@ -6,8 +6,8 @@
 #include "labyrinth_practice.h"
 #include "../Common/util.h"
 
-const int rows = 8;
-const int cols = 8;
+constexpr int rows = 8;
+constexpr int cols = 8;
 
 using labyrinth = std::vector<std::vector<char>>;
 
@@ -49,7 +49,7 @@ auto navigate(labyrinth labyrinth, const int row, const int col)
 
 	std::cout << "Checking cell (" << col << ", " << row << ")" << std::endl;
 
-	const std::chrono::milliseconds duration(10);
+	constexpr std::chrono::milliseconds duration(10);
 	std::this_thread::sleep_for(duration);
 
 	auto& cur = labyrinth.at(row).at(col);
