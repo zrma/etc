@@ -33,7 +33,7 @@ void passing_func(const func_type& fn, const int x, const int y)
 void first_class()
 {
 	print_title("fist_class");
-	std::array<func_type, 4> functions = {addition, subtraction, multiplication, division};
+	const std::array<func_type, 4> functions = {addition, subtraction, multiplication, division};
 
 	while (true)
 	{

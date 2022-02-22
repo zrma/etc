@@ -40,7 +40,7 @@ void mutable_practice()
 
 	const auto* const first = "Frankie";
 	const auto* const last = "Gamble";
-	const auto d = 1500.0;
+	constexpr auto d = 1500.0;
 
 	auto me = mutable_employee(0, first, last, d);
 	print_mutable_employee(me);

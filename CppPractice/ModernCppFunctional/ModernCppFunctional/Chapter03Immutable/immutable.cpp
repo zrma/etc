@@ -85,8 +85,8 @@ void first_class_pure_immutable_practice()
 {
 	print_title("first_class_pure_immutable");
 
-	const auto a = 100;
-	const auto b = 10;
+	constexpr auto a = 100;
+	constexpr auto b = 10;
 
 	std::cout << "Initial value" << std::endl;
 	std::cout << "a = " << a << std::endl;

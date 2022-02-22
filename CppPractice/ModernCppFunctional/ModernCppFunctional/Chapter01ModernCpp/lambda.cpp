@@ -158,13 +158,13 @@ void lambda_expression_generic()
 {
 	print_title("lambda_expression_generic");
 
-	const auto find_max = [](auto& x, auto& y)
+	constexpr auto find_max = [](auto& x, auto& y)
 	{
 		return std::max(x, y);
 	};
 
-	const auto i1 = 5, i2 = 3;
-	const auto f1 = 2.5f, f2 = 2.05f;
+	constexpr auto i1 = 5, i2 = 3;
+	constexpr auto f1 = 2.5f, f2 = 2.05f;
 	std::cout << find_max(i1, i2) << std::endl;
 	std::cout << find_max(f1, f2) << std::endl;
 }
