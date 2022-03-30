@@ -1,3 +1,3 @@
-# PolyGlot
+# Et cetera
 
-PolyGlot Programming Practice
+잡동사니 연습장
