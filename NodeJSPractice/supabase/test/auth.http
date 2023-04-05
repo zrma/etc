@@ -1,0 +1,17 @@
+POST http://localhost:8888/signup
+Content-Type: application/json
+
+{
+  "email": "abc@de.com",
+  "password": "pa$$w0rd"
+}
+
+###
+
+POST http://localhost:8888/login
+Content-Type: application/json
+
+{
+  "email": "abc@de.com",
+  "password": "pa$$w0rd"
+}
