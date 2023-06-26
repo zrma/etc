@@ -4,10 +4,16 @@ import e, { $infer } from "@/../dbschema/edgeql-js";
 
 export const client = createClient();
 
-const selectPosts = e.select(e.BlogPost, () => ({
+const selectPosts = e.select(e.BlogPost, (post) => ({
   id: true,
   title: true,
   content: true,
+  created_at: true,
+
+  order_by: {
+    expression: post.created_at,
+    direction: e.DESC,
+  },
 }));
 
 export type Posts = $infer<typeof selectPosts>;
