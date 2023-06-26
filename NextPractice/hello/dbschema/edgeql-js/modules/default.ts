@@ -7,6 +7,8 @@ import type * as _std from "./std";
 export type $BlogPostλShape = $.typeutil.flatten<_std.$Object_169a5ce7108a11eeb5af6feb88c88f11λShape & {
   "content": $.PropertyDesc<_std.$str, $.Cardinality.One, false, false, false, true>;
   "title": $.PropertyDesc<_std.$str, $.Cardinality.One, false, false, false, false>;
+  "created_at": $.PropertyDesc<_std.$datetime, $.Cardinality.AtMostOne, false, false, true, true>;
+  "updated_at": $.PropertyDesc<_std.$datetime, $.Cardinality.AtMostOne, false, false, false, false>;
 }>;
 type $BlogPost = $.ObjectType<"default::BlogPost", $BlogPostλShape, null, [
   ..._std.$Object_169a5ce7108a11eeb5af6feb88c88f11['__exclusives__'],
