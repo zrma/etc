@@ -2,19 +2,28 @@ import Head from "next/head";
 import "@/app/globals.css";
 import { GetServerSideProps } from "next";
 import { Posts } from "@/pages/api/post";
+import { useState } from "react";
 
 export default function Home({ posts }: { posts: Posts }) {
-  if (!posts) {
-    return (
-      <div className="flex flex-col items-center justify-center min-h-screen py-2">
-        <Head>
-          <title>Loading...</title>
-          <meta name="description" content="My awesome memo site" />
-          <link rel="icon" href="/src/app/favicon.ico" />
-        </Head>
-      </div>
-    );
-  }
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+
+  const submitPost = async () => {
+    const resp = await fetch("/api/post", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ title, content }),
+    });
+
+    if (resp.ok) {
+      // Refresh the page to show the new post
+      window.location.reload();
+    } else {
+      console.error("Failed to create post");
+    }
+  };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200">
@@ -29,16 +38,25 @@ export default function Home({ posts }: { posts: Posts }) {
           Memo
         </h1>
         <div className="mt-4">
+          <input
+            id="new-title-input"
+            name="new-title-input"
+            placeholder="Write your title..."
+            className="w-full px-3 py-2 mb-1 text-gray-700 border rounded-lg focus:outline-none"
+            onChange={(e) => setTitle(e.target.value)}
+          />
           <textarea
-            id="new-msg-input"
-            name="new-msg-input"
-            placeholder="Write your new post..."
+            id="new-content-input"
+            name="new-content-input"
+            placeholder="Write your content..."
             className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
             rows={4}
+            onChange={(e) => setContent(e.target.value)}
           />
           <button
             type="submit"
-            className="w-full px-4 py-2 mt-2 font-semibold text-white bg-blue-400 rounded hover:bg-blue-300"
+            className="w-full px-4 py-2 font-semibold text-white bg-gray-400 rounded hover:bg-blue-300"
+            onClick={submitPost}
           >
             Post
           </button>
