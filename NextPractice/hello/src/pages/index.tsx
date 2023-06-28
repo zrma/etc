@@ -33,7 +33,7 @@ export default function Home({ posts }: { posts: Posts }) {
         <link rel="icon" href="/src/app/favicon.ico" />
       </Head>
 
-      <main className="w-full max-w-2xl px-4 py-8 mx-auto bg-gray-300 rounded-lg shadow-md h-[720px] overflow-auto">
+      <main className="w-full max-w-2xl px-4 py-8 mx-auto bg-gray-300 rounded-lg shadow-md h-[720px] flex flex-col">
         <h1 className="text-3xl font-semibold text-center text-gray-700">
           Memo
         </h1>
@@ -62,7 +62,7 @@ export default function Home({ posts }: { posts: Posts }) {
           </button>
         </div>
 
-        <div className="mt-6">
+        <div className="mt-6 overflow-auto scrollbar scrollbar-thumb-gray-400 scrollbar-track-gray-200">
           {posts.map((post) => {
             return (
               <a href={`/post/${post.id}`} key={post.id} className="block mt-4">
