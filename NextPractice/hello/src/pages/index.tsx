@@ -55,8 +55,11 @@ export default function Home({ posts }: { posts: Posts }) {
           />
           <button
             type="submit"
-            className="w-full px-4 py-2 font-semibold text-white bg-gray-400 rounded hover:bg-blue-300"
+            className={`w-full px-4 py-2 font-semibold text-white bg-gray-400 rounded ${
+              !title ? "opacity-50 hover:bg-neutral-500" : "hover:bg-blue-300"
+            }`}
             onClick={submitPost}
+            disabled={!title}
           >
             Post
           </button>
