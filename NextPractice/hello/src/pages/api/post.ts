@@ -16,11 +16,25 @@ const selectPosts = e.select(e.BlogPost, (post) => ({
   },
 }));
 
-const insertPost = (title: string, content: string) =>
-  e.insert(e.BlogPost, {
+const insertPost = (title: string, content: string) => {
+  return e.insert(e.BlogPost, {
     title: title,
     content: content,
   });
+};
+
+const deleteOldPosts = () => {
+  const targets = e.select(e.BlogPost, (post) => ({
+    id: true,
+    created_at: true,
+    order_by: {
+      expression: post.created_at,
+      direction: e.DESC,
+    },
+    offset: 6,
+  }));
+  return e.delete(targets);
+};
 
 export type Posts = $infer<typeof selectPosts>;
 
@@ -31,7 +45,11 @@ export default async function handler(
   const actions = {
     POST: async () => {
       const { title, content } = req.body;
-      await insertPost(title, content).run(client);
+
+      await client.transaction(async (tx) => {
+        await insertPost(title, content).run(tx);
+        await deleteOldPosts().run(tx);
+      });
       res.status(200).json({ message: "Post created" });
     },
     GET: async () => {
