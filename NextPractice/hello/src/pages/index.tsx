@@ -3,6 +3,7 @@ import "@/app/globals.css";
 import { GetServerSideProps } from "next";
 import { Posts } from "@/pages/api/post";
 import { useState } from "react";
+import { req } from "@/api/fetch";
 
 export default function Home({ posts }: { posts: Posts }) {
   const [title, setTitle] = useState("");
@@ -33,7 +34,7 @@ export default function Home({ posts }: { posts: Posts }) {
         <link rel="icon" href="/src/app/favicon.ico" />
       </Head>
 
-      <main className="w-full max-w-2xl px-4 py-8 mx-auto bg-gray-300 rounded-lg shadow-md h-[720px] flex flex-col">
+      <main className="w-full max-w-2xl px-4 py-8 mx-auto bg-gray-300 rounded-lg shadow-md h-[610px] flex flex-col">
         <h1 className="text-3xl font-semibold text-center text-gray-700">
           Memo
         </h1>
@@ -70,7 +71,7 @@ export default function Home({ posts }: { posts: Posts }) {
             return (
               <a href={`/post/${post.id}`} key={post.id} className="block mt-4">
                 <div className="text-xl font-semibold text-gray-700">
-                  {post.title}
+                  {trimString(post.title, 50)}
                 </div>
               </a>
             );
@@ -81,8 +82,12 @@ export default function Home({ posts }: { posts: Posts }) {
   );
 }
 
+const trimString = (str: string, length: number) => {
+  return str.length > length ? str.substring(0, length) + "..." : str;
+};
+
 export const getServerSideProps: GetServerSideProps = async () => {
-  const resp = await fetch(`http://localhost:3000/api/post`);
+  const resp = await req(`/api/post`);
   const posts: Posts = await resp.json();
 
   return {
