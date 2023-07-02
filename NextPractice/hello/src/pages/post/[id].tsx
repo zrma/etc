@@ -32,7 +32,7 @@ export type GetPost = InferGetServerSidePropsType<typeof getServerSideProps>;
 const Post: React.FC<GetPost> = (props) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200">
-      <main className="w-full max-w-2xl px-4 py-8 mx-auto bg-gray-300 rounded-lg shadow-md h-[720px] overflow-auto">
+      <main className="w-full max-w-2xl px-4 py-8 mx-auto bg-gray-300 rounded-lg shadow-md h-[610px] overflow-auto">
         <h1 className="text-3xl font-semibold text-center text-gray-700">
           {props.post.title}
         </h1>
