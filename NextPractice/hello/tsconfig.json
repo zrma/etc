@@ -27,7 +27,10 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
+      "@db/*": [
+        "./dbschema/*"
+      ],
     },
     "strictNullChecks": true
   },
@@ -35,6 +38,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
+    "dbschema/**/*.ts",
     ".next/types/**/*.ts"
   ],
   "exclude": [
