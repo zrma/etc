@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { createClient } from "edgedb";
-import e, { $infer } from "@/../dbschema/edgeql-js";
+import e, { $infer } from "@db/edgeql-js";
 
 export const client = createClient();
 
@@ -40,7 +40,7 @@ export type Posts = $infer<typeof selectPosts>;
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse
+  res: NextApiResponse,
 ) {
   const actions = {
     POST: async () => {
@@ -64,6 +64,6 @@ export default async function handler(
   if (action) {
     await action();
   } else {
-    res.status(405).end(); // Method Not Allowed
+    res.status(405).end(); // Method Isn't Allowed
   }
 }
