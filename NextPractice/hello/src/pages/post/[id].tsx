@@ -1,10 +1,10 @@
 import "@/app/globals.css";
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
 import { client } from "@/pages/api/post";
-import e from "@/../dbschema/edgeql-js";
+import e from "@db/edgeql-js";
 
 export const getServerSideProps = async (
-  context?: GetServerSidePropsContext
+  context?: GetServerSidePropsContext,
 ) => {
   const post = await e
     .select(e.BlogPost, (post) => ({
@@ -29,7 +29,7 @@ export const getServerSideProps = async (
 
 export type GetPost = InferGetServerSidePropsType<typeof getServerSideProps>;
 
-const Post: React.FC<GetPost> = (props) => {
+const Post = (props: GetPost) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-200">
       <main className="w-full max-w-2xl px-4 py-8 mx-auto bg-gray-300 rounded-lg shadow-md h-[610px] overflow-auto">
