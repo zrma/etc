@@ -3,8 +3,6 @@
 [![Package Version](https://img.shields.io/hexpm/v/hello_world)](https://hex.pm/packages/hello_world)
 [![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/hello_world/)
 
-A Gleam project
-
 ## Quick start
 
 ```sh
