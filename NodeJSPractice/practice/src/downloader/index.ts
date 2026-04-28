@@ -9,11 +9,6 @@ import * as sleep from 'sleep-promise';
 import csv from 'csvtojson';
 import {File, Movie} from './movie';
 
-import * as Raven from 'raven';
-
-Raven.config(process.env.SENTRY_DSN || '')
-    .install();
-
 const filePath = path.join(__dirname, 'portal.csv');
 const logger = console;
 
