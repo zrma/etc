@@ -8,7 +8,6 @@
     "es6-promise-pool": "^2.5.0",
     "fs-extra": "^11.3.4",
     "lodash": "^4.18.1",
-    "raven": "^2.6.4",
     "sleep-promise": "^9.1.0"
   },
   "devDependencies": {
@@ -16,7 +15,6 @@
     "@types/fs-extra": "^11.0.4",
     "@types/lodash": "^4.17.24",
     "@types/node": "^25.6.0",
-    "@types/raven": "^2.5.7",
     "should": "^13.2.3",
     "supertest": "^7.2.2",
     "tslint": "^6.1.3",

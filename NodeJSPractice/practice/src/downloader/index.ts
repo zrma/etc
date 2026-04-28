@@ -9,11 +9,6 @@ import * as sleep from 'sleep-promise';
 import csv from 'csvtojson';
 import {File, Movie} from './movie';
 
-import * as Raven from 'raven';
-
-Raven.config('https://c6d70268440f40da8d0a3edabaac8f34:4c9871dda7594070af88d9d53d5e13d5@sentry.team504.co.kr//3')
-    .install();
-
 const filePath = path.join(__dirname, 'portal.csv');
 const logger = console;
 
