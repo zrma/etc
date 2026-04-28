@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MaterialApp(
-    title: 'Hello, Flutter',
-    home: SafeArea(child: MyScaffold()),
-  ));
+  runApp(
+    const MaterialApp(
+      title: 'Hello, Flutter',
+      home: SafeArea(child: MyScaffold()),
+    ),
+  );
 }
 
 class MyAppBar extends StatelessWidget {
-  MyAppBar({this.title});
+  const MyAppBar({super.key, required this.title});
 
   final Widget title;
 
@@ -21,14 +23,16 @@ class MyAppBar extends StatelessWidget {
       child: Row(
         children: <Widget>[
           IconButton(
-              icon: Icon(Icons.menu_rounded),
-              tooltip: 'Navigation menu',
-              onPressed: null),
+            icon: Icon(Icons.menu_rounded),
+            tooltip: 'Navigation menu',
+            onPressed: null,
+          ),
           Expanded(child: title),
           IconButton(
-              icon: Icon(Icons.settings_rounded),
-              tooltip: 'Settings',
-              onPressed: null),
+            icon: Icon(Icons.settings_rounded),
+            tooltip: 'Settings',
+            onPressed: null,
+          ),
         ],
       ),
     );
@@ -36,23 +40,29 @@ class MyAppBar extends StatelessWidget {
 }
 
 class MyScaffold extends StatelessWidget {
+  const MyScaffold({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Material(
       child: Column(
         children: <Widget>[
           MyAppBar(
-              title: Text('Header',
-                  style: Theme.of(context).primaryTextTheme.headline6)),
+            title: Text(
+              'Header',
+              style: Theme.of(context).primaryTextTheme.titleLarge,
+            ),
+          ),
           Expanded(
-              child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Center(child: Text('Hello, world!')),
-              Center(child: Text('Hello, android!')),
-              Center(child: Text('Hello, flutter!')),
-            ],
-          )),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Center(child: Text('Hello, world!')),
+                Center(child: Text('Hello, android!')),
+                Center(child: Text('Hello, flutter!')),
+              ],
+            ),
+          ),
         ],
       ),
     );
