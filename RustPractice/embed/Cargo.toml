@@ -2,6 +2,7 @@
 name = "embed"
 version = "0.1.0"
 authors = ["zrma <bulbitain@gmail.com>"]
+edition = "2024"
 
 [dependencies]
 

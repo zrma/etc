@@ -30,11 +30,14 @@ function funcString(foo: string) {
 }
 
 funcFoo(foo);
-funcFoo(Foo.type); // Error
+// @ts-expect-error string으로 widen된 값은 "foo" 리터럴 타입에 넣을 수 없다.
+funcFoo(Foo.type);
 funcFoo(bar);
 funcFoo(Bar.type);
-funcFoo(baz); // Error
-funcFoo(Baz.type); // Error
+// @ts-expect-error let으로 선언된 baz는 string으로 widen된다.
+funcFoo(baz);
+// @ts-expect-error 객체 속성의 string 값은 리터럴 타입으로 보존되지 않는다.
+funcFoo(Baz.type);
 funcFoo(qux);
 funcFoo(Qux.type);
 

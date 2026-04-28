@@ -14,5 +14,7 @@
 			(println (format "%d x %d = %d" x y (* x y))))))
 
 
-(func "World")
-(multiple)
+(defn -main
+	[]
+	(func "World")
+	(multiple))

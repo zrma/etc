@@ -2,7 +2,8 @@
 name = "practice"
 version = "0.1.0"
 authors = ["zrma <bulbitain@gmail.com>"]
+edition = "2024"
 
 [dependencies]
-dlopen = "0.1.0"
+dlopen = "0.1.8"
 const-cstr = "0.3.0"

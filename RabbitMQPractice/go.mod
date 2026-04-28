@@ -1,8 +1,7 @@
 module PolyGlot/RabbitMQPractice
 
-go 1.14
+go 1.23.0
 
-require (
-	github.com/divan/num2words v0.0.0-20170904212200-57dba452f942
-	github.com/streadway/amqp v1.0.0
-)
+require github.com/divan/num2words v1.0.3
+
+require github.com/rabbitmq/amqp091-go v1.11.0

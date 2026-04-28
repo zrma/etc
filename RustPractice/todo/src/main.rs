@@ -1,25 +1,35 @@
-#[macro_use]
-extern crate serde_derive;
-
-#[macro_use]
-extern crate clap;
-
-use clap::App;
-use store::store;
-use store::Description;
+use clap::{Arg, Command};
+use store::{Description, store};
 
 mod store;
 mod task;
 
 fn main() {
-    let yaml = load_yaml!("cli.yml");
-    let matches = App::from_yaml(yaml).get_matches();
+    let matches = Command::new("todo")
+        .version("1.0")
+        .author("zrma <bulbitain@gmail.com>")
+        .about("todo rust programming practice")
+        .subcommand(
+            Command::new("add").about("add task").arg(
+                Arg::new("INPUT")
+                    .help("add <task>")
+                    .num_args(1..)
+                    .required(true),
+            ),
+        )
+        .subcommand(Command::new("list").about("get a list of tasks"))
+        .subcommand(
+            Command::new("done")
+                .about("done task")
+                .arg(Arg::new("INPUT").help("done <task>").required(true)),
+        )
+        .get_matches();
 
     let mut s = store("todo.json");
 
     if let Some(matches) = matches.subcommand_matches("add") {
-        let input = matches.values_of("INPUT").unwrap();
-        let desc = input.map(|s| &*s).collect::<Vec<&str>>().join(" ");
+        let input = matches.get_many::<String>("INPUT").unwrap();
+        let desc = input.map(|s| s.as_str()).collect::<Vec<&str>>().join(" ");
         println!("add task {}", desc);
         s.add(&desc);
     } else if let Some(_matches) = matches.subcommand_matches("list") {
@@ -28,7 +38,11 @@ fn main() {
             println!("{}", t.description());
         }
     } else if let Some(matches) = matches.subcommand_matches("done") {
-        let input = matches.value_of("INPUT").unwrap().parse::<usize>().unwrap();
+        let input = matches
+            .get_one::<String>("INPUT")
+            .unwrap()
+            .parse::<usize>()
+            .unwrap();
         println!("done task {}", input);
         s.done(input)
     }
@@ -49,5 +63,5 @@ fn test_main() {
 
     t.done(0);
     let list = t.list();
-    assert_eq!(list[0].done, true);
+    assert!(list[0].done);
 }

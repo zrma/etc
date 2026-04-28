@@ -7,7 +7,7 @@ use dlopen::symbor::Library;
 fn main() {
     let file_name = if cfg!(windows) {
         "./embed.dll"
-    } else if cfg!(macos) {
+    } else if cfg!(target_os = "macos") {
         "./libembed.dylib"
     } else {
         "./libembed.so"
