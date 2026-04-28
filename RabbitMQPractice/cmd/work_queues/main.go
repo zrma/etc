@@ -11,7 +11,7 @@ import (
 	"time"
 
 	"github.com/divan/num2words"
-	"github.com/streadway/amqp"
+	amqp "github.com/rabbitmq/amqp091-go"
 
 	"PolyGlot/RabbitMQPractice/pkg/mq"
 )

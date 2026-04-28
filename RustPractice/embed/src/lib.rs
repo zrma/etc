@@ -1,14 +1,6 @@
 use std::thread;
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-    }
-}
-
-#[no_mangle]
+#[unsafe(no_mangle)]
 pub extern "C" fn process() {
     let handles: Vec<_> = (0..10)
         .map(|_| {
@@ -27,5 +19,13 @@ pub extern "C" fn process() {
             "Thread finished with count={}",
             h.join().map_err(|_| "Could not join a thread!").unwrap()
         );
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn it_works() {
+        assert_eq!(2 + 2, 4);
     }
 }

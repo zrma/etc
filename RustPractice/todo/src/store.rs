@@ -1,11 +1,8 @@
-extern crate serde;
-extern crate serde_json;
-
 use std::fs::File;
 use std::io::prelude::*;
 
-use task::build_task;
-use task::Task;
+use crate::task::{Task, build_task};
+use serde::{Deserialize, Serialize};
 
 pub trait Description {
     fn description(&self) -> String;
@@ -25,8 +22,8 @@ impl Store {
         self.save();
     }
 
-    pub fn list(&self) -> &Vec<Task> {
-        return &self.tasks;
+    pub fn list(&self) -> &[Task] {
+        &self.tasks
     }
 
     pub fn done(&mut self, idx: usize) {
@@ -39,18 +36,18 @@ impl Store {
     }
 
     fn save(&mut self) {
-        if self.file == "" {
+        if self.file.is_empty() {
             return;
-        } else {
-            let mut file = File::create(self.file.as_str()).unwrap();
-            file.write_all(self.tasks.description().as_bytes()).unwrap();
         }
+
+        let mut file = File::create(self.file.as_str()).unwrap();
+        file.write_all(self.tasks.description().as_bytes()).unwrap();
     }
 }
 
-impl Description for Vec<Task> {
+impl Description for [Task] {
     fn description(&self) -> String {
-        return serde_json::to_string(&self).unwrap();
+        serde_json::to_string(&self).unwrap()
     }
 }
 
@@ -66,8 +63,8 @@ pub fn store(name: &str) -> Store {
         }
     };
 
-    return Store {
+    Store {
         file: name.to_string(),
         tasks: v,
-    };
+    }
 }

@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "Node16",
         "target": "es2016",
-        "moduleResolution": "node",
+        "moduleResolution": "node16",
         "sourceMap": true,
         "inlineSources": true,
         "emitDecoratorMetadata": true,
@@ -11,7 +11,8 @@
         "isolatedModules": true,
         "strict": true,
         "typeRoots": [
-            "./typings"
+            "./typings",
+            "./node_modules/@types"
         ]
     },
     "include": [

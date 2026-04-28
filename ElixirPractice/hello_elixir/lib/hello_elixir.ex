@@ -17,5 +17,5 @@ defmodule HelloElixir do
   end
 
   def hello, do: :world
-  def hello(name), do: IO.puts "Hello, #{name}"
+  def hello(name), do: IO.puts("Hello, #{name}")
 end

@@ -1,31 +1,45 @@
 import "@/app/globals.css";
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
-import { client } from "@/pages/api/post";
-import e from "@db/edgeql-js";
+import type { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { client, type Post as BlogPost } from "@/pages/api/post";
 
-export const getServerSideProps = async (
-  context?: GetServerSidePropsContext,
-) => {
-  const post = await e
-    .select(e.BlogPost, (post) => ({
-      id: true,
-      title: true,
-      content: true,
-      created_at: true,
-      filter_single: e.op(post.id, "=", e.uuid(context!.params!.id as string)),
-    }))
-    .run(client);
+type SerializedPost = Omit<BlogPost, "created_at"> & {
+  created_at: string;
+};
+
+export const getServerSideProps = (async (context) => {
+  const id = context.params?.id;
+  if (typeof id !== "string") {
+    return { notFound: true };
+  }
+
+  const [post] = await client.query<BlogPost>(
+    `
+      select BlogPost {
+        id,
+        title,
+        content,
+        created_at,
+      }
+      filter .id = <uuid>$id;
+    `,
+    { id },
+  );
+
+  if (!post) {
+    return { notFound: true };
+  }
+
   return {
     props: {
       post: {
-        id: post!.id,
-        title: post!.title,
-        content: post!.content,
-        created_at: JSON.parse(JSON.stringify(post!.created_at)),
+        id: post.id,
+        title: post.title,
+        content: post.content,
+        created_at: post.created_at.toISOString(),
       },
     },
   };
-};
+}) satisfies GetServerSideProps<{ post: SerializedPost }>;
 
 export type GetPost = InferGetServerSidePropsType<typeof getServerSideProps>;
 

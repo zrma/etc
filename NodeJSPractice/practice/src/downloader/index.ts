@@ -6,7 +6,7 @@ import * as fs from 'fs-extra';
 import * as _ from 'lodash';
 import * as sleep from 'sleep-promise';
 
-import * as csv from 'csvtojson';
+import csv from 'csvtojson';
 import {File, Movie} from './movie';
 
 import * as Raven from 'raven';
@@ -109,7 +109,7 @@ ${movie.lecture}
 
     const task = async (cmd: string) => {
         logger.log(cmd);
-        return new Promise(async (resolve) => {
+        return new Promise<void>(async (resolve) => {
             try {
                 await execAsync(cmd, {maxBuffer: 500 * 1024 * 1024});
                 return resolve();

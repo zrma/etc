@@ -14,10 +14,10 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "incremental": true,
     "plugins": [
       {
@@ -27,9 +27,6 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ],
-      "@db/*": [
-        "./dbschema/*"
       ]
     },
     "strictNullChecks": true
@@ -39,7 +36,8 @@
     "**/*.ts",
     "**/*.tsx",
     "dbschema/**/*.ts",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

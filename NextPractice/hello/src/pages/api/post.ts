@@ -1,42 +1,41 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { createClient } from "edgedb";
-import e, { $infer } from "@db/edgeql-js";
 
 export const client = createClient();
 
-const selectPosts = e.select(e.BlogPost, (post) => ({
-  id: true,
-  title: true,
-  content: true,
-  created_at: true,
+export interface Post {
+  id: string;
+  title: string;
+  content: string;
+  created_at: Date;
+}
 
-  order_by: {
-    expression: post.created_at,
-    direction: e.DESC,
-  },
-}));
+export type Posts = Post[];
 
-const insertPost = (title: string, content: string) => {
-  return e.insert(e.BlogPost, {
-    title: title,
-    content: content,
-  });
-};
+const selectPostsQuery = `
+  select BlogPost {
+    id,
+    title,
+    content,
+    created_at,
+  }
+  order by .created_at desc;
+`;
 
-const deleteOldPosts = () => {
-  const targets = e.select(e.BlogPost, (post) => ({
-    id: true,
-    created_at: true,
-    order_by: {
-      expression: post.created_at,
-      direction: e.DESC,
-    },
-    offset: 6,
-  }));
-  return e.delete(targets);
-};
+const insertPostQuery = `
+  insert BlogPost {
+    title := <str>$title,
+    content := <str>$content,
+  };
+`;
 
-export type Posts = $infer<typeof selectPosts>;
+const deleteOldPostsQuery = `
+  delete (
+    select BlogPost
+    order by .created_at desc
+    offset 6
+  );
+`;
 
 export default async function handler(
   req: NextApiRequest,
@@ -47,13 +46,13 @@ export default async function handler(
       const { title, content } = req.body;
 
       await client.transaction(async (tx) => {
-        await insertPost(title, content).run(tx);
-        await deleteOldPosts().run(tx);
+        await tx.execute(insertPostQuery, { title, content });
+        await tx.execute(deleteOldPostsQuery);
       });
       res.status(200).json({ message: "Post created" });
     },
     GET: async () => {
-      const posts = await selectPosts.run(client);
+      const posts = await client.query<Post>(selectPostsQuery);
       res.status(200).json(posts);
     },
   };
