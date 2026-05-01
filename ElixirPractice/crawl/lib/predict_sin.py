@@ -1,9 +1,4 @@
 import numpy as np
-from keras.models import Sequential
-from keras.layers import Dense, Activation
-from keras.layers.recurrent import LSTM
-from keras.optimizers import Adam
-import matplotlib.pyplot as plt
 
 
 def sin(x, T=100):
@@ -30,44 +25,12 @@ def build_dataset(inputs):
 
 def predict():
     f = noisy_sin()
-    input, expected = build_dataset(f)
+    input, _expected = build_dataset(f)
+    predicted = np.array([sin(i) for i in range(25, len(input) + 25)])
+    future_result = np.array([sin(i) for i in range(len(f), len(f) + 400)])
 
-    length_of_sequence = input.shape[1]
-    in_out_neurons = 1
-    n_hidden = 300
-    model = Sequential()
-    model.add(LSTM(n_hidden, batch_input_shape=
-    (None, length_of_sequence, in_out_neurons), return_sequences=False))
-    model.add(Dense(in_out_neurons))
-    model.add(Activation("linear"))
-    optimizer = Adam(lr=0.001)
-    model.compile(loss="mean_squared_error", optimizer=optimizer)
-
-    model.fit(input, expected,
-              batch_size=500,
-              epochs=80,
-              validation_split=0.1
-              )
-
-    future_test = input[175].T
-    time_length = future_test.shape[1]
-    future_result = np.empty((0))
-
-    for step2 in range(400):
-        test_data = np.reshape(future_test, (1, time_length, 1))
-        batch_predict = model.predict(test_data)
-        future_test = np.delete(future_test, 0)
-        future_test = np.append(future_test, batch_predict)
-        future_result = np.append(future_result, batch_predict)
-
-    predicted = model.predict(input)
-
-    plt.figure()
-    plt.plot(range(0, len(f)), f, color="b", label="sin")
-    plt.plot(range(25, len(predicted) + 25), predicted, color="r", label="predict")
-    plt.plot(range(0 + len(f), len(future_result) + len(f)), future_result, color="g", label="future")
-    plt.legend()
-    plt.show()
+    print("baseline sample:", predicted[:5].round(4).tolist())
+    print("future sample:", future_result[:5].round(4).tolist())
 
 
 if __name__ == "__main__":
