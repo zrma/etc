@@ -11,14 +11,14 @@ class ThingsResource:
     def on_get(self, _, res):
         """Handles GET requests"""
         res.status = falcon.HTTP_200  # This is the default status
-        res.body = ('\nTwo things awe me most, the starry sky '
+        res.text = ('\nTwo things awe me most, the starry sky '
                     'above me and the moral law within me.\n'
                     '\n'
                     '    ~ Immanuel Kant\n\n')
 
 
-# falcon.API instances are callable WSGI apps
-app = falcon.API()
+# Falcon App instances are callable WSGI apps
+app = falcon.App()
 
 # Resources are represented by long-lived class instances
 things = ThingsResource()
