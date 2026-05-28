@@ -2,7 +2,7 @@ module PolyGlot/RabbitMQPractice
 
 go 1.26
 
-toolchain go1.26.2
+toolchain go1.26.3
 
 require github.com/divan/num2words v1.0.3
 
