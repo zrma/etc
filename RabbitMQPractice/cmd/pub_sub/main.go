@@ -18,11 +18,9 @@ func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
-	opt := mq.Option{
-		Host:     "localhost",
-		Port:     5672,
-		Id:       "example",
-		Password: "example",
+	opt, err := mq.OptionFromEnv()
+	if err != nil {
+		log.Fatalln(err)
 	}
 	client, err := mq.New(opt)
 	if err != nil {

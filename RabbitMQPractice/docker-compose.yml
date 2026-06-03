@@ -4,6 +4,10 @@ services:
   rabbitmq:
     restart: always
     build: ./docker
+    environment:
+      RABBITMQ_USER: ${RABBITMQ_USER:?set RABBITMQ_USER}
+      RABBITMQ_PASSWORD: ${RABBITMQ_PASSWORD:?set RABBITMQ_PASSWORD}
+      RABBITMQ_VHOST: ${RABBITMQ_VHOST:-practice}
     ports:
-      - 5672:5672
-      - 15672:15672
+      - 127.0.0.1:5672:5672
+      - 127.0.0.1:15672:15672
