@@ -11,11 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^5.2.1",
-    "uuid": "^14.0.0"
+    "uuid": "^14.0.1"
   },
-  "pnpm": {
-    "overrides": {
-      "qs@<6.15.2": "6.15.2"
-    }
-  }
+  "packageManager": "pnpm@11.12.0"
 }

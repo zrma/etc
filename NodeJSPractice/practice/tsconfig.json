@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
         "module": "Node16",
-        "target": "es2016",
+        "target": "ES2024",
         "moduleResolution": "node16",
         "sourceMap": true,
         "inlineSources": true,
@@ -9,22 +9,12 @@
         "experimentalDecorators": true,
         "removeComments": true,
         "isolatedModules": true,
-        "strict": true,
-        "typeRoots": [
-            "./typings",
-            "./node_modules/@types"
-        ]
+        "strict": true
     },
     "include": [
         "src"
     ],
     "exclude": [
-        "typings",
         "node_modules"
-    ],
-    "files": [
-        "./typings/sleep-promise.d.ts",
-        "./typings/async-child-process.d.ts",
-        "./typings/es6-promise-pool.d.ts"
     ]
 }

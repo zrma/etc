@@ -90,21 +90,21 @@ class _MyHomePageState extends State<MyHomePage> {
               leading: Icon(Icons.call),
               title: Text('Call'),
               onTap: () {
-                this._onItemTapped(0);
+                _onItemTapped(0);
               },
             ),
             ListTile(
               leading: Icon(Icons.message),
               title: Text('Message'),
               onTap: () {
-                this._onItemTapped(1);
+                _onItemTapped(1);
               },
             ),
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
               onTap: () {
-                this._onItemTapped(2);
+                _onItemTapped(2);
               },
             ),
           ],

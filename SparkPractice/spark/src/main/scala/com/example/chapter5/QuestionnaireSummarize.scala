@@ -38,9 +38,8 @@ object QuestionnaireSummarize {
   private def computeAgeRangeAvg(rdd: RDD[(Int, String, Int)]) = {
     rdd
       .map(record => (record._1, (record._3, 1)))
-      .reduceByKey {
-        case ((lPoint, lCnt), (rPoint, rCnt)) => (lPoint + rPoint, lCnt + rCnt)
-      }
+      .reduceByKey((left: (Int, Int), right: (Int, Int)) =>
+        (left._1 + right._1, left._2 + right._2))
       .map {
         case (ageRange, (totalPoint, cnt)) =>
           (ageRange, totalPoint / cnt.toDouble)

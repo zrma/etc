@@ -9,29 +9,24 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "@types/node": "^25.6.0",
-    "@types/react": "^19.2.14",
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "autoprefixer": "^10.5.0",
+    "autoprefixer": "^10.5.2",
     "edgedb": "^2.0.1",
-    "eslint-config-next": "^16.2.6",
-    "next": "^16.2.6",
-    "postcss": "^8.5.12",
-    "prettier": "^3.8.3",
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5",
+    "eslint-config-next": "^16.2.10",
+    "next": "^16.2.10",
+    "postcss": "8.5.17",
+    "prettier": "^3.9.5",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
     "tailwind-scrollbar": "^4.0.2",
-    "tailwindcss": "^4.2.4",
+    "tailwindcss": "^4.3.2",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.4",
-    "eslint": "^10.2.1"
+    "@tailwindcss/postcss": "^4.3.2",
+    "eslint": "^9.39.4"
   },
-  "pnpm": {
-    "overrides": {
-      "postcss@<8.5.10": "8.5.12",
-      "brace-expansion@>=5.0.0 <5.0.6": "5.0.6"
-    }
-  }
+  "packageManager": "pnpm@11.12.0"
 }

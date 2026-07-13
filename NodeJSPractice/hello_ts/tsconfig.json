@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    "target": "ES2024",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
@@ -12,6 +12,6 @@
     "declaration": false,
     "outDir": "dist"
   },
-  "include": ["src"],
+  "include": ["index.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }

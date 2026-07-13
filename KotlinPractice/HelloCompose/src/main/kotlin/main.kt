@@ -1,5 +1,3 @@
-
-import androidx.compose.desktop.Window
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,11 +8,20 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.IntSize
+import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.window.Window
+import androidx.compose.ui.window.application
+import androidx.compose.ui.window.rememberWindowState
 
-fun main() =
-    Window(title = "Compose for Desktop", size = IntSize(300, 300)) {
+fun multiply(left: Int, right: Int): Int = left * right
+
+fun main() = application {
+    Window(
+        onCloseRequest = ::exitApplication,
+        title = "Compose for Desktop",
+        state = rememberWindowState(size = DpSize(300.dp, 300.dp)),
+    ) {
         val count = remember { mutableStateOf(0) }
         MaterialTheme {
             Column(Modifier.fillMaxSize(), Arrangement.spacedBy(5.dp)) {
@@ -29,3 +36,4 @@ fun main() =
             }
         }
     }
+}

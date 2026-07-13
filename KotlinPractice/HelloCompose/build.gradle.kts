@@ -1,19 +1,18 @@
 import org.jetbrains.compose.compose
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.4.30"
-    id("org.jetbrains.compose") version "0.3.1"
+    kotlin("jvm") version "2.3.21"
+    id("org.jetbrains.kotlin.plugin.compose") version "2.3.21"
+    id("org.jetbrains.compose") version "1.9.3"
 }
 
 group = "team504.zrma"
 version = "1.0"
 
 repositories {
-    jcenter()
+    google()
     mavenCentral()
-    maven { url = uri("https://maven.pkg.jetbrains.space/public/p/compose/dev") }
 }
 
 dependencies {
@@ -25,8 +24,8 @@ tasks.test {
     useTestNG()
 }
 
-tasks.withType<KotlinCompile>() {
-    kotlinOptions.jvmTarget = "11"
+kotlin {
+    jvmToolchain(17)
 }
 
 compose.desktop {

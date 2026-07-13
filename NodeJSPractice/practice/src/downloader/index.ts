@@ -1,16 +1,18 @@
-import {execAsync} from 'async-child-process';
-import {PromisePool} from 'es6-promise-pool';
+import {exec as execCallback} from 'node:child_process';
+import PromisePool from 'es6-promise-pool';
 import * as path from 'path';
+import {promisify} from 'node:util';
 
 import * as fs from 'fs-extra';
 import * as _ from 'lodash';
-import * as sleep from 'sleep-promise';
+import sleep from 'sleep-promise';
 
 import csv from 'csvtojson';
 import {File, Movie} from './movie';
 
 const filePath = path.join(__dirname, 'portal.csv');
 const logger = console;
+const execAsync = promisify(execCallback);
 
 const loadMovies = async () => {
     const data: Movie[] = [];
@@ -122,7 +124,7 @@ ${movie.lecture}
         if (cnt < maxCnt) {
             return task(commands[cnt++]);
         } else {
-            return null;
+            return undefined;
         }
     };
 

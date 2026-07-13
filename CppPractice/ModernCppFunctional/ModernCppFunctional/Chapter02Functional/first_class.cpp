@@ -47,7 +47,17 @@ void first_class()
 		std::cout << "  4. Division" << std::endl;
 		std::cout << "  5. Exit" << std::endl;
 		std::cout << "Choice : ";
-		std::cin >> i;
+		if (!(std::cin >> i))
+		{
+			if (std::cin.eof())
+			{
+				return;
+			}
+			std::cin.clear();
+			std::cin.ignore(INT8_MAX, '\n');
+			std::cout << "Please select available mode!" << std::endl;
+			continue;
+		}
 
 		if (i == 5)
 		{
@@ -65,6 +75,10 @@ void first_class()
 		// a값 유효성 확인
 		while (std::cin.fail())
 		{
+			if (std::cin.eof())
+			{
+				return;
+			}
 			// std::cin 에러 플래그를 초기화 해 std::cin 을 사용 가능한 상태로 변경
 			std::cin.clear();
 
@@ -81,6 +95,10 @@ void first_class()
 		// a값 유효성 확인
 		while (std::cin.fail())
 		{
+			if (std::cin.eof())
+			{
+				return;
+			}
 			// std::cin 에러 플래그를 초기화 해 std::cin 을 사용 가능한 상태로 변경
 			std::cin.clear();
 

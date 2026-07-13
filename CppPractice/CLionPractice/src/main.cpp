@@ -47,7 +47,7 @@ auto bar() {
   auto ptr = std::make_shared<IntWrapper>();
   // https://neosmart.net/blog/2018/modern-c-isnt-memory-safe/
   // https://floating.io/2017/07/lambda-shared_ptr-memory-leak/
-  auto closure = [&](int x) {
+  auto closure = [ptr, dist, mt](int x) mutable {
     if (!ptr) {
       std::cerr << "Shared pointer is removed" << std::endl;
       return;

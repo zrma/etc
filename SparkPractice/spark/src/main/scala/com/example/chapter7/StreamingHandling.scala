@@ -21,7 +21,7 @@ object StreamingHandling {
         val arrayOfMax =
           Array(Double.MaxValue, Double.MaxValue, Double.MaxValue)
         val tmpIndex = Long.MaxValue
-        rdd.sparkContext.parallelize(Array((arrayOfMax, tmpIndex)))
+        rdd.sparkContext.parallelize(Seq((arrayOfMax, tmpIndex)))
       } else {
         // 데이터 건수
         val count = rdd.count

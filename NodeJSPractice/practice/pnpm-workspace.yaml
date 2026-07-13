@@ -1,0 +1,4 @@
+allowBuilds:
+  core-js: true
+overrides:
+  "qs@<6.15.2": 6.15.2

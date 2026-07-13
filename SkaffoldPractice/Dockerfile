@@ -1,8 +1,9 @@
-FROM golang:1.16.5-alpine3.13 as builder
+FROM golang:1.26.5-alpine3.24 AS builder
+WORKDIR /src
 COPY main.go .
 RUN go build -o /app main.go
 
-FROM alpine:3.13.5
+FROM alpine:3.24.1
 ENV GOTRACEBACK=single
-CMD ["./app"]
-COPY --from=builder /app .
+COPY --from=builder /app /app
+CMD ["/app"]

@@ -43,5 +43,6 @@ int func1()
 
 const int& func2()
 {
-	return std::forward<int&&>(0);
+	static constexpr int value = 0;
+	return value;
 }

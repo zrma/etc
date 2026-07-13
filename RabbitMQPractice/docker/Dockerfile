@@ -1,6 +1,4 @@
-FROM rabbitmq:3.8.5
-
-RUN rabbitmq-plugins enable rabbitmq_management
+FROM rabbitmq:4.3.2-management
 
 COPY ./init.sh /init.sh
 RUN chmod +x /init.sh

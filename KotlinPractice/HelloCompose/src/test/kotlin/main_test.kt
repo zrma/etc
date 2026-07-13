@@ -1,8 +1,9 @@
 import org.testng.annotations.Test
+import kotlin.test.assertEquals
 
 class MainTest {
     @Test
     fun testMultiply() {
-        TODO("not implemented")
+        assertEquals(6, multiply(2, 3))
     }
 }
