@@ -5,8 +5,10 @@ on:
     branches: [main]
     paths:
       - .github/workflows/dependency-checks.yml
+      - scripts/dependency-security.test.cjs
       - NextPractice/hello/**
       - NodeJSPractice/hello_ts/**
+      - NodeJSPractice/practice/**
       - NodeJSPractice/supabase/**
       - NodeJSPractice/test/**
       - ReactPractice/my-app/**
@@ -14,8 +16,10 @@ on:
   pull_request:
     paths:
       - .github/workflows/dependency-checks.yml
+      - scripts/dependency-security.test.cjs
       - NextPractice/hello/**
       - NodeJSPractice/hello_ts/**
+      - NodeJSPractice/practice/**
       - NodeJSPractice/supabase/**
       - NodeJSPractice/test/**
       - ReactPractice/my-app/**
@@ -38,11 +42,17 @@ jobs:
       matrix:
         include:
           - project: NextPractice/hello
+            security: true
             check: pnpm lint && pnpm build
           - project: NodeJSPractice/hello_ts
+            security: true
             check: pnpm exec tsc --noEmit
           - project: NodeJSPractice/supabase
+            security: true
             check: pnpm test --runInBand
+          - project: NodeJSPractice/practice
+            security: true
+            check: pnpm check
           - project: NodeJSPractice/test
             check: node --check index.js
           - project: ReactPractice/my-app
@@ -65,6 +75,9 @@ jobs:
           cache-dependency-path: ${{ matrix.project }}/pnpm-lock.yaml
       - run: pnpm install --frozen-lockfile
       - run: ${{ matrix.check }}
+      - name: Verify dependency security and caller compatibility
+        if: matrix.security
+        run: node --test "$GITHUB_WORKSPACE/scripts/dependency-security.test.cjs"
       - name: Verify the Express example responds with a UUID
         if: matrix.project == 'NodeJSPractice/test'
         run: |
