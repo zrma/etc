@@ -9,13 +9,15 @@
 node --test scripts/audit-dependencies.test.cjs
 node scripts/audit-dependencies.cjs
 cd RabbitMQPractice/pkg/mq
-govulncheck -scan=module
+GOTOOLCHAIN=go1.26.10 govulncheck -scan=module
+# SkaffoldPractice에서도 같은 명령을 실행한다.
 ```
 
 Node 검사는 `security/dependency-policy.json`에 나열된 pnpm 프로젝트 6개의
 runtime/dev 전체 lockfile을 registry의 최신 권고와 대조한다. 새 pnpm lockfile이
 추가되거나 기존 검사 대상이 누락되면 coverage 검사에서 실패한다.
-Go 검사는 RabbitMQ 모듈의 dependency와 Go 표준 라이브러리를 검사한다.
+Go 검사는 RabbitMQ와 Skaffold 두 모듈의 dependency와 Go 표준 라이브러리를 검사한다.
+로컬에서 CI와 같은 SDK를 검사하려면 `GOTOOLCHAIN=go1.26.10`을 설정한다.
 다른 언어의 과거 학습 예제, lockfile이 없는 예제와 배포 상태는 이 gate의 범위가 아니다.
 
 공개 저장소의 `Dependency security` CI는 관련 manifest, lockfile, 정책 또는 검사
@@ -53,6 +55,15 @@ minimatch 10 소비자는 11.0.4로 갱신했다. Jest 전용 구버전의 상�
 성공했다고 주장하지 않으며, `scripts/dependency-security.test.cjs`에서 별도
 호환성 경계를 유지한다.
 
+## Go 도구 체인 수정
+
+새 CI의 모듈 수준 감사는 기존 Go 1.26.5 표준 라이브러리의 권고 22건을 탐지했다.
+로컬의 더 최신 Go가 이를 가릴 수 있어, 두 go.mod의 최소 도구 체인을 같은
+1.26 계열의 보안 수정판 1.26.10으로 올렸다. Skaffold Docker builder의 SDK도
+같은 패치 버전으로 맞췄다. 검사 범위를 symbol 수준으로 낮추거나
+Go 권고를 예외로 숨기지 않았다. CI는 각 go.mod의 도구 체인을 사용하며 로컬 대조도
+같은 SDK를 강제한다. 모듈 수준 권고 수를 실제 호출 가능한 취약점 수로 해석하지 않는다.
+
 ## 공식 근거
 
 - [minimatch 전처리 증폭](https://github.com/isaacs/minimatch/security/advisories/GHSA-g3hv-75wg-m249)
@@ -62,3 +73,5 @@ minimatch 10 소비자는 11.0.4로 갱신했다. Jest 전용 구버전의 상�
 - [SVGO foreignObject 우회](https://github.com/svg/svgo/security/advisories/GHSA-4vpr-x523-8j87)
 - [SVGO script 제거 우회](https://github.com/svg/svgo/security/advisories/GHSA-2p49-hgcm-8545)
 - [qs comma 직렬화 오류](https://github.com/ljharb/qs/security/advisories/GHSA-6pq8-jhm2-2vcw)
+
+- [Go 보안 패치 릴리스 기록](https://go.dev/doc/devel/release#go1.26.0)

@@ -9,6 +9,8 @@ on:
       - '**/pnpm-workspace.yaml'
       - RabbitMQPractice/go.mod
       - RabbitMQPractice/go.sum
+      - SkaffoldPractice/go.mod
+      - SkaffoldPractice/Dockerfile
       - security/**
       - scripts/audit-dependencies*
       - .github/workflows/dependency-security.yml
@@ -19,6 +21,8 @@ on:
       - '**/pnpm-workspace.yaml'
       - RabbitMQPractice/go.mod
       - RabbitMQPractice/go.sum
+      - SkaffoldPractice/go.mod
+      - SkaffoldPractice/Dockerfile
       - security/**
       - scripts/audit-dependencies*
       - .github/workflows/dependency-security.yml
@@ -53,13 +57,20 @@ jobs:
     if: github.event.repository.private == false
     runs-on: ubuntu-latest
     timeout-minutes: 10
+    strategy:
+      matrix:
+        include:
+          - module: RabbitMQPractice
+            scan: RabbitMQPractice/pkg/mq
+          - module: SkaffoldPractice
+            scan: SkaffoldPractice
     defaults:
       run:
-        working-directory: RabbitMQPractice/pkg/mq
+        working-directory: ${{ matrix.scan }}
     steps:
       - uses: actions/checkout@v7.0.0
-      - uses: actions/setup-go@v6.0.0
+      - uses: actions/setup-go@v7.0.0
         with:
-          go-version-file: RabbitMQPractice/go.mod
-          cache-dependency-path: RabbitMQPractice/go.sum
+          go-version-file: ${{ matrix.module }}/go.mod
+          cache-dependency-path: ${{ matrix.module }}/go.*
       - run: go run golang.org/x/vuln/cmd/govulncheck@v1.9.0 -scan=module
