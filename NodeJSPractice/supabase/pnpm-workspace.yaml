@@ -2,8 +2,11 @@ allowBuilds:
   supabase: true
   unrs-resolver: true
 overrides:
-  # glob 10의 minimatch 9는 반환 API와 복합 패턴 호환성을 위해 별도로 유지한다.
-  # 이 경로는 저장소 소유 Jest 설정만 처리하며 외부 요청 입력을 받지 않는다.
+  # 상위 도구의 API를 유지한 채 coverage 경로를 glob 13으로 옮긴다.
+  # test-exclude 8의 변경은 Node 20 이상 요구와 glob 갱신이다.
+  "babel-plugin-istanbul@8.0.0>test-exclude": 8.0.0
+  # glob 13 계열 소비 API를 유지하면서 AbortSignal 취소 수정을 반영한다.
+  "glob@>=13.0.0 <14.0.3": 14.0.3
   "minimatch@>=10.0.0 <11.0.1": 11.0.4
   "js-yaml@>=3.0.0 <3.15.2": 3.15.2
   "semver@>=7.0.0 <7.5.2": 7.8.5

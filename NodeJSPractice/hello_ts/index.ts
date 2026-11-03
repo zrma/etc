@@ -1,5 +1,7 @@
 const foo = "foo";
+// eslint-disable-next-line @typescript-eslint/prefer-as-const -- 명시적 리터럴 타입과 as const를 비교한다.
 const bar: "foo" = "foo";
+// eslint-disable-next-line prefer-const -- let 선언의 타입 widening을 비교하는 예제다.
 let baz = "foo";
 const qux = "foo" as const;
 

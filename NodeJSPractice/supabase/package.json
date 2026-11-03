@@ -6,7 +6,8 @@
   "scripts": {
     "start": "ts-node src/app.ts",
     "test": "jest --forceExit --detectOpenHandles --coverage",
-    "watch": "nodemon src/app.ts"
+    "watch": "nodemon src/app.ts",
+    "check": "pnpm test --runInBand && tsc --noEmit"
   },
   "keywords": [],
   "author": "",
@@ -17,11 +18,12 @@
     "@types/jest": "^30.0.0",
     "@types/node": "^26.1.1",
     "@types/supertest": "^7.2.0",
-    "jest": "^30.4.2",
+    "jest": "^30.5.2",
     "supabase": "^2.109.1",
     "supertest": "^7.2.2",
     "ts-jest": "^29.4.11",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "@types/body-parser": "^1.19.6"
   },
   "dependencies": {
     "body-parser": "^2.4.0",
@@ -33,5 +35,5 @@
     "preset": "ts-jest",
     "testEnvironment": "node"
   },
-  "packageManager": "pnpm@11.12.0"
+  "packageManager": "pnpm@11.13.1"
 }

@@ -28,63 +28,6 @@
       "reference": "https://github.com/isaacs/minimatch/security/advisories/GHSA-g3hv-75wg-m249"
     },
     {
-      "project": "NodeJSPractice/hello_ts",
-      "advisory": "GHSA-g3hv-75wg-m249",
-      "package": "minimatch",
-      "versions": [
-        "3.1.5"
-      ],
-      "severity": "moderate",
-      "pathPrefixes": [
-        ".>@typescript-eslint/eslint-plugin>",
-        ".>@typescript-eslint/parser>",
-        ".>eslint>",
-        ".>eslint-config-prettier>",
-        ".>eslint-plugin-prettier>"
-      ],
-      "reviewed": "2026-11-03",
-      "expires": "2026-12-03",
-      "reason": "minimatch 3에는 해당 firstPhasePreProcess 구현이 없다. 기존 callable CommonJS 소비자 API를 유지한다.",
-      "recheckWhen": "권고의 영향 코드 설명, 버전 또는 직접 소비자가 바뀌면 재검토한다.",
-      "reference": "https://github.com/isaacs/minimatch/security/advisories/GHSA-g3hv-75wg-m249"
-    },
-    {
-      "project": "NodeJSPractice/supabase",
-      "advisory": "GHSA-g3hv-75wg-m249",
-      "package": "minimatch",
-      "versions": [
-        "3.1.5"
-      ],
-      "severity": "moderate",
-      "pathPrefixes": [
-        ".>jest>",
-        ".>ts-jest>"
-      ],
-      "reviewed": "2026-11-03",
-      "expires": "2026-12-03",
-      "reason": "minimatch 3에는 해당 firstPhasePreProcess 구현이 없다. 기존 callable CommonJS 소비자 API를 유지한다.",
-      "recheckWhen": "권고의 영향 코드 설명, 버전 또는 직접 소비자가 바뀌면 재검토한다.",
-      "reference": "https://github.com/isaacs/minimatch/security/advisories/GHSA-g3hv-75wg-m249"
-    },
-    {
-      "project": "NodeJSPractice/supabase",
-      "advisory": "GHSA-g3hv-75wg-m249",
-      "package": "minimatch",
-      "versions": [
-        "9.0.9"
-      ],
-      "severity": "moderate",
-      "pathPrefixes": [
-        ".>jest>",
-        ".>ts-jest>"
-      ],
-      "reviewed": "2026-11-03",
-      "expires": "2026-12-03",
-      "reason": "증폭 구현은 남아 있지만 저장소 소유 Jest 설정 패턴에 제한된다. glob 10은 RegExp API를 요구하고 최신 glob 동반 갱신은 복합 패턴 매칭 회귀를 재현해 제외했다.",
-      "recheckWhen": "요청·외부 파일 등 비신뢰 패턴을 받거나 호환 가능한 upstream 수정이 나오면 즉시 재검토한다.",
-      "reference": "https://github.com/isaacs/minimatch/security/advisories/GHSA-g3hv-75wg-m249"
-    },
-    {
       "project": "NodeJSPractice/supabase",
       "advisory": "GHSA-gcqx-w48m-w2h4",
       "package": "deepmerge",
@@ -101,24 +44,6 @@
       "reason": "CVE-2026-93753은 발급 기관이 보안 취약점을 기술하지 않는다는 이유로 REJECTED 처리했다.",
       "recheckWhen": "공식 CVE/GHSA 판정 또는 소비 경로가 바뀌면 재검토한다.",
       "reference": "https://github.com/CVEProject/cvelistV5/blob/main/cves/2026/93xxx/CVE-2026-93753.json"
-    },
-    {
-      "project": "NodeJSPractice/supabase",
-      "advisory": "GHSA-3g3m-2fjr-6pw4",
-      "package": "glob",
-      "versions": [
-        "10.5.0"
-      ],
-      "severity": "moderate",
-      "pathPrefixes": [
-        ".>jest>",
-        ".>ts-jest>"
-      ],
-      "reviewed": "2026-11-03",
-      "expires": "2026-12-03",
-      "reason": "Jest 소비자는 glob.sync를 signal 없이 호출한다. 권고의 비동기 AbortSignal 취소 후 순회 경로에 의존하지 않는다.",
-      "recheckWhen": "비동기 glob/globStream이나 AbortSignal 취소를 도입하거나 소비자가 바뀌면 재검토한다.",
-      "reference": "https://github.com/isaacs/node-glob/security/advisories/GHSA-3g3m-2fjr-6pw4"
     }
   ]
 }
