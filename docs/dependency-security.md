@@ -70,6 +70,8 @@ glob 13의 AbortSignal 권고도 해결하도록 이 소비 경로에는 glob 14
 패턴은 globstar / brace / 없는 파일 / 절대 경로, coverage의 include / exclude /
 공백·한글 경로 / node_modules 제외와 동기·비동기 결과를 검사한다.
 기존 Jest / ts-jest 테스트 4개와 coverage 실행 방식도 유지한다.
+Jest의 native 파일 감시 의존성인 `@parcel/watcher`를 build script 허용 목록에
+추가하고, CI와 같은 일반 frozen install에서도 검사한다.
 서버 진입점의 누락된 body-parser 타입 선언도 직접 개발 의존성으로 추가해
 전체 TypeScript 검사를 CI에 연결한다.
 TypeScript 예제는 ESLint 10의 flat config로 기존 권장 TypeScript 규칙과

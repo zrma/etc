@@ -1,4 +1,5 @@
 allowBuilds:
+  "@parcel/watcher": true
   supabase: true
   unrs-resolver: true
 overrides:
