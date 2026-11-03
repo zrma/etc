@@ -56,7 +56,7 @@ jobs:
           - project: NodeJSPractice/test
             check: node --check index.js
           - project: ReactPractice/my-app
-            check: pnpm test --watch=false --runInBand && pnpm build
+            check: pnpm check
     defaults:
       run:
         working-directory: ${{ matrix.project }}

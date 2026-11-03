@@ -1,68 +1,28 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React 연습 앱
 
-## Available Scripts
+React 예제 화면을 Vite로 빌드하고 Vitest와 Testing Library로 검사한다.
+기존 화면, 로고, manifest와 `build/` 출력 경로를 유지한다.
 
-In the project directory, you can run:
+## 실행
 
-### `npm start`
+Node.js 24.15 이상의 24 LTS 또는 26 이상과 package.json에 지정된 pnpm을 사용한다.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```sh
+pnpm install --frozen-lockfile
+pnpm start
+pnpm check
+pnpm preview
+```
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- `start` / `dev`: localhost:3000 개발 서버와 HMR.
+- `lint`: 소스 정적 검사.
+- `test`: Vitest 단일 실행. 대화형 실행은 `test:watch`.
+- `build`: 배포 가능한 정적 파일을 `build/`에 생성. 상대 자산 경로를 사용한다.
+- `preview`: 빌드 결과의 로컬 확인용 서버. 운영 서버로 사용하지 않는다.
 
-### `npm test`
+서비스 워커는 기존처럼 등록하지 않는다. 기존 등록 해제 동작은 유지하며
+이 예제는 오프라인 캐시나 외부 SVG 정화 기능을 제공하지 않는다.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+CRA의 `eject`, `%PUBLIC_URL%`, `REACT_APP_*` 환경변수와 자동 webpack/Jest 설정은
+사용하지 않는다. 새 클라이언트 환경변수가 필요하면 Vite의 `VITE_*` 및
+`import.meta.env` 규칙을 사용하고, 비밀값을 번들에 포함하지 않는다.
